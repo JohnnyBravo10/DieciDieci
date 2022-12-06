@@ -11,4 +11,9 @@ public class Tile {
     public Tile(){
         this.occupied=false;
     }
+
+    //initialization empty/occupied tile
+    public Tile (boolean o){
+        this.occupied=o;
+    }
 }

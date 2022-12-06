@@ -10,4 +10,10 @@ public class SimpleTests {
       Assertions.assertFalse(t.occupied);
    }
 
+   @Test
+   public void OccupiedTileConstructor(){
+      Tile t=new Tile(true);
+      Assertions.assertTrue(t.occupied);
+   }
+
    }
