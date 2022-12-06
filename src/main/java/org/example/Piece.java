@@ -4,7 +4,7 @@ public class Piece {
 
 //shape of the piece
     public Tile[][] shape;
-//possible shapes (matrices of occupied/empty tiles)
+//possible shapes (matrices of occupied/empty tiles)///////////////////////////////////////////////////////////////////
 
     // straight pieces
     private static final Tile[][] A={{new Tile(true)}};
@@ -27,7 +27,7 @@ public class Piece {
 
     //array of possible shapes
     private final Tile[][][] possibleShapes={A,B,C,D,E,F,G,H,I,J,K};
-
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public void clockwiseRotation(){
     }
 
