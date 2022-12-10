@@ -31,10 +31,19 @@ public class Piece {
 
     //costruttore di pezzi di forma random
     public Piece(){
-        SecureRandom s=new SecureRandom();
+        SecureRandom s = new SecureRandom();
         //array of possible shapes
         Tile[][][] possibleShapes = {A, B, C, D, E, F, G, H, I, J, K};
-        this.shape= possibleShapes[s.nextInt(possibleShapes.length)];
+        this.shape = possibleShapes[s.nextInt(possibleShapes.length)];
+    }
+
+    public Piece(int pieceIndex) throws IllegalArgumentException {
+        Tile[][][] possibleShapes = {A, B, C, D, E, F, G, H, I, J, K};
+
+        if (pieceIndex < 0 || pieceIndex > possibleShapes.length - 1)
+            throw new IllegalArgumentException("Piece Index out of bounds");
+
+        this.shape = possibleShapes[pieceIndex];
     }
 
 }
