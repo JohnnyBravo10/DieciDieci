@@ -1,5 +1,6 @@
 package org.example;
 
+import java.security.SecureRandom;
 public class Piece {
 
 //shape of the piece
@@ -25,10 +26,15 @@ public class Piece {
     private static final Tile[][] J={{new Tile(), new Tile(true)}, {new Tile(true), new Tile(true)}};
     private static final Tile[][] K={{new Tile(),new Tile(),new Tile(true)}, {new Tile(),new Tile(),new Tile(true)}, {new Tile(true),new Tile(true),new Tile(true)} };
 
-    //array of possible shapes
-    private final Tile[][][] possibleShapes={A,B,C,D,E,F,G,H,I,J,K};
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public void clockwiseRotation(){
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+    //costruttore di pezzi di forma random
+    public Piece(){
+        SecureRandom s=new SecureRandom();
+        //array of possible shapes
+        Tile[][][] possibleShapes = {A, B, C, D, E, F, G, H, I, J, K};
+        this.shape= possibleShapes[s.nextInt(possibleShapes.length)];
     }
 
 }
