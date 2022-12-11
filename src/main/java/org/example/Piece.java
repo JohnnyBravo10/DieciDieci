@@ -1,74 +1,58 @@
 package org.example;
 
 import java.security.SecureRandom;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Objects;
 
 public class Piece {
 
-//shape of the piece
-    public Tile[][] shape;
-//possible shapes (matrices of occupied/empty tiles)///////////////////////////////////////////////////////////////////
+    // TODO: forse posso trasformare sta roba in un hashmap però ci devo pensare meglio private HashMap<ShapeType, Tile[][]> shapeX;
 
-    // straight pieces
-    private static final Tile[][] A={{new Tile(true)}};
-    private static final Tile[][] B={{new Tile(true),new Tile(true)}};
-    private static final Tile[][] C={{new Tile(true),new Tile(true),new Tile(true)}};
-    private static final Tile[][] D={{new Tile(true),new Tile(true),new Tile(true),new Tile(true)}};
-    private static final Tile[][] E={{new Tile(true),new Tile(true),new Tile(true),new Tile(true),new Tile(true)}};
-
-    // square pieces
-    private static final Tile[][] F={
-            {new Tile(true),new Tile(true)},
-            {new Tile(true),new Tile(true)}
-    };
-    private static final Tile[][] G={
-            {new Tile(true),new Tile(true),new Tile(true)},
-            {new Tile(true), new Tile(true), new Tile(true)},
-            {new Tile(true),new Tile(true), new Tile(true)}
-    };
-
-    //'L' pieces
-    private static final Tile[][] H={
-            {new Tile(true), new Tile()},
-            {new Tile(true), new Tile(true)}
-    };
-    private static final Tile[][] I={
-            {new Tile(true),new Tile(),new Tile()},
-            {new Tile(true),new Tile(),new Tile()},
-            {new Tile(true),new Tile(true),new Tile(true)}
-    };
-
-    //reversed 'L' pieces
-    private static final Tile[][] J={
-            {new Tile(), new Tile(true)},
-            {new Tile(true), new Tile(true)}
-    };
-    private static final Tile[][] K={
-            {new Tile(),new Tile(),new Tile(true)},
-            {new Tile(),new Tile(),new Tile(true)},
-            {new Tile(true),new Tile(true),new Tile(true)}
-    };
-
-    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    //costruttore di pezzi di forma random
-    public Piece(){
-        SecureRandom s = new SecureRandom();
-        //array of possible shapes
-        Tile[][][] possibleShapes = {A, B, C, D, E, F, G, H, I, J, K};
-        this.shape = possibleShapes[s.nextInt(possibleShapes.length)];
+    //shape of the piece
+    private final Tile[][] shape;
+    public enum ShapeType{
+        SQUARE2x,
+        SQUARE3x,
+        STRAIGHT1x,
+        STRAIGHT2x,
+        STRAIGHT3x,
+        STRAIGHT4x,
+        STRAIGHT5x,
+        ELLE2x,
+        ELLE3x
     }
 
-    public Piece(int pieceIndex) throws IllegalArgumentException {
-        Tile[][][] possibleShapes = {A, B, C, D, E, F, G, H, I, J, K};
+    private final ShapeType type;
 
-        if (pieceIndex < 0 || pieceIndex > possibleShapes.length - 1)
-            throw new IllegalArgumentException("Piece Index out of bounds");
+    // Normal piece constructor
 
-        this.shape = possibleShapes[pieceIndex];
+    public Piece(Tile[][] tileSet, ShapeType type) {
+        this.shape = tileSet;
+        this.type = type;
+    }
+    // Copy constructor
+    public Piece(Piece piece){
+        this.shape = new Tile[piece.shape.length][piece.shape[0].length];
+
+        for(int i = 0; i < piece.shape.length; i++){
+            this.shape[i] = Arrays.copyOf(piece.shape[i], piece.shape[i].length);
+        }
+
+        this.type = piece.type;
     }
 
+    // type getter
+    public ShapeType getType() {
+        return this.type;
+    }
+
+    // copy object method
+    public Piece copy() {
+        return new Piece(this);
+    }
+
+    // equals can be called to check if 2 pieces are equal
     @Override
     public boolean equals(Object o) {
         if (this == o)
