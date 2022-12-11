@@ -32,7 +32,7 @@ public class PieceTest {
 
     // Check if pieces are equal with differnt shapes
     private Stream<Arguments> providePiecesToTest() {
-        var piece = allSets.getPieceByType(Piece.ShapeType.SQUARE2x);
+        Piece piece = allSets.getPieceByType(Piece.ShapeType.SQUARE2x);
         return Stream.of(
                 Arguments.of(piece.equals(piece.copy()), true),
                 Arguments.of(allSets.getPieceByType(Piece.ShapeType.SQUARE3x).equals(piece), false),
