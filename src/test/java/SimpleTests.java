@@ -18,31 +18,5 @@ public class SimpleTests {
    Comunque se li eseguite tutti passano
    */
 
-   @Test
-   public void TileConstructor(){
-      Tile t=new Tile();
-      Assertions.assertFalse(t.occupied);
-   }
 
-   @Test
-   public void OccupiedTileConstructor(){
-      Tile t=new Tile(true);
-      Assertions.assertTrue(t.occupied);
-   }
-
-   private static Stream<Arguments> provideTilesToTest() {
-      Tile tile = new Tile();
-      return Stream.of(
-              Arguments.of(new Tile().equals(new Tile()), true),
-              Arguments.of(new Tile(true).equals(new Tile(true)), true),
-              Arguments.of(tile.equals(tile), true),
-              Arguments.of(tile.equals(null), false)
-      );
-   }
-
-   @ParameterizedTest
-   @MethodSource("provideTilesToTest")
-   void checkEqualTiles(boolean eval, boolean expected){
-      assertEquals(expected, eval);
-   }
 }

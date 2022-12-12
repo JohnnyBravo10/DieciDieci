@@ -9,32 +9,32 @@ public class PieceSet {
     private PieceSet(){
         this.possibleSet = new Piece[]{
                 // straight pieces
-                new Piece(new Tile[][]{{new Tile(true)}}, Piece.ShapeType.STRAIGHT1x),
-                new Piece(new Tile[][]{{new Tile(true),new Tile(true)}}, Piece.ShapeType.STRAIGHT2x),
-                new Piece(new Tile[][]{{new Tile(true),new Tile(true),new Tile(true)}}, Piece.ShapeType.STRAIGHT3x),
-                new Piece(new Tile[][]{{new Tile(true),new Tile(true),new Tile(true),new Tile(true)}}, Piece.ShapeType.STRAIGHT4x),
-                new Piece(new Tile[][]{{new Tile(true),new Tile(true),new Tile(true),new Tile(true),new Tile(true)}}, Piece.ShapeType.STRAIGHT5x),
+                new Piece(new Tile[][]{{new Tile("purple")}}, Piece.ShapeType.STRAIGHT1x),
+                new Piece(new Tile[][]{{new Tile("yellow"),new Tile("yellow")}}, Piece.ShapeType.STRAIGHT2x),
+                new Piece(new Tile[][]{{new Tile("orange"),new Tile("orange"),new Tile("orange")}}, Piece.ShapeType.STRAIGHT3x),
+                new Piece(new Tile[][]{{new Tile("magenta"),new Tile("magenta"),new Tile("magenta"),new Tile("magenta")}}, Piece.ShapeType.STRAIGHT4x),
+                new Piece(new Tile[][]{{new Tile("red"),new Tile("red"),new Tile("red"),new Tile("red"),new Tile("red")}}, Piece.ShapeType.STRAIGHT5x),
 
                 // squares
                 new Piece(new Tile[][]{
-                        {new Tile(true),new Tile(true)},
-                        {new Tile(true),new Tile(true)}
+                        {new Tile("lightGreen"),new Tile("lightGreen")},
+                        {new Tile("lightGreen"),new Tile("lightGreen")}
                 }, Piece.ShapeType.SQUARE2x),
                 new Piece(new Tile[][]{
-                        {new Tile(true), new Tile(true), new Tile(true)},
-                        {new Tile(true), new Tile(true), new Tile(true)},
-                        {new Tile(true), new Tile(true), new Tile(true)}
+                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")},
+                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")},
+                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")}
                 }, Piece.ShapeType.SQUARE3x),
 
                 // elles
                 new Piece(new Tile[][]{
-                        {new Tile(true), new Tile()},
-                        {new Tile(true), new Tile(true)}
+                        {new Tile("green"), new Tile()},
+                        {new Tile("green"), new Tile("green")}
                 }, Piece.ShapeType.ELLE2x),
                 new Piece(new Tile[][]{
-                        {new Tile(true),new Tile(),new Tile()},
-                        {new Tile(true),new Tile(),new Tile()},
-                        {new Tile(true),new Tile(true),new Tile(true)}
+                        {new Tile("grey"),new Tile(),new Tile()},
+                        {new Tile("grey"),new Tile(),new Tile()},
+                        {new Tile("grey"),new Tile("grey"),new Tile("grey")}
                 }, Piece.ShapeType.ELLE3x)
         };
     }
