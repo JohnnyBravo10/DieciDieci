@@ -12,16 +12,16 @@ public class PieceSet {
         this.possibleSet = new Piece[]{
                 // straight pieces
                 new Piece(new Tile[][]{{new Tile(new Color(175, 175, 225))}}, Piece.ShapeType.STRAIGHT1x),
-                new Piece(new Tile[][]{{new Tile(Color.yellow),new Tile(Color.yellow)}}, Piece.ShapeType.STRAIGHT2x),
-                new Piece(new Tile[][]{{new Tile(Color.orange),new Tile(Color.orange),new Tile(Color.orange)}}, Piece.ShapeType.STRAIGHT3x),
-                new Piece(new Tile[][]{{new Tile(Color.magenta),new Tile(Color.magenta),new Tile(Color.magenta),new Tile(Color.magenta)}}, Piece.ShapeType.STRAIGHT4x),
-                new Piece(new Tile[][]{{new Tile(Color.red),new Tile(Color.red),new Tile(Color.red),new Tile(Color.red),new Tile(Color.red)}}, Piece.ShapeType.STRAIGHT5x),
+                new Piece(new Tile[][]{{new Tile(Color.yellow), new Tile(Color.yellow)}}, Piece.ShapeType.STRAIGHT2x),
+                new Piece(new Tile[][]{{new Tile(Color.orange), new Tile(Color.orange), new Tile(Color.orange)}}, Piece.ShapeType.STRAIGHT3x),
+                new Piece(new Tile[][]{{new Tile(Color.magenta), new Tile(Color.magenta), new Tile(Color.magenta), new Tile(Color.magenta)}}, Piece.ShapeType.STRAIGHT4x),
+                new Piece(new Tile[][]{{new Tile(Color.red), new Tile(Color.red), new Tile(Color.red), new Tile(Color.red), new Tile(Color.red)}}, Piece.ShapeType.STRAIGHT5x),
 
                 // squares
                 // meglio new color() o creare una variabile lightGreen = new Color() ?????
                 new Piece(new Tile[][]{
-                        {new Tile(new Color(175, 255, 175)),new Tile(new Color(175, 255, 175))},
-                        {new Tile(new Color(175, 255, 175)),new Tile(new Color(175, 255, 175))}
+                        {new Tile(new Color(175, 255, 175)), new Tile(new Color(175, 255, 175))},
+                        {new Tile(new Color(175, 255, 175)), new Tile(new Color(175, 255, 175))}
                 }, Piece.ShapeType.SQUARE2x),
                 new Piece(new Tile[][]{
                         {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
@@ -35,11 +35,25 @@ public class PieceSet {
                         {new Tile(Color.green), new Tile(Color.green)}
                 }, Piece.ShapeType.ELLE2x),
                 new Piece(new Tile[][]{
-                        {new Tile(Color.darkGray),new Tile(),new Tile()},
-                        {new Tile(Color.darkGray),new Tile(),new Tile()},
-                        {new Tile(Color.darkGray),new Tile(Color.darkGray),new Tile(Color.darkGray)}
-                }, Piece.ShapeType.ELLE3x)
+                        {new Tile(Color.darkGray), new Tile(), new Tile()},
+                        {new Tile(Color.darkGray), new Tile(), new Tile()},
+                        {new Tile(Color.darkGray), new Tile(Color.darkGray), new Tile(Color.darkGray)}
+                }, Piece.ShapeType.ELLE3x),
+
+                //reversed elles
+                new Piece(new Tile[][]{
+                        {new Tile(), new Tile(Color.green)},
+                        {new Tile(Color.green), new Tile(Color.green)}
+                }, Piece.ShapeType.REVERSEDELLE2X),
+
+
+                new Piece(new Tile[][]{
+                        {new Tile(), new Tile(), new Tile(Color.darkGray)},
+                        {new Tile(), new Tile(), new Tile(Color.darkGray)},
+                        {new Tile(Color.darkGray), new Tile(Color.darkGray), new Tile(Color.darkGray)}
+                }, Piece.ShapeType.REVERSEDELLE3X)
         };
+
     }
 
     public static PieceSet getPieceSetInstance(){
