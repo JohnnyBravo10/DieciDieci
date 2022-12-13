@@ -1,5 +1,7 @@
 package org.example;
 
+import java.awt.*;
+
 public class PieceSet {
     // Dato che il set di pezzi è singolo volevo creare una classe singleton per contenere tutti i pezzi
 
@@ -9,32 +11,33 @@ public class PieceSet {
     private PieceSet(){
         this.possibleSet = new Piece[]{
                 // straight pieces
-                new Piece(new Tile[][]{{new Tile("purple")}}, Piece.ShapeType.STRAIGHT1x),
-                new Piece(new Tile[][]{{new Tile("yellow"),new Tile("yellow")}}, Piece.ShapeType.STRAIGHT2x),
-                new Piece(new Tile[][]{{new Tile("orange"),new Tile("orange"),new Tile("orange")}}, Piece.ShapeType.STRAIGHT3x),
-                new Piece(new Tile[][]{{new Tile("magenta"),new Tile("magenta"),new Tile("magenta"),new Tile("magenta")}}, Piece.ShapeType.STRAIGHT4x),
-                new Piece(new Tile[][]{{new Tile("red"),new Tile("red"),new Tile("red"),new Tile("red"),new Tile("red")}}, Piece.ShapeType.STRAIGHT5x),
+                new Piece(new Tile[][]{{new Tile(new Color(175, 175, 225))}}, Piece.ShapeType.STRAIGHT1x),
+                new Piece(new Tile[][]{{new Tile(Color.yellow),new Tile(Color.yellow)}}, Piece.ShapeType.STRAIGHT2x),
+                new Piece(new Tile[][]{{new Tile(Color.orange),new Tile(Color.orange),new Tile(Color.orange)}}, Piece.ShapeType.STRAIGHT3x),
+                new Piece(new Tile[][]{{new Tile(Color.magenta),new Tile(Color.magenta),new Tile(Color.magenta),new Tile(Color.magenta)}}, Piece.ShapeType.STRAIGHT4x),
+                new Piece(new Tile[][]{{new Tile(Color.red),new Tile(Color.red),new Tile(Color.red),new Tile(Color.red),new Tile(Color.red)}}, Piece.ShapeType.STRAIGHT5x),
 
                 // squares
+                // meglio new color() o creare una variabile lightGreen = new Color() ?????
                 new Piece(new Tile[][]{
-                        {new Tile("lightGreen"),new Tile("lightGreen")},
-                        {new Tile("lightGreen"),new Tile("lightGreen")}
+                        {new Tile(new Color(175, 255, 175)),new Tile(new Color(175, 255, 175))},
+                        {new Tile(new Color(175, 255, 175)),new Tile(new Color(175, 255, 175))}
                 }, Piece.ShapeType.SQUARE2x),
                 new Piece(new Tile[][]{
-                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")},
-                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")},
-                        {new Tile("cyan"), new Tile("cyan"), new Tile("cyan")}
+                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
+                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
+                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)}
                 }, Piece.ShapeType.SQUARE3x),
 
                 // elles
                 new Piece(new Tile[][]{
-                        {new Tile("green"), new Tile()},
-                        {new Tile("green"), new Tile("green")}
+                        {new Tile(Color.green), new Tile()},
+                        {new Tile(Color.green), new Tile(Color.green)}
                 }, Piece.ShapeType.ELLE2x),
                 new Piece(new Tile[][]{
-                        {new Tile("grey"),new Tile(),new Tile()},
-                        {new Tile("grey"),new Tile(),new Tile()},
-                        {new Tile("grey"),new Tile("grey"),new Tile("grey")}
+                        {new Tile(Color.darkGray),new Tile(),new Tile()},
+                        {new Tile(Color.darkGray),new Tile(),new Tile()},
+                        {new Tile(Color.darkGray),new Tile(Color.darkGray),new Tile(Color.darkGray)}
                 }, Piece.ShapeType.ELLE3x)
         };
     }
