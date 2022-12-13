@@ -69,4 +69,9 @@ public class Tile {
     public boolean isEmpty(){
         return this.color.equals(Color.white);
     }
+
+    //Get tile's color
+    public Color getColor(){
+        return this.color;
+    }
 }
