@@ -64,4 +64,9 @@ public class Tile {
                 break;
         }
     }
+
+    // Adding is Empty check
+    public boolean isEmpty(){
+        return this.color.equals(Color.white);
+    }
 }

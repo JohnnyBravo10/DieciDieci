@@ -7,7 +7,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SimpleTests {
 
@@ -18,5 +18,18 @@ public class SimpleTests {
    Comunque se li eseguite tutti passano
    */
 
+    private static Stream<Arguments> provideTilesToTest() {
+        return Stream.of(
+                Arguments.of(new Tile("white").isEmpty(), true),
+                Arguments.of(new Tile("black").isEmpty(), false)
+        );
+    }
+
+    // Check if a tile is occupied or not all in one test
+    @ParameterizedTest
+    @MethodSource("provideTilesToTest")
+    void testTiles(boolean expected, boolean result){
+        assertEquals(expected, result);
+    }
 
 }
