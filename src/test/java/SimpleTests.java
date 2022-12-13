@@ -13,8 +13,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class SimpleTests {
     private static Stream<Arguments> provideTilesOccupiedToTest() {
         return Stream.of(
-                Arguments.of(new Tile("white").isEmpty(), true),
-                Arguments.of(new Tile("black").isEmpty(), false)
+                Arguments.of(new Tile(Color.white).isEmpty(), true),
+                Arguments.of(new Tile(Color.black).isEmpty(), false)
         );
     }
 
