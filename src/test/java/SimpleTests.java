@@ -5,30 +5,35 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.awt.*;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class SimpleTests {
-
-   /*
-   Se eseguite solo dei segunti test appare un messaggio di warning, non se si può disattivare
-   e come, ma non è un errore. Su github dicono così':
-   https://stackoverflow.com/questions/68465659/what-causes-a-junit-warning-org-junit-platform-launcher-core-enginediscoveryorch
-   Comunque se li eseguite tutti passano
-   */
-
-    private static Stream<Arguments> provideTilesToTest() {
+    private static Stream<Arguments> provideTilesOccupiedToTest() {
         return Stream.of(
-                Arguments.of(new Tile("white").isEmpty(), true),
-                Arguments.of(new Tile("black").isEmpty(), false)
+                Arguments.of(new Tile(Color.white).isEmpty(), true),
+                Arguments.of(new Tile(Color.black).isEmpty(), false)
         );
     }
 
     // Check if a tile is occupied or not all in one test
     @ParameterizedTest
-    @MethodSource("provideTilesToTest")
+    @MethodSource("provideTilesOccupiedToTest")
     void testTiles(boolean expected, boolean result){
+        assertEquals(expected, result);
+    }
+
+    private static Stream<Arguments> provideTilesColorToTest() {
+        return Stream.of(
+                Arguments.of(new Tile().getColor().toString(), Color.white.toString()),
+                Arguments.of(new Tile(Color.red).getColor().toString(), Color.red.toString())
+        );
+    }
+    @ParameterizedTest
+    @MethodSource("provideTilesColorToTest")
+    void testTiles(String expected, String result){
         assertEquals(expected, result);
     }
 

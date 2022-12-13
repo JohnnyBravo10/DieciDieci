@@ -1,5 +1,8 @@
+
+/*
 import org.example.Piece;
 import org.example.PieceSet;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -11,6 +14,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+
 public class PieceTest {
     PieceSet allSets = PieceSet.getPieceSetInstance();
 
@@ -26,6 +30,7 @@ public class PieceTest {
 
     @ParameterizedTest
     @MethodSource("provideCopyToTest")
+
     void checkCopyConstructor(boolean eval, boolean expected){
         assertEquals(eval, expected);
     }
@@ -43,7 +48,9 @@ public class PieceTest {
 
     @ParameterizedTest
     @MethodSource("providePiecesToTest")
+
     void checkEqualPieces(boolean eval, boolean expected){
         assertEquals(expected, eval);
     }
 }
+*/
