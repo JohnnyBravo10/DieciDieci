@@ -77,7 +77,7 @@ private static final Tile[][] REVERSEDELLE3X_PIECE = new Tile[][]{
         REVERSEDELLE3X
     }
 
-    private static final Map<ShapeType,Tile[][]> possiblePieces=new HashMap<>(){{
+    private static final Map<ShapeType,Tile[][]> possiblePieces=new HashMap<ShapeType,Tile[][]>(){{
         put(ShapeType.SQUARE2x, SQUARE2x_PIECE);
         put(ShapeType.SQUARE3x, SQUARE3x_PIECE);
         put(ShapeType.STRAIGHT1x, STRAIGHT1x_PIECE);
