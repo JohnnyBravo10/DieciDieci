@@ -1,6 +1,6 @@
 package org.example;
 
-import java.awt.*;
+/*import java.awt.*;
 
 public class PieceSet {
     // Dato che il set di pezzi è singolo volevo creare una classe singleton per contenere tutti i pezzi
@@ -74,3 +74,4 @@ public class PieceSet {
         throw new IllegalArgumentException("Shape Out of Bounds");
     }
 }
+*/
