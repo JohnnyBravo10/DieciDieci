@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.awt.*;
 
 public class Piece {
-
+//ciaoooooooooooooo
     // TODO: forse posso trasformare sta roba in un hashmap però ci devo pensare meglio private HashMap<ShapeType, Tile[][]> shapeX;
 
     private static final Tile[][] SQUARE2x_PIECE = new Tile[][]{
