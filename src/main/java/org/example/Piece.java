@@ -114,6 +114,7 @@ private static final Tile[][] REVERSEDELLE3X_PIECE = new Tile[][]{
         this.type = piece.type;
     }
 
+
     // type getter
     public ShapeType getType() {
         return this.type;
