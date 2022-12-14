@@ -3,6 +3,7 @@ package org.example;
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 import java.awt.*;
 
@@ -76,7 +77,7 @@ private static final Tile[][] REVERSEDELLE3X_PIECE = new Tile[][]{
         REVERSEDELLE3X
     }
 
-    private static final HashMap<ShapeType,Tile[][]> possiblePieces=new HashMap<>(){{
+    private static final Map<ShapeType,Tile[][]> possiblePieces=new HashMap<ShapeType,Tile[][]>(){{ //NON CAMBIARE SENNò CIRCLE SI ARRABBIA
         put(ShapeType.SQUARE2x, SQUARE2x_PIECE);
         put(ShapeType.SQUARE3x, SQUARE3x_PIECE);
         put(ShapeType.STRAIGHT1x, STRAIGHT1x_PIECE);
