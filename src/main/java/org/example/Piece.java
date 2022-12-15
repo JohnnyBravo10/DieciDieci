@@ -1,5 +1,4 @@
 package org.example;
-
 import java.security.SecureRandom;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -8,7 +7,6 @@ import java.util.Objects;
 import java.awt.*;
 
 public class Piece {
-
     // TODO: forse posso trasformare sta roba in un hashmap però ci devo pensare meglio private HashMap<ShapeType, Tile[][]> shapeX;
 
     private static final Tile[][] SQUARE2x_PIECE = new Tile[][]{
@@ -16,15 +14,15 @@ public class Piece {
        {new Tile(new Color(175, 255, 175)),new Tile(new Color(175, 255, 175))}
 };
 
-private static final Tile[][] SQUARE3x_PIECE = new Tile[][]{
+    private static final Tile[][] SQUARE3x_PIECE = new Tile[][]{
         {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
         {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
         {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)}
-        };
+    };
 
-private static final Tile[][] STRAIGHT1x_PIECE = new Tile[][]{
+    private static final Tile[][] STRAIGHT1x_PIECE = new Tile[][]{
         {new Tile(new Color(175, 175, 225))}
-        };
+    };
 
 private static final Tile[][] STRAIGHT2x_PIECE = new Tile[][]{
         {new Tile(Color.yellow),new Tile(Color.yellow)}
@@ -113,6 +111,7 @@ private static final Tile[][] REVERSEDELLE3X_PIECE = new Tile[][]{
 
         this.type = piece.type;
     }
+
 
     // type getter
     public ShapeType getType() {
