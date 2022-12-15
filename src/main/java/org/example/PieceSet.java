@@ -9,6 +9,7 @@ import java.util.Random;
 public class PieceSet {
     private static PieceSet set;
     private final Piece[] possibleSet;
+    private static final Random gen = new Random();
 
     private PieceSet(){
         this.possibleSet = new Piece[]{
@@ -72,6 +73,6 @@ public class PieceSet {
     }
 
     public Piece getRandomPiece(){
-        return this.possibleSet[new Random().nextInt(this.possibleSet.length)];
+        return this.possibleSet[gen.nextInt(this.possibleSet.length)];
     }
 }
