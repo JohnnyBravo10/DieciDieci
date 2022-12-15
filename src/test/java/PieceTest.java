@@ -1,56 +1,65 @@
 
-/*
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.RealMatrix;
 import org.example.Piece;
 import org.example.PieceSet;
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.Arguments;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
-
-import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class PieceTest {
-    PieceSet allSets = PieceSet.getPieceSetInstance();
+    PieceSet allSets = PieceSet.getInstance();
 
-    // Checking if the referece are diffent but the content is the same to test the copy constructor
-    private Stream<Arguments> provideCopyToTest() {
-        return Stream.of(
-                Arguments.of(allSets.getPieceByType(Piece.ShapeType.SQUARE2x) ==
-                        allSets.getPieceByType(Piece.ShapeType.SQUARE2x).copy(), false),
-                Arguments.of(allSets.getPieceByType(Piece.ShapeType.SQUARE2x)
-                        .equals(allSets.getPieceByType(Piece.ShapeType.SQUARE2x).copy()), true)
-        );
+    // Test if all the pieces have been initialized
+    @Test
+    void testPieceInitialization(){
+        int cont = 0;
+
+        for(Piece p : allSets.getPossibleSet())
+        {
+            if(!p.equals(null))
+                cont++;
+        }
+        assertEquals(allSets.getPossibleSet().length, cont);
     }
 
+    // Test if a shape it's initialized by comparing it to the real matrix
+    @Test
+    void testFirstShapeMatrixInitialization(){
+        assertTrue(allSets.getPossibleSet()[0]
+                .getPieceGeometry()
+                .getShape()
+                .equals(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1 ,0}})));
+    }
+
+    // Test how to get a entry and if it's working
+    @Test
+    void testWorkingGetEntry(){
+        assertTrue(allSets.getPossibleSet()[0]
+                .getPieceGeometry()
+                .getShape().getEntry(1, 0) == 1);
+    }
+
+    // This test checks if a rotation of 360 is correct
     @ParameterizedTest
-    @MethodSource("provideCopyToTest")
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7})
+    void testPieceRotation(int index){
 
-    void checkCopyConstructor(boolean eval, boolean expected){
-        assertEquals(eval, expected);
-    }
+        RealMatrix m = allSets.getPossibleSet()[index]
+                .getPieceGeometry().getShape();
+        RealMatrix res = allSets.getPossibleSet()[index]
+                .getPieceGeometry().getShape();
 
-    // Check if pieces are equal with differnt shapes
-    private Stream<Arguments> providePiecesToTest() {
-        Piece piece = allSets.getPieceByType(Piece.ShapeType.SQUARE2x);
-        return Stream.of(
-                Arguments.of(piece.equals(piece.copy()), true),
-                Arguments.of(allSets.getPieceByType(Piece.ShapeType.SQUARE3x).equals(piece), false),
-                Arguments.of(piece.equals(piece), true),
-                Arguments.of(piece.equals(null), false)
-        );
-    }
+        for(int i = 0; i < 360; i+= 90)
+        {
+            res = res.multiply(new Array2DRowRealMatrix(new double[][]{{0, -1}, {1, 0}}));
+        }
 
-    @ParameterizedTest
-    @MethodSource("providePiecesToTest")
-
-    void checkEqualPieces(boolean eval, boolean expected){
-        assertEquals(expected, eval);
+        assertTrue(res.equals(m));
     }
 }
-*/

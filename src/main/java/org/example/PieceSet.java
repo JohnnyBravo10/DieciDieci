@@ -1,77 +1,77 @@
 package org.example;
 
-/*import java.awt.*;
+import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.ArrayRealVector;
+
+import java.awt.*;
+import java.util.Random;
 
 public class PieceSet {
-    // Dato che il set di pezzi è singolo volevo creare una classe singleton per contenere tutti i pezzi
-
-    private final Piece[] possibleSet;
     private static PieceSet set;
+    private final Piece[] possibleSet;
 
     private PieceSet(){
         this.possibleSet = new Piece[]{
-                // straight pieces
-                new Piece(new Tile[][]{{new Tile(new Color(175, 175, 225))}}, Piece.ShapeType.STRAIGHT1x),
-                new Piece(new Tile[][]{{new Tile(Color.yellow), new Tile(Color.yellow)}}, Piece.ShapeType.STRAIGHT2x),
-                new Piece(new Tile[][]{{new Tile(Color.orange), new Tile(Color.orange), new Tile(Color.orange)}}, Piece.ShapeType.STRAIGHT3x),
-                new Piece(new Tile[][]{{new Tile(Color.magenta), new Tile(Color.magenta), new Tile(Color.magenta), new Tile(Color.magenta)}}, Piece.ShapeType.STRAIGHT4x),
-                new Piece(new Tile[][]{{new Tile(Color.red), new Tile(Color.red), new Tile(Color.red), new Tile(Color.red), new Tile(Color.red)}}, Piece.ShapeType.STRAIGHT5x),
+                // STRAIGTH
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1, 0}}),
+                        new ArrayRealVector(new double[]{0, 0})),
+                        Piece.ShapeType.STRAIGHT2x,
+                        Color.BLUE),
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1, 0}, {2, 0}}),
+                        new ArrayRealVector(new double[]{0, 0})),
+                        Piece.ShapeType.STRAIGHT3x,
+                        Color.RED),
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1, 0}, {2, 0}, {3, 0}}),
+                        new ArrayRealVector(new double[]{0, 0})),
+                        Piece.ShapeType.STRAIGHT4x,
+                        Color.CYAN),
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1, 0}, {2, 0}, {3, 0}, {4, 0}}),
+                        new ArrayRealVector(new double[]{0, 0})),
+                        Piece.ShapeType.STRAIGHT5x,
+                        Color.GREEN),
 
-                // squares
-                // meglio new color() o creare una variabile lightGreen = new Color() ?????
-                new Piece(new Tile[][]{
-                        {new Tile(new Color(175, 255, 175)), new Tile(new Color(175, 255, 175))},
-                        {new Tile(new Color(175, 255, 175)), new Tile(new Color(175, 255, 175))}
-                }, Piece.ShapeType.SQUARE2x),
-                new Piece(new Tile[][]{
-                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
-                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)},
-                        {new Tile(Color.cyan), new Tile(Color.cyan), new Tile(Color.cyan)}
-                }, Piece.ShapeType.SQUARE3x),
-
-                // elles
-                new Piece(new Tile[][]{
-                        {new Tile(Color.green), new Tile()},
-                        {new Tile(Color.green), new Tile(Color.green)}
-                }, Piece.ShapeType.ELLE2x),
-                new Piece(new Tile[][]{
-                        {new Tile(Color.darkGray), new Tile(), new Tile()},
-                        {new Tile(Color.darkGray), new Tile(), new Tile()},
-                        {new Tile(Color.darkGray), new Tile(Color.darkGray), new Tile(Color.darkGray)}
-                }, Piece.ShapeType.ELLE3x),
-
-                //reversed elles
-                new Piece(new Tile[][]{
-                        {new Tile(), new Tile(Color.green)},
-                        {new Tile(Color.green), new Tile(Color.green)}
-                }, Piece.ShapeType.REVERSEDELLE2X),
-
-
-                new Piece(new Tile[][]{
-                        {new Tile(), new Tile(), new Tile(Color.darkGray)},
-                        {new Tile(), new Tile(), new Tile(Color.darkGray)},
-                        {new Tile(Color.darkGray), new Tile(Color.darkGray), new Tile(Color.darkGray)}
-                }, Piece.ShapeType.REVERSEDELLE3X)
+                // SQUARES
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                        {0, 0}, {0, 1},
+                        {1, 0}, {-1, 1}}),
+                        new ArrayRealVector(new double[]{0, 0})),
+                        Piece.ShapeType.SQUARE2x,
+                        Color.PINK),
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                        {0, 0}, {0, 1}, {0, -1},
+                        {1, 0}, {1, 1}, {1, -1},
+                        {-1, 0}, {-1, 1}, {-1, -1}}),
+                        new ArrayRealVector(new double[]{-1, 1})),
+                        Piece.ShapeType.SQUARE3x,
+                        Color.DARK_GRAY),
+                //ELLES
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                        {0, 0}, {0, -1}, {1, 0}}),
+                        new ArrayRealVector(new double[]{1, 0})),
+                        Piece.ShapeType.ELLE2x,
+                        Color.MAGENTA),
+                new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                        {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}}),
+                        new ArrayRealVector(new double[]{-1, 1})),
+                        Piece.ShapeType.ELLE3x,
+                        Color.YELLOW)
         };
-
     }
 
-    public static PieceSet getPieceSetInstance(){
-        if (set == null)
+    public static PieceSet getInstance(){
+        if(set == null)
+        {
             set = new PieceSet();
+        }
 
         return set;
     }
 
-    public Piece getPieceByType(Piece.ShapeType type) throws IllegalArgumentException{
+    public Piece[] getPossibleSet() {
+        return this.possibleSet;
+    }
 
-        for(Piece piece : this.possibleSet){
-            if(piece.getType() == type){
-                return piece;
-            }
-        }
-
-        throw new IllegalArgumentException("Shape Out of Bounds");
+    public Piece getRandomPiece(){
+        return this.possibleSet[new Random().nextInt(this.possibleSet.length)];
     }
 }
-*/
