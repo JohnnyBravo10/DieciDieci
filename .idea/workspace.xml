@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="tests" />
+    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="tests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,8 +165,16 @@
       <updated>1671201861329</updated>
       <workItem from="1671201866697" duration="1594000" />
       <workItem from="1671203507070" duration="72000" />
+      <workItem from="1671203736808" duration="98000" />
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="tests">
+      <created>1671203757235</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1671203757235</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +194,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Make available tile method" />
     <MESSAGE value="check columns and rows method" />
-    <option name="LAST_COMMIT_MESSAGE" value="check columns and rows method" />
+    <MESSAGE value="tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="tests" />
   </component>
 </project>

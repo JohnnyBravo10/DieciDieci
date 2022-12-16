@@ -39,12 +39,12 @@ public class Board {
             }
         }
         for (int i = 0; i < BOARD_DIM; i++) {
-            if (tokeepRows[i] != true) {
+            if (!tokeepRows[i]) {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[i][j].makeAvailable();
                 }
             }
-            if (tokeepColumns[i] != true) {
+            if (!tokeepColumns[i]) {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[j][i].makeAvailable();
                 }
