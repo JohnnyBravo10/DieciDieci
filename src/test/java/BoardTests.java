@@ -33,12 +33,12 @@ public class BoardTests {
 
         for (int i=0; i< tabella1.BOARD_DIM;i++){
             for (int j=0; j< tabella1.BOARD_DIM;j++){
-                if (tabella1.gameBoard[i][j].getColor() != tabella2.gameBoard[i][j].getColor()){
+                if (!tabella1.gameBoard[i][j].equals(tabella2.gameBoard[i][j])){
                     b = false;
                 }
             }
         }
-        assertTrue(b == true);
+        assertTrue(b);
     }
 
 }

@@ -16,7 +16,6 @@ public class Board {
             }
         }
     }
-
     // metodo che controlla riga e colonne complete e in caso rende bianchi i tile
     public void checkColumnsAndRows() {
 

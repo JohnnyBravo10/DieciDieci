@@ -25,11 +25,18 @@ public class Tile {
         return this.color;
     }
 
+    // Make tiles white again
     public void makeAvailable(){
         this.color = Color.white;
     }
 
+    // set the color
     public void setColor(Color color){
         this.color = color;
+    }
+
+    // check if two tiles are equals (have the same color)
+    public boolean equals (Tile tile){
+        return this.getColor() == tile.getColor();
     }
 }

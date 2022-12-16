@@ -51,4 +51,11 @@ public class SimpleTests {
         assertEquals(redTile.getColor(),Color.RED);
     }
 
+    @Test
+    void EqualsTilesTest(){
+        Tile tile1 = new Tile(Color.BLUE);
+        Tile tile2 = new Tile(Color.BLUE);
+        assertTrue(tile1.equals(tile2));
+    }
+
 }
