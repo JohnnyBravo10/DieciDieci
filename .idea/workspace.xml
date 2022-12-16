@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="Make available tile method">
+    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="check columns and rows method">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BoardTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SimpleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimpleTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,30 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Gradle.DieciDieci [test]">
+    <configuration name="BoardTests.Test_checkColumnsAndRowsMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BoardTests.Test_checkColumnsAndRowsMethod&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="DieciDieci [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -95,6 +120,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.DieciDieci [test]" />
+        <item itemvalue="Gradle.BoardTests.Test_checkColumnsAndRowsMethod" />
       </list>
     </recent_temporary>
   </component>
@@ -106,7 +132,21 @@
       <option name="project" value="LOCAL" />
       <updated>1671184044557</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="check columns and rows method">
+      <created>1671188635362</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1671188635362</updated>
+    </task>
+    <task id="LOCAL-00003" summary="check columns and rows method">
+      <created>1671188679021</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1671188679021</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,6 +162,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Make available tile method" />
-    <option name="LAST_COMMIT_MESSAGE" value="Make available tile method" />
+    <MESSAGE value="check columns and rows method" />
+    <option name="LAST_COMMIT_MESSAGE" value="check columns and rows method" />
   </component>
 </project>

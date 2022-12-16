@@ -44,6 +44,11 @@ public class SimpleTests {
         redTile.makeAvailable();
         assertEquals(redTile.getColor(),Color.white);
     }
-
+    @Test
+    void SetColorTest() {
+        Tile redTile = new Tile();
+        redTile.setColor(Color.RED);
+        assertEquals(redTile.getColor(),Color.RED);
+    }
 
 }

@@ -28,4 +28,8 @@ public class Tile {
     public void makeAvailable(){
         this.color = Color.white;
     }
+
+    public void setColor(Color color){
+        this.color = color;
+    }
 }
