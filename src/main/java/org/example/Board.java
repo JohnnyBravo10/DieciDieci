@@ -16,4 +16,41 @@ public class Board {
             }
         }
     }
+
+    // metodo che controlla riga e colonne complete e in caso rende bianchi i tile
+    public void checkColumnsAndRows() {
+
+        boolean[] tokeepColumns = new boolean[BOARD_DIM];
+        boolean[] tokeepRows = new boolean[BOARD_DIM];
+
+        for (int i = 0; i < BOARD_DIM; i++) {
+            for (int j = 0; j < BOARD_DIM; j++) {
+                if (this.gameBoard[i][j].isEmpty()) {
+                    tokeepRows[i] = true;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < BOARD_DIM; i++) {
+            for (int j = 0; j < BOARD_DIM; j++) {
+                if (this.gameBoard[j][i].isEmpty()) {
+                    tokeepColumns[i] = true;
+                    break;
+                }
+            }
+        }
+        for (int i = 0; i < BOARD_DIM; i++) {
+            if (tokeepRows[i] != true) {
+                for (int j = 0; j < BOARD_DIM; j++) {
+                    this.gameBoard[i][j].makeAvailable();
+                }
+            }
+            if (tokeepColumns[i] != true) {
+                for (int j = 0; j < BOARD_DIM; j++) {
+                    this.gameBoard[j][i].makeAvailable();
+                }
+            }
+        }
+    }
 }
+
