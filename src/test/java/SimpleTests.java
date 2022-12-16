@@ -31,10 +31,19 @@ public class SimpleTests {
                 Arguments.of(new Tile(Color.red).getColor().toString(), Color.red.toString())
         );
     }
+
     @ParameterizedTest
     @MethodSource("provideTilesColorToTest")
     void testTiles(String expected, String result){
         assertEquals(expected, result);
     }
+
+    @Test
+    void MakeAvailableTest() {
+        Tile redTile = new Tile(Color.red);
+        redTile.makeAvailable();
+        assertEquals(redTile.getColor(),Color.white);
+    }
+
 
 }

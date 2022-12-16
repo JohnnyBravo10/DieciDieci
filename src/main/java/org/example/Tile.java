@@ -24,4 +24,8 @@ public class Tile {
     public Color getColor(){
         return this.color;
     }
+
+    public void makeAvailable(){
+        this.color = Color.white;
+    }
 }
