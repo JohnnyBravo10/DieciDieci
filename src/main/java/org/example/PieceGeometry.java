@@ -33,6 +33,8 @@ public class PieceGeometry {
 
     // TODO: GET RID OF THE WARNING BECAUSE I HAVE TO CHECK IF THE OPTINAL VALUES ARE PRESENT USING isPresent() METHOD
 
+
+    // Useare questo .collect(Collectors.toList()) al posto di .toList() perché a circleci non piace
     public double[] calculateLeftCorner(){
         OptionalDouble max_y = Arrays.stream(this.shape.getColumn(1)).max();
 

@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="Removing costructor parameter RealVector leftCorner because I implemented a method to calculate that. Adding a rotate method and adding to PieceTest.java the test to verify initial leftCornerCalculation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="Trying to resolve toList() error" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671313032119</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Trying to resolve toList() error">
+      <created>1671314200737</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1671314200737</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +232,7 @@
     <MESSAGE value="check columns and rows method" />
     <MESSAGE value="tests" />
     <MESSAGE value="Removing costructor parameter RealVector leftCorner because I implemented a method to calculate that. Adding a rotate method and adding to PieceTest.java the test to verify initial leftCornerCalculation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing costructor parameter RealVector leftCorner because I implemented a method to calculate that. Adding a rotate method and adding to PieceTest.java the test to verify initial leftCornerCalculation" />
+    <MESSAGE value="Trying to resolve toList() error" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying to resolve toList() error" />
   </component>
 </project>
