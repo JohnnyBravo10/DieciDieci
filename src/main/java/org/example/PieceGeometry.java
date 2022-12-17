@@ -5,6 +5,7 @@ import org.apache.commons.math3.linear.RealMatrix;
 import org.apache.commons.math3.linear.RealVector;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class PieceGeometry {
     private RealMatrix shape;
@@ -35,7 +36,8 @@ public class PieceGeometry {
     public double[] calculateLeftCorner(){
         OptionalDouble max_y = Arrays.stream(this.shape.getColumn(1)).max();
 
-        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], max_y.getAsDouble()) == 0).toList();
+        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], max_y.getAsDouble()) == 0)
+                .collect(Collectors.toList());
 
         Optional<double[]> min = leftCandidates.stream().min(Comparator.comparingDouble(h -> h[0]));
 
