@@ -1,19 +1,32 @@
 
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
+import org.apache.commons.math3.linear.ArrayRealVector;
 import org.apache.commons.math3.linear.RealMatrix;
+import org.apache.commons.math3.linear.RealVector;
 import org.example.Piece;
 import org.example.PieceSet;
+import org.example.Tile;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+
+import java.awt.*;
+import java.util.*;
+import java.util.List;
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 public class PieceTest {
-    PieceSet allSets = PieceSet.getInstance();
+
+    final PieceSet allSets = PieceSet.getInstance();
+
+
 
     // Test if all the pieces have been initialized
     @Test
@@ -52,14 +65,34 @@ public class PieceTest {
 
         RealMatrix m = allSets.getPossibleSet()[index]
                 .getPieceGeometry().getShape();
-        RealMatrix res = allSets.getPossibleSet()[index]
-                .getPieceGeometry().getShape();
 
         for(int i = 0; i < 360; i+= 90)
         {
-            res = res.multiply(new Array2DRowRealMatrix(new double[][]{{0, -1}, {1, 0}}));
+            allSets.getPossibleSet()[index].getPieceGeometry().rotate();
         }
 
-        assertTrue(res.equals(m));
+        assertTrue(allSets.getPossibleSet()[index].getPieceGeometry().getShape().equals(m));
+    }
+
+    final List<RealVector> startingLeftCornerPositions = new ArrayList<>(
+            Arrays.asList(
+                    new ArrayRealVector(new double[]{0, 0}),
+                    new ArrayRealVector(new double[]{0, 0}),
+                    new ArrayRealVector(new double[]{0, 0}),
+                    new ArrayRealVector(new double[]{0, 0}),
+
+                    new ArrayRealVector(new double[]{0, 1}),
+                    new ArrayRealVector(new double[]{-1, 1}),
+
+                    new ArrayRealVector(new double[]{0, 1}),
+                    new ArrayRealVector(new double[]{-1, 1}))
+    );
+
+    @ParameterizedTest
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7})
+    void testLeftCornerCalculation(int index){
+        assertTrue(new ArrayRealVector(allSets.getPossibleSet()[index]
+                .getPieceGeometry()
+                .calculateLeftCorner()).equals(startingLeftCornerPositions.get(index)));
     }
 }

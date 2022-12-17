@@ -24,7 +24,7 @@ public class BoardTests {
         Board tabella2 = new Board();
         boolean b = true;
 
-        for (int i=0; i< tabella1.BOARD_DIM;i++){
+        for (int i=0; i < tabella1.BOARD_DIM;i++){
             tabella1.gameBoard[0][i].setColor(Color.RED);
             tabella1.gameBoard[5][i].setColor(Color.RED);
         }

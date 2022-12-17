@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="tests">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22__10_14__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22__10_14__Changes_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22__10_14__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22__10_14__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PieceGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PieceGeometry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PieceSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PieceSet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BoardTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PieceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PieceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +81,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.DieciDieci [test]">
+  <component name="RunManager" selected="Gradle.PieceTest.testLeftCornerCalculation">
     <configuration name="BoardTests.Test_checkColumnsAndRowsMethod" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -120,8 +126,32 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="PieceTest.testLeftCornerCalculation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;PieceTest.testLeftCornerCalculation&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PieceTest.testLeftCornerCalculation" />
         <item itemvalue="Gradle.DieciDieci [test]" />
         <item itemvalue="Gradle.BoardTests.Test_checkColumnsAndRowsMethod" />
       </list>
