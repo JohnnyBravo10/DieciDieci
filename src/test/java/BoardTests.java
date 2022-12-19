@@ -19,7 +19,7 @@ public class BoardTests {
     }
 
     @Test
-    void Test_checkColumnsAndRowsMethod(){
+    void Test_checkBoard(){
         Board tabella1 = new Board();
         Board tabella2 = new Board();
         boolean b = true;
@@ -29,7 +29,7 @@ public class BoardTests {
             tabella1.gameBoard[5][i].setColor(Color.RED);
         }
 
-        tabella1.checkColumnsAndRows();
+        tabella1.checkBoard();
 
         for (int i=0; i< tabella1.BOARD_DIM;i++){
             for (int j=0; j< tabella1.BOARD_DIM;j++){

@@ -16,10 +16,31 @@ public class Board {
             }
         }
     }
-    // metodo che controlla riga e colonne complete e in caso rende bianchi i tile
-    public void checkColumnsAndRows() {
+    // controlla righe, colonne e rende bianche quelle completate
+    public void checkBoard() {
+        boolean[] tokeepColumns = checkColumns();
+        boolean[] tokeepRows = checkRows();
 
+        cleanBoard(tokeepRows, tokeepColumns);
+    }
+
+    // metodo per controllare le colonne
+    public boolean[] checkColumns(){
         boolean[] tokeepColumns = new boolean[BOARD_DIM];
+
+        for (int i = 0; i < BOARD_DIM; i++) {
+            for (int j = 0; j < BOARD_DIM; j++) {
+                if (this.gameBoard[j][i].isEmpty()) {
+                    tokeepColumns[i] = true;
+                    break;
+                }
+            }
+        }
+        return tokeepColumns;
+    }
+
+    // metodo per controllare le righe
+    public boolean[] checkRows(){
         boolean[] tokeepRows = new boolean[BOARD_DIM];
 
         for (int i = 0; i < BOARD_DIM; i++) {
@@ -30,14 +51,12 @@ public class Board {
                 }
             }
         }
-        for (int i = 0; i < BOARD_DIM; i++) {
-            for (int j = 0; j < BOARD_DIM; j++) {
-                if (this.gameBoard[j][i].isEmpty()) {
-                    tokeepColumns[i] = true;
-                    break;
-                }
-            }
-        }
+        return tokeepRows;
+    }
+
+    // metodo che rende bianche righe e colonne completate
+    public void cleanBoard(boolean[] tokeepRows, boolean[] tokeepColumns){
+
         for (int i = 0; i < BOARD_DIM; i++) {
             if (!tokeepRows[i]) {
                 for (int j = 0; j < BOARD_DIM; j++) {
