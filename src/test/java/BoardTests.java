@@ -17,7 +17,7 @@ public class BoardTests {
         Arrays.stream(b.gameBoard)
                 .forEach(x -> Arrays.stream(x).forEach(y -> assertTrue(y.isEmpty())));
     }
-
+    // test per verificare l'efficienza del metodo checkBoard
     @Test
     void Test_checkBoard(){
         Board tabella1 = new Board();
