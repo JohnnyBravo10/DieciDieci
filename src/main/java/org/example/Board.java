@@ -16,7 +16,7 @@ public class Board {
             }
         }
     }
-    // controlla righe, colonne e rende bianche quelle completate
+    // metodo che controlla righe, colonne e rende bianche quelle completate
     public void checkBoard() {
         boolean[] tokeepColumns = checkColumns();
         boolean[] tokeepRows = checkRows();
