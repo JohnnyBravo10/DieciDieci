@@ -24,7 +24,10 @@ public class Piece {
         STRAIGHT4x,
         STRAIGHT5x,
         ELLE2x,
-        ELLE3x
+        ELLE3x,
+        REVERSED_ELLE2X,
+        REVERSED_ELLE3X
+
     }
 
     // GETTERS

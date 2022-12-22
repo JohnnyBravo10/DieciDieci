@@ -13,8 +13,12 @@ public class PieceSet {
     //non dobbiamo più usare un costruttore che costruisce il possibleSet (i prof fanno così nelle cell dell'esempio della banca)
     // ho modificato anche i test. ora non c'è neanche bisogno di istanziare la classe pieceset, secondo me così è meglio in caso ditemi
     //se non vi convince. (poi volendo tutt questo campo final si potrebbe addiritture mettere nella classe piece e cancellare la class pieceset
+    // in alternativa si potrebbe anche pensare di rendere pieceset una classe record :o
     private static final Piece[] possibleSet=new Piece[]{
             // STRAIGTH
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}})),
+                    Piece.ShapeType.STRAIGHT1x,
+                    Color.ORANGE),
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1, 0}})),
                     Piece.ShapeType.STRAIGHT2x,
                     Color.BLUE),
@@ -48,7 +52,17 @@ public class PieceSet {
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
                     {-1, 1}, {-1, 0}, {-1, -1}, {0, -1}, {1, -1}})),
                     Piece.ShapeType.ELLE3x,
-                    Color.YELLOW)
+                    Color.YELLOW),
+
+            //REVERSED ELLES
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                    {0, 0}, {0, 1}, {-1, 0}})),
+                    Piece.ShapeType.REVERSED_ELLE2X,
+                    Color.LIGHT_GRAY),
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                    {-1, -1}, {0, -1}, {1, -1}, {1, 0}, {1, 1}})),
+                    Piece.ShapeType.REVERSED_ELLE3X,
+                    Color.BLACK),
     };
     private static final Random gen = new Random();
 
