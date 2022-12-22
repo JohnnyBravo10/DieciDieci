@@ -47,7 +47,7 @@ public class PieceTest {
         assertTrue(PieceSet.getPossibleSet()[0]
                 .getPieceGeometry()
                 .getShape()
-                .equals(new Array2DRowRealMatrix(new double[][]{{0, 0}, {1 ,0}})));
+                .equals(new Array2DRowRealMatrix(new double[][]{{0, 0}})));
     }
 
     // Test how to get a entry and if it's working
@@ -55,12 +55,12 @@ public class PieceTest {
     void testWorkingGetEntry(){
         assertTrue(PieceSet.getPossibleSet()[0]
                 .getPieceGeometry()
-                .getShape().getEntry(1, 0) == 1);
+                .getShape().getEntry(0, 0) == 0);
     }
 
     // This test checks if a rotation of 360 is correct
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testPieceRotation(int index){
 
         RealMatrix m = PieceSet.getPossibleSet()[index]
@@ -80,16 +80,21 @@ public class PieceTest {
                     new ArrayRealVector(new double[]{0, 0}),
                     new ArrayRealVector(new double[]{0, 0}),
                     new ArrayRealVector(new double[]{0, 0}),
+                    new ArrayRealVector(new double[]{0, 0}),
 
                     new ArrayRealVector(new double[]{0, 1}),
                     new ArrayRealVector(new double[]{-1, 1}),
 
                     new ArrayRealVector(new double[]{0, 1}),
-                    new ArrayRealVector(new double[]{-1, 1}))
+                    new ArrayRealVector(new double[]{-1, 1}),
+
+                    new ArrayRealVector(new double[]{0, 1}),
+                    new ArrayRealVector(new double[]{-1, 1})
+                    )
     );
 
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testLeftCornerCalculation(int index){
         assertTrue(new ArrayRealVector(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
