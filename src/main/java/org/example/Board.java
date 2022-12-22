@@ -1,5 +1,7 @@
 package org.example;
 
+import java.awt.*;
+
 public class Board {
 
     // TODO: May be it can be a singleton class since we need only one board but idk
@@ -71,5 +73,19 @@ public class Board {
             }
         }
     }
-}
+    //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner posizionato sul tile della gameboard cliccato (accetta indici del tile sulla matrice gameboard)
+
+    //da rivedere e da implementare test
+    /*
+    public boolean canBePlaced (Piece p, Double[] clickedPosition){
+        for(int i=0; i<p.getPieceGeometry().getShape().getRowDimension(); i++){
+            if(!this.gameBoard[(int)(clickedPosition[0]+p.getPieceGeometry().calculateLeftCorner()[1]-p.getPieceGeometry().getShape().getRow(i)[1])][(int)(clickedPosition[1]+p.getPieceGeometry().calculateLeftCorner()[0]-p.getPieceGeometry().getShape().getRow(i)[0])].isEmpty()){
+                return false;
+            }
+            }
+        return true;
+    }
+    */
+    }
+
 
