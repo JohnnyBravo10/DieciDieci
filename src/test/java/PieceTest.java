@@ -44,18 +44,17 @@ public class PieceTest {
     // Test if a shape it's initialized by comparing it to the real matrix
     @Test
     void testFirstShapeMatrixInitialization(){
-        assertTrue(PieceSet.getPossibleSet()[0]
+        assertEquals(PieceSet.getPossibleSet()[0]
                 .getPieceGeometry()
-                .getShape()
-                .equals(new Array2DRowRealMatrix(new double[][]{{0, 0}})));
+                .getShape(), new Array2DRowRealMatrix(new double[][]{{0, 0}}));
     }
 
-    // Test how to get a entry and if it's working
+    // Test how to get an entry and if it's working
     @Test
     void testWorkingGetEntry(){
-        assertTrue(PieceSet.getPossibleSet()[0]
+        assertEquals(PieceSet.getPossibleSet()[0]
                 .getPieceGeometry()
-                .getShape().getEntry(0, 0) == 0);
+                .getShape().getEntry(0, 0) ,0);
     }
 
     // This test checks if a rotation of 360 is correct
@@ -71,7 +70,7 @@ public class PieceTest {
             PieceSet.getPossibleSet()[index].getPieceGeometry().rotate();
         }
 
-        assertTrue(PieceSet.getPossibleSet()[index].getPieceGeometry().getShape().equals(m));
+        assertEquals(PieceSet.getPossibleSet()[index].getPieceGeometry().getShape(), m);
     }
 
     final List<RealVector> startingLeftCornerPositions = new ArrayList<>(
@@ -96,8 +95,8 @@ public class PieceTest {
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testLeftCornerCalculation(int index){
-        assertTrue(new ArrayRealVector(PieceSet.getPossibleSet()[index]
+        assertEquals(new ArrayRealVector(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
-                .calculateLeftCorner()).equals(startingLeftCornerPositions.get(index)));
+                .calculateLeftCorner()), startingLeftCornerPositions.get(index));
     }
 }
