@@ -7,6 +7,7 @@ public class Board {
     public Tile[][] gameBoard;
     public static final int BOARD_DIM = 10;
 
+    //costruttore di board vuota
     public Board(){
         this.gameBoard = new Tile [BOARD_DIM][BOARD_DIM];
 
