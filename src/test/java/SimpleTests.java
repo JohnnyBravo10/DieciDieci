@@ -1,4 +1,5 @@
 import org.example.Tile;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +22,7 @@ public class SimpleTests {
     // Check if a tile is occupied or not all in one test
     @ParameterizedTest
     @MethodSource("provideTilesOccupiedToTest")
+    @Disabled
     void testTiles(boolean expected, boolean result){
         assertEquals(expected, result);
     }
@@ -34,6 +36,7 @@ public class SimpleTests {
 
     @ParameterizedTest
     @MethodSource("provideTilesColorToTest")
+    @Disabled
     void testTiles(String expected, String result){
         assertEquals(expected, result);
     }
