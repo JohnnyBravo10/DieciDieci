@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.4/checksums/checksums.lock&#10;#&#9;.gradle/7.4/checksums/md5-checksums.bin&#10;#&#9;.gradle/7.4/checksums/sha1-checksums.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.4/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece$ShapeType.class&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece.class&#10;#&#9;build/classes/java/test/SimpleTests.class&#10;#&#9;build/libs/DieciDieci-1.0-SNAPSHOT.jar&#10;#&#9;build/reports/tests/test/index.html&#10;#&#9;build/test-results/test/binary/results.bin&#10;#&#9;build/tmp/compileTestJava/previous-compilation-data.bin">
+    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="&#10;tests">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]1/Board.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]1/Piece$ShapeType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]1/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22__10_14__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PieceGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PieceGeometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PieceSet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PieceSet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PieceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PieceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SimpleTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SimpleTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BoardTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,6 +191,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -210,7 +215,51 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.DieciDieci [test]">
+  <component name="RunManager">
+    <configuration name="BoardTests.canBePlacedTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BoardTests.canBePlacedTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="DieciDieci [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="testClasses" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="DieciDieci [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -278,59 +327,13 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="PieceTest.testLeftCornerCalculation" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;PieceTest.testLeftCornerCalculation&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="SimpleTests.EqualsTilesTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;SimpleTests.EqualsTilesTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.DieciDieci [test]" />
+        <item itemvalue="Gradle.DieciDieci [testClasses]" />
+        <item itemvalue="Gradle.BoardTests.canBePlacedTest" />
         <item itemvalue="Gradle.PieceTest.testGetLeftCornerWithRotations" />
         <item itemvalue="Gradle.PieceTest.testGetLeftCorner" />
-        <item itemvalue="Gradle.PieceTest.testLeftCornerCalculation" />
-        <item itemvalue="Gradle.SimpleTests.EqualsTilesTest" />
       </list>
     </recent_temporary>
   </component>
@@ -365,7 +368,7 @@
       <updated>1671190470228</updated>
     </task>
     <task active="true" id="Default" summary="Default task">
-      <changelist id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="check columns and rows method" />
+      <changelist id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="&#10;tests" />
       <created>1671201861329</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -430,7 +433,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671732769052</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="&#10;tests">
+      <created>1671789478965</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671789478965</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,6 +464,7 @@
     <MESSAGE value="Removing costructor parameter RealVector leftCorner because I implemented a method to calculate that. Adding a rotate method and adding to PieceTest.java the test to verify initial leftCornerCalculation" />
     <MESSAGE value="Trying to resolve toList() error" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.4/checksums/checksums.lock&#10;#&#9;.gradle/7.4/checksums/md5-checksums.bin&#10;#&#9;.gradle/7.4/checksums/sha1-checksums.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.4/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece$ShapeType.class&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece.class&#10;#&#9;build/classes/java/test/SimpleTests.class&#10;#&#9;build/libs/DieciDieci-1.0-SNAPSHOT.jar&#10;#&#9;build/reports/tests/test/index.html&#10;#&#9;build/test-results/test/binary/results.bin&#10;#&#9;build/tmp/compileTestJava/previous-compilation-data.bin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.gradle/7.4/checksums/checksums.lock&#10;#&#9;.gradle/7.4/checksums/md5-checksums.bin&#10;#&#9;.gradle/7.4/checksums/sha1-checksums.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.bin&#10;#&#9;.gradle/7.4/executionHistory/executionHistory.lock&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.bin&#10;#&#9;.gradle/7.4/fileHashes/fileHashes.lock&#10;#&#9;.gradle/7.4/fileHashes/resourceHashesCache.bin&#10;#&#9;.gradle/buildOutputCleanup/buildOutputCleanup.lock&#10;#&#9;.gradle/buildOutputCleanup/outputFiles.bin&#10;#&#9;.gradle/file-system.probe&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece$ShapeType.class&#10;#&#9;.idea/shelf/Uncommitted_changes_before_Update_at_16_12_22,_10_14_[Changes]/Piece.class&#10;#&#9;build/classes/java/test/SimpleTests.class&#10;#&#9;build/libs/DieciDieci-1.0-SNAPSHOT.jar&#10;#&#9;build/reports/tests/test/index.html&#10;#&#9;build/test-results/test/binary/results.bin&#10;#&#9;build/tmp/compileTestJava/previous-compilation-data.bin" />
+    <MESSAGE value="&#10;tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="&#10;tests" />
   </component>
 </project>

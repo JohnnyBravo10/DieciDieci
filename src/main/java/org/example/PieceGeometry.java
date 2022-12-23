@@ -11,7 +11,6 @@ public class PieceGeometry {
     private RealVector leftSquareCorner;
     private static final RealMatrix PI_QUARTER_ROTATION = new Array2DRowRealMatrix(new double[][]{{0, -1}, {1, 0}});
 
-    /////////////provato a cambiare
     public PieceGeometry(RealMatrix shape) {
         this.shape = shape;
         this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
