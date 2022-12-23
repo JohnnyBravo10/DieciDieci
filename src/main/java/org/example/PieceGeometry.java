@@ -1,8 +1,7 @@
 package org.example;
 
-import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-import org.apache.commons.math3.linear.RealMatrix;
-import org.apache.commons.math3.linear.RealVector;
+import org.apache.commons.math3.exception.*;
+import org.apache.commons.math3.linear.*;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -12,10 +11,10 @@ public class PieceGeometry {
     private RealVector leftSquareCorner;
     private static final RealMatrix PI_QUARTER_ROTATION = new Array2DRowRealMatrix(new double[][]{{0, -1}, {1, 0}});
 
-    public PieceGeometry(RealMatrix shape)
-    {
+    /////////////provato a cambiare
+    public PieceGeometry(RealMatrix shape) {
         this.shape = shape;
-        this.leftSquareCorner = this.getLeftSquareCorner();
+        this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
     }
 
     public RealMatrix getShape() {
@@ -26,16 +25,16 @@ public class PieceGeometry {
         return this.leftSquareCorner;
     }
 
-    public void rotate(){
+    public void rotate() {
         this.shape = this.shape.multiply(PI_QUARTER_ROTATION);
-        this.leftSquareCorner = this.getLeftSquareCorner();
+        this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
     }
 
     // TODO: GET RID OF THE WARNING BECAUSE I HAVE TO CHECK IF THE OPTINAL VALUES ARE PRESENT USING isPresent() METHOD
 
 
     // Useare questo .collect(Collectors.toList()) al posto di .toList() perché a circleci non piace
-    public double[] calculateLeftCorner(){
+    public double[] calculateLeftCorner() {
         OptionalDouble max_y = Arrays.stream(this.shape.getColumn(1)).max();
 
         List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], max_y.getAsDouble()) == 0)

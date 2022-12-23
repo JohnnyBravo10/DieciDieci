@@ -57,7 +57,7 @@ public class PieceSet {
             //REVERSED ELLES "Γ"
 
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
-                    {0, 0}, {0, 1}, {1, 1}})),
+                    {0, 0}, {0, -1}, {1, 0}})),
                     Piece.ShapeType.REVERSED_ELLE2X,
                     Color.LIGHT_GRAY),
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
