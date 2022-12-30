@@ -1,7 +1,7 @@
 package org.example;
 
 import java.awt.*;
-import org.apache.commons.math.linear.RealMatrix;
+
 
 public class Piece {
 
@@ -39,6 +39,9 @@ public class Piece {
         return this.pieceGeometry;
     }
 
+    public Color getPieceColor() {
+        return this.pieceColor;
+    }
 }
 
 
