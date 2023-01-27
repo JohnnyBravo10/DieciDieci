@@ -8,7 +8,9 @@ public class Game {
     public JFrame gameFrame;
     private Board Board; //board di gioco
 
-    private int points;
+    public int points;
+
+    public JLabel punteggio;
 
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
@@ -22,6 +24,7 @@ public class Game {
         this.gameFrame.setResizable(true);
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
+        this.punteggio=new JLabel("Punteggio: "+this.points);
         //in JPanel p sono disegnate board e pezzi disponibili
         JPanel p = new JPanel() {
             //per rappresentare figure è sufficiente fare override del metodo paint di JPanel
@@ -53,10 +56,9 @@ public class Game {
         q.setBounds(800,550,200,200);
         this.gameFrame.add(q);
 
-        //in JPanel r c'è il punteggio
-        JLabel punteggio= new JLabel("Punteggio: "+ this.points);
+
         JPanel r=new JPanel();
-        r.add(punteggio);
+        r.add(this.punteggio);
         r.setBounds(800,200,200,200);
         this.gameFrame.add(r);
 

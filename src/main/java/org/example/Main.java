@@ -11,7 +11,15 @@ public class Main {
 
        //per refreshare il jframe game.gameframe ogni volta che viene modificata la board o availablePieces usare:
         //SwingUtilities.updateComponentTreeUI(game.gameFrame);
-        // è DA CAPIRE BENE COME FARE A MODIFICARE I CAMPI E AGGIORNARE IL JFRAME
+        // è DA CAPIRE BENE COME FARE A MODIFICARE IL PUNTEGGIO E AGGIORNARE IL JFRAME
+
+        /*
+        Per aggiornare punteggio bisogna aggiprnare sia points che punteggio, esempio:
+        game.points=10;
+        game.punteggio.setText("Punteggio: "+game.points);
+
+
+         */
 
 
         //per modificare la board basta cambiare colore ai tile di game.board.gamerBoard
