@@ -11,6 +11,7 @@ public class Main {
 
        //per refreshare il jframe game.gameframe ogni volta che viene modificata la board o availablePieces usare:
         //SwingUtilities.updateComponentTreeUI(game.gameFrame);
+        // è DA CAPIRE BENE COME FARE A MODIFICARE I CAMPI E AGGIORNARE IL JFRAME
 
 
         //per modificare la board basta cambiare colore ai tile di game.board.gamerBoard

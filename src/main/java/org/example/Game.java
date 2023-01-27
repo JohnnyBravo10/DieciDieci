@@ -8,6 +8,8 @@ public class Game {
     public JFrame gameFrame;
     private Board Board; //board di gioco
 
+    private int points;
+
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
 
@@ -50,6 +52,14 @@ public class Game {
         q.add(this.rotationButton);
         q.setBounds(800,550,200,200);
         this.gameFrame.add(q);
+
+        //in JPanel r c'è il punteggio
+        JLabel punteggio= new JLabel("Punteggio: "+ this.points);
+        JPanel r=new JPanel();
+        r.add(punteggio);
+        r.setBounds(800,200,200,200);
+        this.gameFrame.add(r);
+
 
         p.setBounds(0,0,1000,800);
         this.gameFrame.add(p);
