@@ -56,5 +56,17 @@ public class BoardTests {
         assertFalse(tabella.canBePlaced(p, new Double[]{3.0,9.0})); //out of gameboard case
     }
 
+    @Test
+    void placeTest(){
+        Piece p=PieceSet.getPossibleSet()[1];
+        Board tabella=new Board();
+        assertTrue(tabella.canBePlaced(p, new Double[]{2.0,2.0})); //can be placed case
+        tabella.place(p, new Double[]{2.0, 1.0});
+        assertFalse(tabella.canBePlaced(p, new Double[]{2.0,0.0})); //verifico che lo stesso pezzo non possa più essere posizionato
+        assertFalse(tabella.canBePlaced(p, new Double[]{2.0,1.0}));  // negli spazi già occupati
+        assertFalse(tabella.canBePlaced(p, new Double[]{2.0,2.0}));
+        assertTrue(tabella.canBePlaced(p, new Double[]{2.0,3.0}));
+    }
+
 
 }

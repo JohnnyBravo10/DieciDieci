@@ -1,6 +1,6 @@
 package org.example;
 
-import java.awt.*;
+
 
 public class Board {
 
@@ -86,11 +86,18 @@ public class Board {
             }
 
             return true;
-        }catch (ArrayIndexOutOfBoundsException IndexOutOfBoundsException){ //in this case the piece can't be placed beacause it's totally or partially out of the board
+        } catch (
+                ArrayIndexOutOfBoundsException IndexOutOfBoundsException) { //in this case the piece can't be placed beacause it's totally or partially out of the board
             return false;
         }
-
     }
+        //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
+        public void place (Piece p, Double[] clickedPosition){
+            for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){
+                this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].setColor(p.getPieceColor());
+            }
+        }
+
 }
 
 
