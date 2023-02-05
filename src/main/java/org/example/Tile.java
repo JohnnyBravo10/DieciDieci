@@ -40,4 +40,8 @@ public class Tile {
     public boolean equals (Tile tile){
         return this.getColor() == tile.getColor();
     }
+
+    public static int getSize() {
+        return SIZE;
+    }
 }
