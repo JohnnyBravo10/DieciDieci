@@ -28,8 +28,9 @@ public class Game {
 
         this.punteggio=new JLabel("Points: "+this.points);
 
-        //in JPanel p sono disegnate board e pezzi disponibili
-        JPanel p = new JPanel() {
+        //creazione di 4 JPanel da inserire nel JFrame per: board, pezzi, bottone rotazione, punteggio
+
+        JPanel gameBoardPanel = new JPanel() {
             //per rappresentare figure è sufficiente fare override del metodo paint di JPanel
             //qui vengono disegnata board e tre pezzi, c'è da capire come fare a refreshare il jframe quando Board viene modificata o available pieces viene cambiato
             @Override
@@ -41,7 +42,10 @@ public class Game {
                         gr.fillRect(300 + 40 * i, 20 + 40 * j, 39, 39);
                     }
                 }
-
+            }
+        };
+        JPanel piecesPanel= new JPanel(){
+            public void paint(Graphics gr){
                 //rappresentazione dei tre pezzi disponibili
                 for (int l=0; l<availablePieces.length; l++){//per ognuno dei tre pezzi
                     gr.setColor(availablePieces[l].getPieceColor());//seleziono il colore del pezzo
@@ -52,29 +56,29 @@ public class Game {
             }
         };
 
-        //in JPAnel q c'è il tasto per ruotare
+        //creazione bottone rotazione
         this.rotationButton= new JButton("Rotate");
-        this.rotationButton.addActionListener(new ActionListener(){
-            public void actionPerformed(ActionEvent e){
-                for (Piece piece : availablePieces){
-                    piece.getPieceGeometry().rotate();
-                }
+        this.rotationButton.addActionListener(e -> {
+            for (Piece piece : availablePieces){
+                piece.getPieceGeometry().rotate();
+                //serve un modo per aggiornare il piecesPanel
             }
         });
-        JPanel q= new JPanel();
-        q.add(this.rotationButton);
-        q.setBounds(800,550,200,200);
-        this.gameFrame.add(q);
+        JPanel rotationPanel= new JPanel();
+        rotationPanel.add(this.rotationButton);
+        rotationPanel.setBounds(800,550,200,200);
+        this.gameFrame.add(rotationPanel);
 
+        JPanel pointsPanel=new JPanel();
+        pointsPanel.add(this.punteggio);
+        pointsPanel.setBounds(800,300,200,200);
+        this.gameFrame.add(pointsPanel);
 
-        //in JPanel r c'è il punteggio
-        JPanel r=new JPanel();
-        r.add(this.punteggio);
-        r.setBounds(800,300,200,200);
-        this.gameFrame.add(r);
+        gameBoardPanel.setBounds(0,0,1000,500);
+        this.gameFrame.add(gameBoardPanel);
 
-        p.setBounds(0,0,1000,800);
-        this.gameFrame.add(p);
+        piecesPanel.setBounds(0,500,1000,300);
+        this.gameFrame.add(piecesPanel);
 
     }
     }
