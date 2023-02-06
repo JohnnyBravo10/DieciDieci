@@ -2,6 +2,8 @@ package org.example;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 public class Game {
@@ -52,6 +54,13 @@ public class Game {
 
         //in JPAnel q c'è il tasto per ruotare
         this.rotationButton= new JButton("Rotate");
+        this.rotationButton.addActionListener(new ActionListener(){
+            public void actionPerformed(ActionEvent e){
+                for (Piece piece : availablePieces){
+                    piece.getPieceGeometry().rotate();
+                }
+            }
+        });
         JPanel q= new JPanel();
         q.add(this.rotationButton);
         q.setBounds(800,550,200,200);

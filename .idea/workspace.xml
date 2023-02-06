@@ -239,7 +239,7 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.DieciDieci [build]">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -535,7 +535,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675347346109</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="place mathod to place piece on board">
+      <created>1675679866256</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1675679866256</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
