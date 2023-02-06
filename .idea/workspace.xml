@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="rotate action when button pressed (need to fix)">
+    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="4 panels in the JFrame">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
     </list>
@@ -549,7 +549,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675681568011</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="4 panels in the JFrame">
+      <created>1675682455805</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1675682455805</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,6 +589,7 @@
     <MESSAGE value="aggiunta grafica punteggio" />
     <MESSAGE value="place mathod to place piece on board" />
     <MESSAGE value="rotate action when button pressed (need to fix)" />
-    <option name="LAST_COMMIT_MESSAGE" value="rotate action when button pressed (need to fix)" />
+    <MESSAGE value="4 panels in the JFrame" />
+    <option name="LAST_COMMIT_MESSAGE" value="4 panels in the JFrame" />
   </component>
 </project>

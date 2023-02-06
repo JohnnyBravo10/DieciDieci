@@ -11,9 +11,6 @@ public class Game {
     private Board Board; //board di gioco
 
     public int points;
-
-    public JLabel punteggio;
-
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
 
@@ -21,12 +18,10 @@ public class Game {
         this.gameFrame = new JFrame("1010");
         this.Board = new Board();
         this.availablePieces=new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()};
-
         this.gameFrame.setSize(1200, 800);
         this.gameFrame.setResizable(true);
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-        this.punteggio=new JLabel("Points: "+this.points);
+        this.points=0;
 
         //creazione di 4 JPanel da inserire nel JFrame per: board, pezzi, bottone rotazione, punteggio
 
@@ -61,6 +56,7 @@ public class Game {
         this.rotationButton.addActionListener(e -> {
             for (Piece piece : availablePieces){
                 piece.getPieceGeometry().rotate();
+
                 //serve un modo per aggiornare il piecesPanel
             }
         });
@@ -70,7 +66,7 @@ public class Game {
         this.gameFrame.add(rotationPanel);
 
         JPanel pointsPanel=new JPanel();
-        pointsPanel.add(this.punteggio);
+        pointsPanel.add(new JLabel("Points: "+ this.points));
         pointsPanel.setBounds(800,300,200,200);
         this.gameFrame.add(pointsPanel);
 
