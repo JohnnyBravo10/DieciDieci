@@ -24,7 +24,8 @@ public class Game {
         this.gameFrame.setResizable(true);
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        this.punteggio=new JLabel("Punteggio: "+this.points);
+        this.punteggio=new JLabel("Points: "+this.points);
+
         //in JPanel p sono disegnate board e pezzi disponibili
         JPanel p = new JPanel() {
             //per rappresentare figure è sufficiente fare override del metodo paint di JPanel
@@ -57,11 +58,11 @@ public class Game {
         this.gameFrame.add(q);
 
 
+        //in JPanel r c'è il punteggio
         JPanel r=new JPanel();
         r.add(this.punteggio);
-        r.setBounds(800,200,200,200);
+        r.setBounds(800,300,200,200);
         this.gameFrame.add(r);
-
 
         p.setBounds(0,0,1000,800);
         this.gameFrame.add(p);
