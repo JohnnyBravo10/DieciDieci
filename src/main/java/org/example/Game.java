@@ -8,11 +8,16 @@ import java.awt.event.ActionListener;
 
 public class Game {
     public JFrame gameFrame;
-    private Board Board; //board di gioco
 
+
+    private Board Board; //board di gioco
     public int points;
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
+
+
+
+    private JPanel piecesPanel;
 
     public Game() {
         this.gameFrame = new JFrame("1010");
@@ -34,18 +39,7 @@ public class Game {
                 for (int i = 0; i < Board.gameBoard.length; i++) {
                     for (int j = 0; j < Board.gameBoard[i].length; j++) {
                         gr.setColor(Board.gameBoard[i][j].getColor());
-                        gr.fillRect(300 + 40 * i, 20 + 40 * j, 39, 39);
-                    }
-                }
-            }
-        };
-        JPanel piecesPanel= new JPanel(){
-            public void paint(Graphics gr){
-                //rappresentazione dei tre pezzi disponibili
-                for (int l=0; l<availablePieces.length; l++){//per ognuno dei tre pezzi
-                    gr.setColor(availablePieces[l].getPieceColor());//seleziono il colore del pezzo
-                    for (int k=0; k<availablePieces[l].getPieceGeometry().getShape().getRowDimension(); k++){//per ogni quadratino del pezzo
-                        gr.fillRect((int)(120/*offset da sinistra*/+250*l/*distanza tra i punti (0,0) dei pezzi*/+ 40*availablePieces[l].getPieceGeometry().getShape().getRow(k)[0]/*ascissa del quadratino*/), (int)(550 /*offset dall'alto del (0,0) dei pezzi*/-40*availablePieces[l].getPieceGeometry().getShape().getRow(k)[1]/*ascissa del quadratino*/), 39,39);
+                        gr.fillRect(300 + 35 * i, 20 + 35 * j, 34, 34);
                     }
                 }
             }
@@ -54,11 +48,10 @@ public class Game {
         //creazione bottone rotazione
         this.rotationButton= new JButton("Rotate");
         this.rotationButton.addActionListener(e -> {
-            for (Piece piece : availablePieces){
+            for (Piece piece : this.availablePieces){
                 piece.getPieceGeometry().rotate();
-
-                //serve un modo per aggiornare il piecesPanel
-            }
+                this.updatePiecesPanel();
+                }
         });
         JPanel rotationPanel= new JPanel();
         rotationPanel.add(this.rotationButton);
@@ -73,8 +66,29 @@ public class Game {
         gameBoardPanel.setBounds(0,0,1000,500);
         this.gameFrame.add(gameBoardPanel);
 
-        piecesPanel.setBounds(0,500,1000,300);
-        this.gameFrame.add(piecesPanel);
+        this.updatePiecesPanel();
+    }
 
+    public void updatePiecesPanel(){
+
+        if (this.piecesPanel!=null){
+            this.piecesPanel=null;
+        }
+
+        Piece[] ap=this.availablePieces;
+    this.piecesPanel= new JPanel() {
+        public void paint(Graphics gr) {
+            //rappresentazione dei tre pezzi disponibili
+            for (int l = 0; l < ap.length; l++) {//per ognuno dei tre pezzi
+                gr.setColor(ap[l].getPieceColor());//seleziono il colore del pezzo
+                for (int k = 0; k < ap[l].getPieceGeometry().getShape().getRowDimension(); k++) {//per ogni quadratino del pezzo
+                    gr.fillRect((int) (150/*offset da sinistra*/ + 250 * l/*distanza tra i punti (0,0) dei pezzi*/ + 35 * ap[l].getPieceGeometry().getShape().getRow(k)[0]/*ascissa del quadratino*/), (int) (520 /*offset dall'alto del (0,0) dei pezzi*/ - 35 * ap[l].getPieceGeometry().getShape().getRow(k)[1]/*ascissa del quadratino*/), 34, 34);
+                }
+            }
+        }
+    };
+    this.piecesPanel.setBounds(0,500,1000,300);
+    this.gameFrame.add(this.piecesPanel);
+    SwingUtilities.updateComponentTreeUI(this.gameFrame);
     }
     }
