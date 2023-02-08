@@ -1,12 +1,14 @@
 package diecidieci.core;
 
 
+import diecidieci.graphics.BoardGraphics;
 
 public class Board {
 
     // TODO: May be it can be a singleton class since we need only one board but idk
 
     public Tile[][] gameBoard;
+    private final BoardGraphics boardGraphics;
     public static final int BOARD_DIM = 10;
 
     //costruttore di board vuota
@@ -18,6 +20,8 @@ public class Board {
                 gameBoard[i][j] = new Tile();
             }
         }
+
+        this.boardGraphics = new BoardGraphics(this.gameBoard);
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
@@ -101,12 +105,16 @@ public class Board {
             return false;
         }
     }
-        //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
-        public void place (Piece p, Double[] clickedPosition){
-            for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){
-                this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].setColor(p.getPieceColor());
-            }
+    //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
+    public void place (Piece p, Double[] clickedPosition){
+        for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){
+            this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].setColor(p.getPieceColor());
         }
+    }
+
+    public BoardGraphics getBoardGraphics(){
+        return this.boardGraphics;
+    }
 
 }
 

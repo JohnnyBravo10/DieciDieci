@@ -4,7 +4,6 @@ package diecidieci.core;
 public class Main {
     public static void main(String[] args) {
         Game game = new Game();
-        game.gameFrame.setVisible(true);
 
        //per refreshare il jframe game.gameframe ogni volta che viene modificata la board o availablePieces usare:
         //SwingUtilities.updateComponentTreeUI(game.gameFrame);

@@ -25,7 +25,7 @@ public class PieceSet {
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{-1, 0}, {0, 0}, {1, 0}})),
                     Piece.ShapeType.STRAIGHT3x,
                     Color.RED),
-            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{-1, 0}, {-0.5, 0}, {0.5, 0}, {1, 0}})),
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{-1.5, 0}, {-0.5, 0}, {0.5, 0}, {1.5, 0}})),
                     Piece.ShapeType.STRAIGHT4x,
                     Color.CYAN),
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{-2, 0}, {-1, 0}, {0, 0}, {1, 0}, {2, 0}})),
