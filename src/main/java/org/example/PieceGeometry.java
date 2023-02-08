@@ -16,6 +16,11 @@ public class PieceGeometry {
         this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
     }
 
+    public PieceGeometry(PieceGeometry pieceGeometry){
+        this.shape = pieceGeometry.getShape().copy();
+        this.leftSquareCorner = pieceGeometry.getLeftSquareCorner().copy();
+    }
+
     public RealMatrix getShape() {
         return this.shape;
     }

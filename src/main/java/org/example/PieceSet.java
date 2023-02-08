@@ -64,6 +64,6 @@ public class PieceSet {
     }
 
     public static Piece getRandomPiece(){
-        return possibleSet[gen.nextInt(possibleSet.length)];
+        return new Piece(possibleSet[gen.nextInt(possibleSet.length)]);
     }
 }

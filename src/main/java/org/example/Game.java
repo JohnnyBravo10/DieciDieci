@@ -8,73 +8,77 @@ import java.awt.event.ActionListener;
 
 public class Game {
     public JFrame gameFrame;
-    private Board Board; //board di gioco
+    private Board board; //board di gioco
 
     public int points;
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
+    private PieceGraphics[] pieceGraphicsComponents;
 
     public Game() {
         this.gameFrame = new JFrame("1010");
-        this.Board = new Board();
+
+        this.board = new Board();
+
+        // TODO: Aggiungere copy constuctor
+
         this.availablePieces=new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()};
-        this.gameFrame.setSize(1200, 800);
-        this.gameFrame.setResizable(true);
+
+        this.gameFrame.setPreferredSize(new Dimension(1280, 800));
+
+        this.gameFrame.setResizable(false);
+
         this.gameFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.points=0;
 
-        //creazione di 4 JPanel da inserire nel JFrame per: board, pezzi, bottone rotazione, punteggio
+        this.points = 0;
 
-        JPanel gameBoardPanel = new JPanel() {
-            //per rappresentare figure è sufficiente fare override del metodo paint di JPanel
-            //qui vengono disegnata board e tre pezzi, c'è da capire come fare a refreshare il jframe quando Board viene modificata o available pieces viene cambiato
+        JPanel mainPanel = new JPanel();
+        mainPanel.setLayout(new GridLayout(2,2));
+
+        JPanel pieceSelectionPanel = new JPanel();
+        pieceSelectionPanel.setLayout(new GridLayout(1, 3));
+
+        JComponent boardComponent = new JComponent() {
             @Override
-            public void paint(Graphics gr) {
-                //rappresentazione board
-                for (int i = 0; i < Board.gameBoard.length; i++) {
-                    for (int j = 0; j < Board.gameBoard[i].length; j++) {
-                        gr.setColor(Board.gameBoard[i][j].getColor());
-                        gr.fillRect(300 + 40 * i, 20 + 40 * j, 39, 39);
+            protected void paintComponent(Graphics g) {
+                setBackground(getBackground());
+                for (int i = 0; i < board.gameBoard.length; i++) {
+                    for (int j = 0; j < board.gameBoard[i].length; j++) {
+                        g.setColor(board.gameBoard[i][j].getColor());
+                        g.fillRect(40 * i, 40 * j, 39, 39);
                     }
                 }
             }
         };
-        JPanel piecesPanel= new JPanel(){
-            public void paint(Graphics gr){
-                //rappresentazione dei tre pezzi disponibili
-                for (int l=0; l<availablePieces.length; l++){//per ognuno dei tre pezzi
-                    gr.setColor(availablePieces[l].getPieceColor());//seleziono il colore del pezzo
-                    for (int k=0; k<availablePieces[l].getPieceGeometry().getShape().getRowDimension(); k++){//per ogni quadratino del pezzo
-                        gr.fillRect((int)(120/*offset da sinistra*/+250*l/*distanza tra i punti (0,0) dei pezzi*/+ 40*availablePieces[l].getPieceGeometry().getShape().getRow(k)[0]/*ascissa del quadratino*/), (int)(550 /*offset dall'alto del (0,0) dei pezzi*/-40*availablePieces[l].getPieceGeometry().getShape().getRow(k)[1]/*ascissa del quadratino*/), 39,39);
-                    }
-                }
-            }
-        };
+
+        this.pieceGraphicsComponents = new PieceGraphics[3];
+
+        for(int i = 0; i < this.pieceGraphicsComponents.length; i++)
+        {
+            this.pieceGraphicsComponents[i] = new PieceGraphics(this.availablePieces[i]);
+            pieceSelectionPanel.add(this.pieceGraphicsComponents[i]);
+        }
 
         //creazione bottone rotazione
-        this.rotationButton= new JButton("Rotate");
-        this.rotationButton.addActionListener(e -> {
-            for (Piece piece : availablePieces){
-                piece.getPieceGeometry().rotate();
+        this.rotationButton = new JButton("Rotate");
+        this.rotationButton.setPreferredSize(new Dimension(100, 50));
 
-                //serve un modo per aggiornare il piecesPanel
+        this.rotationButton.addActionListener(e -> {
+            for(int i = 0; i < this.availablePieces.length; i++)
+            {
+                this.availablePieces[i].getPieceGeometry().rotate();
+                this.pieceGraphicsComponents[i].repaint();
             }
         });
-        JPanel rotationPanel= new JPanel();
-        rotationPanel.add(this.rotationButton);
-        rotationPanel.setBounds(800,550,200,200);
-        this.gameFrame.add(rotationPanel);
 
-        JPanel pointsPanel=new JPanel();
-        pointsPanel.add(new JLabel("Points: "+ this.points));
-        pointsPanel.setBounds(800,300,200,200);
-        this.gameFrame.add(pointsPanel);
+        mainPanel.add(boardComponent);
+        mainPanel.add(new JLabel("Punteggio: " + this.points));
+        mainPanel.add(pieceSelectionPanel);
+        mainPanel.add(this.rotationButton);
 
-        gameBoardPanel.setBounds(0,0,1000,500);
-        this.gameFrame.add(gameBoardPanel);
+        this.gameFrame.add(mainPanel);
 
-        piecesPanel.setBounds(0,500,1000,300);
-        this.gameFrame.add(piecesPanel);
+        this.gameFrame.pack();
 
     }
     }

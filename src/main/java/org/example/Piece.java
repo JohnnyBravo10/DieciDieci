@@ -14,7 +14,12 @@ public class Piece {
         this.type = type;
         this.pieceColor = pieceColor;
     }
-    //il costruttore di pezzi di forma casuale è Pieceset.getRandomPiece
+
+    public Piece(Piece piece){
+        this.pieceGeometry = new PieceGeometry(piece.getPieceGeometry());
+        this.type = piece.type;
+        this.pieceColor = piece.getPieceColor();
+    }
 
     public enum ShapeType{
         SQUARE2x,
@@ -25,9 +30,7 @@ public class Piece {
         STRAIGHT4x,
         STRAIGHT5x,
         ELLE2x,
-        ELLE3x,
-        REVERSED_ELLE2X,
-        REVERSED_ELLE3X
+        ELLE3x
 
     }
 
