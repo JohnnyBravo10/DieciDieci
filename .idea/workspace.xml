@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="metodo per creare e aggiornare pannello con pezzi disponibili" />
+    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="revert commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PieceGraphics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PieceGraphics.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,7 +216,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -236,12 +239,25 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="src.main.javaorg.example.Main" />
       <module name="DieciDieci" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="DieciDieci.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -313,27 +329,6 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="DieciDieci [testClasses]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="testClasses" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
     <configuration name="DieciDieci [test]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -357,19 +352,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="Application.org.example.Main" />
       <item itemvalue="Gradle.BoardTests.placeTest" />
       <item itemvalue="Gradle.BoardTests.canBePlacedTest" />
       <item itemvalue="Gradle.DieciDieci [build]" />
       <item itemvalue="Gradle.DieciDieci [test]" />
-      <item itemvalue="Gradle.DieciDieci [testClasses]" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.example.Main" />
         <item itemvalue="Gradle.DieciDieci [build]" />
         <item itemvalue="Gradle.BoardTests.placeTest" />
         <item itemvalue="Gradle.BoardTests.canBePlacedTest" />
         <item itemvalue="Gradle.DieciDieci [test]" />
-        <item itemvalue="Gradle.DieciDieci [testClasses]" />
       </list>
     </recent_temporary>
   </component>
@@ -553,7 +548,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675682455805</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="revert commit">
+      <created>1675847237173</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1675847237173</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,6 +589,7 @@
     <MESSAGE value="place mathod to place piece on board" />
     <MESSAGE value="rotate action when button pressed (need to fix)" />
     <MESSAGE value="4 panels in the JFrame" />
-    <option name="LAST_COMMIT_MESSAGE" value="4 panels in the JFrame" />
+    <MESSAGE value="revert commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="revert commit" />
   </component>
 </project>
