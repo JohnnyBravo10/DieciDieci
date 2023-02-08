@@ -1,0 +1,73 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -4,9 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="Trying to resolve toList() error">
+-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Board.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/test/java/BoardTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BoardTests.java" afterDir="false" />
++    <list default="true" id="e1c4d799-5c2c-4f8d-acf4-2e04cffcd11c" name="Changes" comment="test per verificare l'efficienza del metodo checkBoard">
++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -213,7 +212,35 @@
+       <option name="project" value="LOCAL" />
+       <updated>1671314200737</updated>
+     </task>
+-    <option name="localTasksCounter" value="8" />
++    <task id="LOCAL-00008" summary="tests">
++      <created>1671447472896</created>
++      <option name="number" value="00008" />
++      <option name="presentableId" value="LOCAL-00008" />
++      <option name="project" value="LOCAL" />
++      <updated>1671447472896</updated>
++    </task>
++    <task id="LOCAL-00009" summary="tests">
++      <created>1671447480549</created>
++      <option name="number" value="00009" />
++      <option name="presentableId" value="LOCAL-00009" />
++      <option name="project" value="LOCAL" />
++      <updated>1671447480549</updated>
++    </task>
++    <task id="LOCAL-00010" summary="il metodo che controllava righe e colonne precedente era troppo lungo, l'ho diviso in più metodi">
++      <created>1671447616157</created>
++      <option name="number" value="00010" />
++      <option name="presentableId" value="LOCAL-00010" />
++      <option name="project" value="LOCAL" />
++      <updated>1671447616157</updated>
++    </task>
++    <task id="LOCAL-00011" summary="test per verificare l'efficienza del metodo checkBoard">
++      <created>1671447736155</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1671447736155</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -233,9 +260,12 @@
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Make available tile method" />
+     <MESSAGE value="check columns and rows method" />
+-    <MESSAGE value="tests" />
+     <MESSAGE value="Removing costructor parameter RealVector leftCorner because I implemented a method to calculate that. Adding a rotate method and adding to PieceTest.java the test to verify initial leftCornerCalculation" />
+     <MESSAGE value="Trying to resolve toList() error" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Trying to resolve toList() error" />
++    <MESSAGE value="tests" />
++    <MESSAGE value="metodo precedente per controllare righe e colonne troppo lungo, diviso in più metodi" />
++    <MESSAGE value="il metodo che controllava righe e colonne precedente era troppo lungo, l'ho diviso in più metodi" />
++    <MESSAGE value="test per verificare l'efficienza del metodo checkBoard" />
++    <option name="LAST_COMMIT_MESSAGE" value="test per verificare l'efficienza del metodo checkBoard" />
+   </component>
+ </project>
+\ No newline at end of file
