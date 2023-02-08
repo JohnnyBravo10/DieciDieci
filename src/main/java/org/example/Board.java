@@ -21,11 +21,20 @@ public class Board {
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
-    public void checkBoard() {
+    public int checkBoard() {
         boolean[] tokeepColumns = checkColumns();
         boolean[] tokeepRows = checkRows();
-
+        int count = 0;
+        for (int i = 0; i < BOARD_DIM; i++){
+            if (!tokeepColumns[i]){
+                count += 1;
+            }
+            if (!tokeepRows[i]){
+                count += 1;
+            }
+        }
         cleanBoard(tokeepRows, tokeepColumns);
+        return count;
     }
 
     // metodo per controllare le colonne
