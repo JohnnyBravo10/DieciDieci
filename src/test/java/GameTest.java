@@ -1,5 +1,6 @@
+/*
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-import org.example.*;
+import diecidieci.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,7 +11,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameTest {
 
-    /*
 
     @Test
     void addPointsTest()
@@ -34,5 +34,7 @@ public class GameTest {
         assertEquals(g.points, 3);
     }
 
-    */
+
 }
+
+*/

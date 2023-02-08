@@ -1,5 +1,6 @@
-package org.example;
+package diecidieci.graphics;
 
+import diecidieci.core.Piece;
 import org.apache.commons.math3.linear.RealMatrix;
 
 import javax.swing.*;

@@ -1,6 +1,5 @@
-package org.example;
+package diecidieci.core;
 
-import org.apache.commons.math3.exception.*;
 import org.apache.commons.math3.linear.*;
 
 import java.util.*;

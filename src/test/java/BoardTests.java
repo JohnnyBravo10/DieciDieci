@@ -1,12 +1,12 @@
-import org.example.Board;
-import org.example.Piece;
-import org.example.PieceSet;
+import diecidieci.core.Board;
+import diecidieci.core.Piece;
+import diecidieci.core.PieceSet;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 import java.util.Arrays;
 
-import static org.example.Board.BOARD_DIM;
+import static diecidieci.core.Board.BOARD_DIM;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 

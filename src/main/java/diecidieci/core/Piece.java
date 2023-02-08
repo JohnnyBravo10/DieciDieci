@@ -1,4 +1,4 @@
-package org.example;
+package diecidieci.core;
 
 import java.awt.*;
 
