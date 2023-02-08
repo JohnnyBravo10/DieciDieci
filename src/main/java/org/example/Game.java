@@ -83,4 +83,7 @@ public class Game {
         this.gameFrame.pack();
 
     }
+    public void addPoints(int increment){
+        this.points += increment;
+    }
     }

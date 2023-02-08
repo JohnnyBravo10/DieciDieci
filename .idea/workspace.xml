@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="commit di prova">
+    <list default="true" id="bb0b443c-c949-4e68-89cd-0c71a1132d42" name="Changes" comment="metodo per creare e aggiornare pannello con pezzi disponibili">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,174 +30,6 @@
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="DieciDieci" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="build setup" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="documentation" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="help" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="other" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="verification" type="c8890929:TasksNode$1" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-api:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-api:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.platform:junit-platform-commons:1.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testCompileClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-params:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-api:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-api:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.platform:junit-platform-commons:1.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-engine:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-engine:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.platform:junit-platform-engine:1.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-                <item name="testRuntimeClasspath" type="62daadca:ExternalSystemViewDefaultContributor$DependencyScopeExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit:junit-bom:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-                <item name="org.junit.jupiter:junit-jupiter-params:5.9.0" type="b3323d55:ExternalSystemViewDefaultContributor$DependencyExternalSystemNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="DieciDieci" type="f1a62948:ProjectNode" />
-                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
             </expand>
             <select />
@@ -234,21 +67,34 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/goate/Desktop/prova&quot;
+    &quot;last_opened_file_path&quot;: &quot;/Users/simonecossaro/Desktop/DieciDieci&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.org.example.Main (1)">
     <configuration name="Main" type="Application" factoryName="Application">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="src.main.javaorg.example.Main" />
-      <module name="DieciDieci" />
+      <option name="MAIN_CLASS_NAME" value="src.main.java.org.example.Main" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.example.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="org.example.Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="DieciDieci.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.Main" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="temurin-17" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <module name="DieciDieci.main" />
       <extension name="coverage">
         <pattern>
@@ -349,8 +195,9 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.org.example.Main" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.org.example.Main (1)" />
       <item itemvalue="Gradle.BoardTests.placeTest" />
       <item itemvalue="Gradle.BoardTests.canBePlacedTest" />
       <item itemvalue="Gradle.DieciDieci [build]" />
@@ -358,7 +205,7 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.example.Main" />
+        <item itemvalue="Application.org.example.Main (1)" />
         <item itemvalue="Gradle.DieciDieci [build]" />
         <item itemvalue="Gradle.BoardTests.placeTest" />
         <item itemvalue="Gradle.BoardTests.canBePlacedTest" />
@@ -405,6 +252,10 @@
       <workItem from="1671201866697" duration="1594000" />
       <workItem from="1671203507070" duration="72000" />
       <workItem from="1671203736808" duration="98000" />
+      <workItem from="1675850366223" duration="421000" />
+      <workItem from="1675850792814" duration="25000" />
+      <workItem from="1675850866652" duration="63000" />
+      <workItem from="1675854585642" duration="401000" />
     </task>
     <task id="LOCAL-00005" summary="tests">
       <created>1671203757235</created>
@@ -546,21 +397,7 @@
       <option name="project" value="LOCAL" />
       <updated>1675682455805</updated>
     </task>
-    <task id="LOCAL-00025" summary="revert commit">
-      <created>1675847237173</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1675847237173</updated>
-    </task>
-    <task id="LOCAL-00026" summary="commit di prova">
-      <created>1675853296617</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1675853296617</updated>
-    </task>
-    <option name="localTasksCounter" value="27" />
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,8 +431,6 @@
     <MESSAGE value="place mathod to place piece on board" />
     <MESSAGE value="rotate action when button pressed (need to fix)" />
     <MESSAGE value="4 panels in the JFrame" />
-    <MESSAGE value="revert commit" />
-    <MESSAGE value="commit di prova" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit di prova" />
+    <option name="LAST_COMMIT_MESSAGE" value="4 panels in the JFrame" />
   </component>
 </project>
