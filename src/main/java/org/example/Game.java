@@ -34,7 +34,7 @@ public class Game {
         this.points = 0;
 
         JPanel mainPanel = new JPanel();
-        mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));////////////////////////////////////
+        mainPanel.setBorder(new EmptyBorder(5, 20, 20, 20));////////////////////////////////////
         mainPanel.setLayout(new GridLayout(2,2));
 
         JPanel pieceSelectionPanel = new JPanel();
@@ -47,7 +47,7 @@ public class Game {
                 for (int i = 0; i < board.gameBoard.length; i++) {
                     for (int j = 0; j < board.gameBoard[i].length; j++) {
                         g.setColor(board.gameBoard[i][j].getColor());
-                        g.fillRect(35 * i, 35 * j, 34, 34);////////////////////////////
+                        g.fillRect(33 * i, 33 * j, 32, 32);////////////////////////////
                     }
                 }
             }

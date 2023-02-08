@@ -62,8 +62,8 @@ public class PieceGraphics extends JComponent {
         g.setColor(piece.getPieceColor());//seleziono il colore del pezzo
         for (int k=0; k < piece.getPieceGeometry().getShape().getRowDimension(); k++){//per ogni quadratino del pezzo
             RealMatrix pg = piece.getPieceGeometry().getShape();
-            g.fillRect((int)(this.getPreferredSize().width/2 + 35*(pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),/////////////////////////
-                    (int)(this.getPreferredSize().height/2 + 35*(pg.getRow(k)[1] + 0.5)),34, 34);//////////////////////
+            g.fillRect((int)(this.getPreferredSize().width/2 + 33*(pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),/////////////////////////
+                    (int)(this.getPreferredSize().height/2 + 33*(pg.getRow(k)[1] + 0.5)),32, 32);//////////////////////
         }
     }
 
