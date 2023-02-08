@@ -5,10 +5,9 @@ import org.junit.jupiter.api.Test;
 
 import java.awt.*;
 import java.util.Arrays;
-
+import static org.junit.jupiter.api.Assertions.*;
 import static diecidieci.core.Board.BOARD_DIM;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 public class BoardTests {
 
@@ -21,28 +20,23 @@ public class BoardTests {
         Arrays.stream(b.gameBoard)
                 .forEach(x -> Arrays.stream(x).forEach(y -> assertTrue(y.isEmpty())));
     }
+
     // test per verificare l'efficienza del metodo checkBoard
     @Test
     void Test_checkBoard(){
         Board tabella1 = new Board();
         Board tabella2 = new Board();
-        boolean b = true;
-
         for (int i=0; i < BOARD_DIM;i++){
             tabella1.gameBoard[0][i].setColor(Color.RED);
             tabella1.gameBoard[5][i].setColor(Color.RED);
         }
-
-        tabella1.checkBoard();
-
+        int points_count = tabella1.checkBoard();
         for (int i=0; i< BOARD_DIM;i++){
             for (int j=0; j< BOARD_DIM;j++){
-                if (!tabella1.gameBoard[i][j].equals(tabella2.gameBoard[i][j])){
-                    b = false;
-                }
+                assertEquals(tabella1.gameBoard[i][j].getColor(),tabella2.gameBoard[i][j].getColor());
             }
         }
-        assertTrue(b);
+        assertEquals(points_count, 2);
     }
 
     //Test per verificare il metodo can be placed

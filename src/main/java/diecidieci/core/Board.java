@@ -21,6 +21,7 @@ public class Board {
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
+    // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti
     public int checkBoard() {
         boolean[] tokeepColumns = checkColumns();
         boolean[] tokeepRows = checkRows();
