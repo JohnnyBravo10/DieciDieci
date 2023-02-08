@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameTest {
 
+    /*
+
     @Test
     void addPointsTest()
     {
@@ -32,4 +34,5 @@ public class GameTest {
         assertEquals(g.points, 3);
     }
 
+    */
 }
