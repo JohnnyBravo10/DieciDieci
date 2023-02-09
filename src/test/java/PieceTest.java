@@ -104,7 +104,7 @@ public class PieceTest {
     //test per getLeftSquareCorner
 
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testGetLeftCorner(int index){
         assertEquals(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
@@ -125,6 +125,9 @@ public class PieceTest {
                     new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}}),
 
                     new Array2DRowRealMatrix(new double[][]{{0, 1}, {0, 0}, {-1, 0}, {0, 1}}),
+                    new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {1, 1}}),
+
+                    new Array2DRowRealMatrix(new double[][]{{0, 1}, {0, 0}, {-1, 0}, {0, 1}}),
                     new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {1, 1}})
             )
     );
@@ -132,7 +135,7 @@ public class PieceTest {
     //test per i Left corner ad ogni rotazione
     @Disabled
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testGetLeftCornerWithRotations(int index) {
         PieceGeometry p= PieceSet.getPossibleSet()[index].getPieceGeometry();
 

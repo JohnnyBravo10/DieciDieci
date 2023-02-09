@@ -33,7 +33,9 @@ public class Piece {
         STRAIGHT4x,
         STRAIGHT5x,
         ELLE2x,
-        ELLE3x
+        ELLE3x,
+        REVERSEDELLE2X,
+        REVERSEDELLE3X
 
     }
 
