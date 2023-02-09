@@ -18,7 +18,7 @@ public class StartMenu {
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(4, 1));
-        mainPanel.setBorder(new EmptyBorder(5, 500, 50, 500));
+        mainPanel.setBorder(new EmptyBorder(150, 350, 150, 350));
 
         JLabel label_titolo = new JLabel("1010!");
         label_titolo.setPreferredSize(new Dimension(400, 400));
