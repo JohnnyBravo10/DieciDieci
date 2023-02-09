@@ -10,12 +10,12 @@ import java.awt.*;
 
 public class Game {
     private Board board; //board di gioco
-
     public int points;
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
     private PieceGraphics[] pieceGraphicsComponents;
 
+    private static Piece selectedPiece;
     private final Window window;
 
     public Game() {
@@ -62,5 +62,9 @@ public class Game {
 
     public void addPoints(int increment){
         this.points += increment;
+    }
+
+    public static void setSelectedPiece (Piece p){
+        selectedPiece=p;
     }
     }

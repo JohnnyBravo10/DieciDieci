@@ -12,6 +12,7 @@ public class BoardGraphics extends JComponent {
     public BoardGraphics(Tile[][] gameBoard)
     {
         this.gameBoard = gameBoard;
+
     }
 
     @Override

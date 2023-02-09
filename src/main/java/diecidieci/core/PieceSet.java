@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.Random;
 
 public class PieceSet {
-    private static PieceSet set;
+    //private static PieceSet set;
 
     // ho reso possibleSet un campo static final perché alla fine è una costante. Tenendo così
     // non dobbiamo più usare un costruttore che costruisce il possibleSet (i prof fanno così nelle cell dell'esempio della banca)
@@ -51,6 +51,16 @@ public class PieceSet {
                     Color.MAGENTA),
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
                     {0, 0}, {1, 0}, {2, 0}, {0, 1}, {0, 2}})),
+                    Piece.ShapeType.ELLE3x,
+                    Color.YELLOW),
+
+            //REVERSED ELLES
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                    {-0.5, -0.5}, {0.5, 0.5}, {0.5, -0.5}})),
+                    Piece.ShapeType.ELLE2x,
+                    Color.MAGENTA),
+            new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
+                    {0, 0}, {-1, 0}, {-2, 0}, {0, 1}, {0, 2}})),
                     Piece.ShapeType.ELLE3x,
                     Color.YELLOW)
     };

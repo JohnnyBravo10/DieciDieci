@@ -1,6 +1,8 @@
 package diecidieci.graphics;
 
+import diecidieci.core.Game;
 import diecidieci.core.Piece;
+import diecidieci.core.Tile;
 import org.apache.commons.math3.linear.RealMatrix;
 
 import javax.swing.*;
@@ -23,13 +25,15 @@ public class PieceGraphics extends JComponent {
 
             }
 
-            @Override/////////////////////////////////////////////////////////////////////
+            @Override
             public void mousePressed(MouseEvent e) {
                 if(getBorder()==null) {
                     setBorder(BorderFactory.createLineBorder(Color.RED));
+                    Game.setSelectedPiece(piece);
                 }
                 else {
                     setBorder(null);
+                    Game.setSelectedPiece(null);
                 }
 
                 for (int a=0; a< array.length; a++){
@@ -63,8 +67,8 @@ public class PieceGraphics extends JComponent {
         g.setColor(piece.getPieceColor());//seleziono il colore del pezzo
         for (int k=0; k < piece.getPieceGeometry().getShape().getRowDimension(); k++){//per ogni quadratino del pezzo
             RealMatrix pg = piece.getPieceGeometry().getShape();
-            g.fillRect((int)(this.getPreferredSize().width/2 + 33*(pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),/////////////////////////
-                    (int)(this.getPreferredSize().height/2 + 33*(pg.getRow(k)[1] + 0.5)),32, 32);//////////////////////
+            g.fillRect((int)(this.getPreferredSize().width/2 + (Tile.getSize()+1)*(pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),
+                    (int)(this.getPreferredSize().height/2 + (Tile.getSize()+1)*(pg.getRow(k)[1] + 0.5)),Tile.getSize(), Tile.getSize());
         }
     }
 

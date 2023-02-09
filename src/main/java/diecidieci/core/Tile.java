@@ -4,7 +4,7 @@ import java.awt.*;
 
 public class Tile {
     private Color color;
-    private static final int SIZE = 40; // Adding tile size
+    private static final int SIZE = 32; // Adding tile size
 
     //initialization empty tile
     public Tile(){

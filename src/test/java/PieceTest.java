@@ -55,9 +55,9 @@ public class PieceTest {
     }
 
     // This test checks if a rotation of 360 is correct
-    @Disabled
+
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testPieceRotation(int index){
 
         RealMatrix m = PieceSet.getPossibleSet()[index]
@@ -74,23 +74,26 @@ public class PieceTest {
     final List<RealVector> startingLeftCornerPositions = new ArrayList<>(
             Arrays.asList(
                     new ArrayRealVector(new double[]{0, 0}),
-                    new ArrayRealVector(new double[]{0, 0}),
-                    new ArrayRealVector(new double[]{0, 0}),
-                    new ArrayRealVector(new double[]{0, 0}),
-                    new ArrayRealVector(new double[]{0, 0}),
+                    new ArrayRealVector(new double[]{-0.5, 0}),
+                    new ArrayRealVector(new double[]{-1, 0}),
+                    new ArrayRealVector(new double[]{-1.5, 0}),
+                    new ArrayRealVector(new double[]{-2, 0}),
 
-                    new ArrayRealVector(new double[]{0, 1}),
+                    new ArrayRealVector(new double[]{-0.5, 0.5}),
                     new ArrayRealVector(new double[]{-1, 1}),
 
-                    new ArrayRealVector(new double[]{0, 1}),
-                    new ArrayRealVector(new double[]{-1, 1})
+                    new ArrayRealVector(new double[]{-0.5, 0.5}),
+                    new ArrayRealVector(new double[]{0, 2}),
+
+                    new ArrayRealVector(new double[]{0.5, 0.5}),
+                    new ArrayRealVector(new double[]{0, 2})
                     )
     );
 
     //test per calculate left square corner
-    @Disabled
+
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
     void testLeftCornerCalculation(int index){
         assertEquals(new ArrayRealVector(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
@@ -99,7 +102,7 @@ public class PieceTest {
 
 
     //test per getLeftSquareCorner
-    @Disabled
+
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCorner(int index){
