@@ -37,7 +37,7 @@ public class StartMenu {
                     "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a \n" +
                     "row or a column are occupied this line is fully emptied and the player earns 10 points. The game \n" +
                     "terminates when none of the proposed pieces can be placed on the board.";
-            JOptionPane.showMessageDialog(null,message);
+            JOptionPane.showMessageDialog(null,message,"Rules",JOptionPane.PLAIN_MESSAGE);
         });
         rulesButton.setBackground(Color.YELLOW);
         rulesButton.setOpaque(true);
