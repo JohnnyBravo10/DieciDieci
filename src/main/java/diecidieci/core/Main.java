@@ -1,9 +1,10 @@
 package diecidieci.core;
+import diecidieci.graphics.StartMenu;
 
 
 public class Main {
     public static void main(String[] args) {
-        Game game = new Game();
+        StartMenu startMenu = new StartMenu();
 
        //per refreshare il jframe game.gameframe ogni volta che viene modificata la board o availablePieces usare:
         //SwingUtilities.updateComponentTreeUI(game.gameFrame);
