@@ -9,7 +9,7 @@ import java.awt.*;
 
 
 public class Game {
-    private Board board; //board di gioco
+    public static Board board; //board di gioco
     public int points;
     public JButton rotationButton; //bottone per ruotare i pezzi
     private Piece[] availablePieces; //tre pezzi disponibili da piazzare
@@ -22,7 +22,7 @@ public class Game {
 
         this.window = new Window("1010", new Dimension(1280, 720));
 
-        this.board = new Board();
+        board = new Board();
 
         this.availablePieces = new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()};
 
@@ -38,7 +38,7 @@ public class Game {
 
         //creazione bottone rotazione
         this.rotationButton = new JButton("Rotate");
-        this.rotationButton.setPreferredSize(new Dimension(100, 50));
+        this.rotationButton.setSize(new Dimension(100, 50));
 
         this.rotationButton.addActionListener(e -> {
             for(int i = 0; i < this.availablePieces.length; i++)
@@ -48,7 +48,7 @@ public class Game {
             }
         });
 
-        this.window.getMainPanel().add(this.board.getBoardGraphics());
+        this.window.getMainPanel().add(board.getBoardGraphics());
         this.window.getMainPanel().add(new JLabel("Punteggio: " + this.points));
         this.window.getMainPanel().add(this.window.getPieceSelectionPanel());
         this.window.getMainPanel().add(this.rotationButton);
@@ -66,5 +66,9 @@ public class Game {
 
     public static void setSelectedPiece (Piece p){
         selectedPiece=p;
+    }
+
+    public static Piece getSelectedPiece(){
+        return selectedPiece;
     }
     }

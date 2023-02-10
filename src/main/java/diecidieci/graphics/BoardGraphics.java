@@ -21,7 +21,7 @@ public class BoardGraphics extends JComponent {
         for (int i = 0; i < this.gameBoard.length; i++) {
             for (int j = 0; j < this.gameBoard[i].length; j++) {
                 g.setColor(this.gameBoard[i][j].getColor());
-                g.fillRect((Tile.getSize() + 1) * i, (Tile.getSize() + 1) * j, Tile.getSize(), Tile.getSize());
+                g.fillRect((Tile.getSize() + 1) * j, (Tile.getSize() + 1) * i, Tile.getSize(), Tile.getSize());
             }
         }
     }

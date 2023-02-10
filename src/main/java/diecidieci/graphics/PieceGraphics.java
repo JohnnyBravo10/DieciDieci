@@ -68,7 +68,7 @@ public class PieceGraphics extends JComponent {
         for (int k=0; k < piece.getPieceGeometry().getShape().getRowDimension(); k++){//per ogni quadratino del pezzo
             RealMatrix pg = piece.getPieceGeometry().getShape();
             g.fillRect((int)(this.getPreferredSize().width/2 + (Tile.getSize()+1)*(pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),
-                    (int)(this.getPreferredSize().height/2 + (Tile.getSize()+1)*(pg.getRow(k)[1] + 0.5)),Tile.getSize(), Tile.getSize());
+                    (int)(this.getPreferredSize().height/2 - (Tile.getSize()+1)*(pg.getRow(k)[1] + 0.5)),Tile.getSize(), Tile.getSize());
         }
     }
 

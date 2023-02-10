@@ -3,11 +3,14 @@ package diecidieci.core;
 
 import diecidieci.graphics.BoardGraphics;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+
 public class Board {
 
     // TODO: May be it can be a singleton class since we need only one board but idk
 
-    public Tile[][] gameBoard;
+    public static Tile[][] gameBoard;
     private final BoardGraphics boardGraphics;
     public static final int BOARD_DIM = 10;
 
@@ -22,6 +25,34 @@ public class Board {
         }
 
         this.boardGraphics = new BoardGraphics(this.gameBoard);
+        this.boardGraphics.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //TODO: determinare su che casella ci si trova col mouse, verificare che il selectedPeace possa essere inserito in quel punto (metodo canBePlaced)
+                //eventualmente piazzarlo nella board (metodo place)
+                Game.board.boardGraphics.repaint();
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
@@ -91,6 +122,7 @@ public class Board {
     //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner posizionato sul tile della gameboard cliccato (accetta indici del tile sulla matrice gameboard)
     //forse gli indici della casella della board cliccata potrebbero essere anche descritti da un array di int
 
+    ///////////////da sistemare
     public boolean canBePlaced(Piece p, Double[] clickedPosition) throws ArrayIndexOutOfBoundsException {
         try {
             for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++) {
@@ -105,6 +137,8 @@ public class Board {
             return false;
         }
     }
+
+    /////////////////////da sistemare
     //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
     public void place (Piece p, Double[] clickedPosition){
         for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){
