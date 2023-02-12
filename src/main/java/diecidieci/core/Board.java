@@ -17,15 +17,12 @@ public class Board {
     //costruttore di board vuota
     public Board() {
         this.gameBoard = new Tile[BOARD_DIM][BOARD_DIM];
-
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
                 gameBoard[i][j] = new Tile();
             }
         }
-
-        this.boardGraphics = new BoardGraphics(this.gameBoard);
-
+        this.boardGraphics = new BoardGraphics();
         }
 
 

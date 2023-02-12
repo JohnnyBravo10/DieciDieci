@@ -14,19 +14,19 @@ public class Game {
     public JButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private static Piece selectedPiece;
+
+    private static Tile selectedTile;
     private final Window window;
 
     public Game() {
 
-        this.window = new Window("1010", new Dimension(1280, 720));
+        this.window = new Window("1010", new Dimension(780, 780));
 
         board = new Board();
 
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
 
         this.points = 0;
-
-
 
         //creazione bottone rotazione, anche per questo si potrebbe forse creare una classe apposita che estenda JButton
         this.rotationButton = new JButton("Rotate");
@@ -42,10 +42,16 @@ public class Game {
             this.availablePieces.pieceSelectionPanel.repaint();
         });
 
-        this.window.getMainPanel().add(board.getBoardGraphics());
-        this.window.getMainPanel().add(new JLabel("Punteggio: " + this.points));//per ordine si potrebbe anche fare una classe per questo ma idk
-        this.window.getMainPanel().add(this.availablePieces.pieceSelectionPanel);
-        this.window.getMainPanel().add(this.rotationButton);
+        JPanel upperPanel = new JPanel();
+        upperPanel.add(new JLabel("Punteggio: " + this.points));
+        upperPanel.add(board.getBoardGraphics());
+
+        JPanel lowerPanel = new JPanel();
+        lowerPanel.add(this.availablePieces.pieceSelectionPanel);
+        lowerPanel.add(this.rotationButton);
+
+        this.window.getMainPanel().add(upperPanel);
+        this.window.getMainPanel().add(lowerPanel);
 
         this.window.getWindowFrame().add(this.window.getMainPanel());
         this.window.getWindowFrame().pack();
@@ -62,5 +68,12 @@ public class Game {
 
     public static Piece getSelectedPiece(){
         return selectedPiece;
+    }
+
+    public static void setSelectedTile(Tile t){
+        selectedTile = t;
+    }
+    public static Tile getSelectedTile(){
+        return selectedTile;
     }
     }

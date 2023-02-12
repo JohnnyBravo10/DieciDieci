@@ -16,8 +16,8 @@ public class Window {
         this.windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.mainPanel = new JPanel();
-        this.mainPanel.setBorder(new EmptyBorder(5, 20, 20, 20));
-        this.mainPanel.setLayout(new GridLayout(2,2));
+        this.mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
+        this.mainPanel.setLayout(new GridLayout(2,1));
 
     }
 

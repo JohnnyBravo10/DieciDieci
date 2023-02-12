@@ -1,6 +1,5 @@
 package diecidieci.graphics;
 import diecidieci.core.Game;
-
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
@@ -12,13 +11,13 @@ public class StartMenu {
 
     public StartMenu(){
         this.window = new JFrame("1010");
-        this.window.setPreferredSize(new Dimension(1280, 720));
+        this.window.setPreferredSize(new Dimension(780, 780));
         this.window.setResizable(false);
         this.window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(4, 1));
-        mainPanel.setBorder(new EmptyBorder(150, 350, 150, 350));
+        mainPanel.setBorder(new EmptyBorder(100, 200, 100, 200));
 
         JLabel label_titolo = new JLabel("1010!");
         label_titolo.setPreferredSize(new Dimension(400, 400));
@@ -61,5 +60,4 @@ public class StartMenu {
         this.window.setVisible(true);
 
     }
-
 }
