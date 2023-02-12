@@ -10,7 +10,7 @@ import java.awt.*;
 
 public class Game {
     public static Board board; //board di gioco
-    public int points;
+    public static int points;
     public JButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private static Piece selectedPiece;
@@ -58,8 +58,8 @@ public class Game {
         this.window.getWindowFrame().setVisible(true);
     }
 
-    public void addPoints(int increment){
-        this.points += increment;
+    public static void addPoints(int increment){
+        points += increment;
     }
 
     public static void setSelectedPiece (Piece p){

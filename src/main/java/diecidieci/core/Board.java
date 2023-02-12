@@ -11,7 +11,7 @@ public class Board {
     // TODO: May be it can be a singleton class since we need only one board but idk
 
     public static Tile[][] gameBoard;
-    private final BoardGraphics boardGraphics;
+    public final BoardGraphics boardGraphics;
     public static final int BOARD_DIM = 10;
 
     //costruttore di board vuota

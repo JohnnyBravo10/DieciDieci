@@ -34,7 +34,7 @@ public class BoardGraphics extends JPanel {
 
         for (int i = 0; i < gameBoard.length; i++) {
             for (int j = 0; j < gameBoard[0].length; j++) {
-                this.tileGraphicsComponents[i][j] = new TileGraphics(gameBoard[i][j]);
+                this.tileGraphicsComponents[i][j] = new TileGraphics(gameBoard[i][j], new Double[]{(double)i,(double)j});
                 this.add(this.tileGraphicsComponents[i][j]);
             }
         }

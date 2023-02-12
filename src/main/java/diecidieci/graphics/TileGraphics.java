@@ -15,8 +15,10 @@ public class TileGraphics extends JComponent {
 
     private Tile tile;
 
-    public TileGraphics(Tile tile1){
+    public TileGraphics(Tile tile1, Double[] coordinate){//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
         this.tile = tile1;
+
+
         this.setSize(new Dimension(32,32) );
 
         this.addMouseListener(new MouseListener() {
@@ -28,6 +30,7 @@ public class TileGraphics extends JComponent {
             @Override
             public void mousePressed(MouseEvent e) {
 
+                /*
                 if(getBorder()==null) {
                     setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
                     Game.setSelectedTile(tile);
@@ -42,6 +45,14 @@ public class TileGraphics extends JComponent {
                             Game.board.getBoardGraphics().getGameBoard()[i][j].setBorder(null);
                         }
                     }
+                }
+
+                 */
+                if (Game.board.canBePlaced(Game.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
+                    Game.board.place(Game.getSelectedPiece(), coordinate); //piazzo il pezzo
+                    //Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio
+                    Game.board.boardGraphics.repaint(); //aggiorno la board
+
                 }
             }
 
