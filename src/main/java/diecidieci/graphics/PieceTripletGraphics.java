@@ -15,7 +15,7 @@ public class PieceTripletGraphics extends JPanel {
 
         for(int i = 0; i < pieceGraphicsComponents.length; i++)
         {
-            pieceGraphicsComponents[i] = new PieceGraphics(pieces[i], this.pieceGraphicsComponents, i);/////////////////////////////////////////////
+            pieceGraphicsComponents[i] = new PieceGraphics(pieces[i], this.pieceGraphicsComponents, i);
             this.add(this.pieceGraphicsComponents[i]);
         }
     }

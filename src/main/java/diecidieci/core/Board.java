@@ -17,14 +17,43 @@ public class Board {
     //costruttore di board vuota
     public Board() {
         this.gameBoard = new Tile[BOARD_DIM][BOARD_DIM];
+
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
                 gameBoard[i][j] = new Tile();
             }
         }
-        this.boardGraphics = new BoardGraphics();
-        }
 
+        this.boardGraphics = new BoardGraphics(this.gameBoard);
+        this.boardGraphics.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                //TODO: determinare su che casella ci si trova col mouse, verificare che il selectedPeace possa essere inserito in quel punto (metodo canBePlaced)
+                //eventualmente piazzarlo nella board (metodo place)
+                Game.board.boardGraphics.repaint();
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+
+            }
+        });
+    }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
     // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti

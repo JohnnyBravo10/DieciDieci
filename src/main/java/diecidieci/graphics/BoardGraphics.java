@@ -9,38 +9,40 @@ import static diecidieci.core.Board.BOARD_DIM;
 
 public class BoardGraphics extends JPanel {
 
-    private TileGraphics[][] gameBoard;
+    private TileGraphics[][] tileGraphicsComponents;
 
-    public BoardGraphics(){
+    /*public BoardGraphics(){
 
-        this.gameBoard = new TileGraphics[BOARD_DIM][BOARD_DIM];
+        this.setPreferredSize(new Dimension(330,330));
+        this.setLayout(new GridLayout(BOARD_DIM, BOARD_DIM));
+        this.tileGraphicsComponents = new TileGraphics[BOARD_DIM][BOARD_DIM];
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
                 gameBoard[i][j] = new TileGraphics(new Tile());
             }
         }
-        this.setLayout(new GridLayout(BOARD_DIM, BOARD_DIM,0,0));
-        this.setPreferredSize(new Dimension(320,320));
-    }
 
-    public BoardGraphics(TileGraphics[][] gameBoard)
-    {
-        this.gameBoard = gameBoard;
+    }
+    */
+
+
+    public BoardGraphics(Tile[][] gameBoard) {
+        this.setPreferredSize(new Dimension(330, 330));
         this.setLayout(new GridLayout(BOARD_DIM, BOARD_DIM));
-        this.setPreferredSize(new Dimension(320,320));
-    }
 
-    public TileGraphics[][] getGameBoard(){
-        return this.gameBoard;
-    }
+        this.tileGraphicsComponents = new TileGraphics[BOARD_DIM][BOARD_DIM];
 
-    @Override
-    protected void paintComponent(Graphics g){
-        setBackground(getBackground());
-        for (int i = 0; i < BOARD_DIM; i++) {
-            for (int j = 0; j < BOARD_DIM; j++) {
-                this.add(gameBoard[i][j]);
+        for (int i = 0; i < gameBoard.length; i++) {
+            for (int j = 0; j < gameBoard[0].length; j++) {
+                this.tileGraphicsComponents[i][j] = new TileGraphics(gameBoard[i][j]);
+                this.add(this.tileGraphicsComponents[i][j]);
             }
         }
     }
+
+    public TileGraphics[][] getGameBoard(){
+        return this.tileGraphicsComponents;
+    }
+
+
 }

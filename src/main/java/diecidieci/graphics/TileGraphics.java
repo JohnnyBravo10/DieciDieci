@@ -27,6 +27,7 @@ public class TileGraphics extends JComponent {
 
             @Override
             public void mousePressed(MouseEvent e) {
+
                 if(getBorder()==null) {
                     setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
                     Game.setSelectedTile(tile);
@@ -64,10 +65,10 @@ public class TileGraphics extends JComponent {
 
     @Override
     protected void paintComponent(Graphics g){
-        setBackground(getBackground());
-        g.setColor(tile.getColor());//seleziono il colore del tile
-        g.fillRect((int)(this.getPreferredSize().width + (Tile.getSize()+1)*(0.05)/*ascissa del quadratino*/),
-                (int)(this.getPreferredSize().height + (Tile.getSize()+1.5)*(-0.1)),Tile.getSize(), Tile.getSize());
+        g.setColor(this.tile.getColor());//seleziono il colore del tile
+        //g.fillRect((int)(this.getPreferredSize().width + (Tile.getSize()+1)*(0.05)/*ascissa del quadratino*/),
+                //(int)(this.getPreferredSize().height + (Tile.getSize()+1.5)*(-0.1)),Tile.getSize(), Tile.getSize());
+        g.fillRect(0,0, Tile.getSize(), Tile.getSize());
     }
 
     public Tile getTile(){return this.tile;}
