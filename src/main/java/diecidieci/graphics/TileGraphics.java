@@ -52,7 +52,8 @@ public class TileGraphics extends JComponent {
                 if (Game.board.canBePlaced(Game.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
 
                     Game.board.place(Game.getSelectedPiece(), coordinate); //piazzo il pezzo
-                    Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio
+                    Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
+                    Game.board.checkBoard();//libero colonne o righe piene (e incremento punteggi)
 
 
                     Game.board.boardGraphics.repaint(); //aggiorno la board

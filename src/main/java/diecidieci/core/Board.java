@@ -111,14 +111,18 @@ public class Board {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[i][j].makeAvailable();
                 }
+                Game.addPoints(10);
             }
             if (!tokeepColumns[i]) {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[j][i].makeAvailable();
                 }
+                Game.addPoints(10);
             }
         }
     }
+
+
     //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner posizionato sul tile della gameboard cliccato (accetta indici del tile sulla matrice gameboard)
     //forse gli indici della casella della board cliccata potrebbero essere anche descritti da un array di int
 
