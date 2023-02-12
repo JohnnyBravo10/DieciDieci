@@ -2,6 +2,7 @@ package diecidieci.graphics;
 
 import diecidieci.core.Game;
 import diecidieci.core.Piece;
+import diecidieci.core.PieceSet;
 import diecidieci.core.Tile;
 import org.apache.commons.math3.linear.RealMatrix;
 import javax.swing.*;
@@ -49,9 +50,13 @@ public class TileGraphics extends JComponent {
 
                  */
                 if (Game.board.canBePlaced(Game.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
+
                     Game.board.place(Game.getSelectedPiece(), coordinate); //piazzo il pezzo
-                    //Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio
+                    Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio
+
+
                     Game.board.boardGraphics.repaint(); //aggiorno la board
+                    Game.punteggio.pointsLabel.setText("Punteggio: " + Game.punteggio.points); //aggiorno il punteggio
 
                 }
             }

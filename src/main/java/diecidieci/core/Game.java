@@ -10,9 +10,9 @@ import java.awt.*;
 
 public class Game {
     public static Board board; //board di gioco
-    public static int points;
+    public static Punteggio punteggio;
     public JButton rotationButton; //bottone per ruotare i pezzi
-    private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
+    public static PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private static Piece selectedPiece;
 
     private static Tile selectedTile;
@@ -26,7 +26,7 @@ public class Game {
 
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
 
-        this.points = 0;
+        this.punteggio= new Punteggio(0);
 
         //creazione bottone rotazione, anche per questo si potrebbe forse creare una classe apposita che estenda JButton
         this.rotationButton = new JButton("Rotate");
@@ -43,7 +43,7 @@ public class Game {
         });
 
         JPanel upperPanel = new JPanel();
-        upperPanel.add(new JLabel("Punteggio: " + this.points));
+        upperPanel.add(this.punteggio.pointsLabel);
         upperPanel.add(board.getBoardGraphics());
 
         JPanel lowerPanel = new JPanel();
@@ -59,7 +59,7 @@ public class Game {
     }
 
     public static void addPoints(int increment){
-        points += increment;
+        punteggio.points += increment;
     }
 
     public static void setSelectedPiece (Piece p){
