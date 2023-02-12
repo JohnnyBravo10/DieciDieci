@@ -23,8 +23,6 @@ public class PieceTest {
 
     //final PieceSet allSets = PieceSet.getInstance();
 
-
-
     // Test if all the pieces have been initialized
     @Test
     void testPieceInitialization(){

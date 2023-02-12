@@ -25,35 +25,9 @@ public class Board {
         }
 
         this.boardGraphics = new BoardGraphics(this.gameBoard);
-        this.boardGraphics.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
 
-            }
+        }
 
-            @Override
-            public void mousePressed(MouseEvent e) {
-                //TODO: determinare su che casella ci si trova col mouse, verificare che il selectedPeace possa essere inserito in quel punto (metodo canBePlaced)
-                //eventualmente piazzarlo nella board (metodo place)
-                Game.board.boardGraphics.repaint();
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        });
-    }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
     // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti
@@ -122,7 +96,7 @@ public class Board {
     //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner posizionato sul tile della gameboard cliccato (accetta indici del tile sulla matrice gameboard)
     //forse gli indici della casella della board cliccata potrebbero essere anche descritti da un array di int
 
-    ///////////////da sistemare
+
     public boolean canBePlaced(Piece p, Double[] clickedPosition) throws ArrayIndexOutOfBoundsException {
         try {
             for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++) {
@@ -130,7 +104,6 @@ public class Board {
                     return false;
                 }
             }
-
             return true;
         } catch (
                 ArrayIndexOutOfBoundsException IndexOutOfBoundsException) { //in this case the piece can't be placed beacause it's totally or partially out of the board
@@ -138,7 +111,7 @@ public class Board {
         }
     }
 
-    /////////////////////da sistemare
+
     //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
     public void place (Piece p, Double[] clickedPosition){
         for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){

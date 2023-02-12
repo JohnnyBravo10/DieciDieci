@@ -8,7 +8,6 @@ public class Window {
 
     private final JFrame windowFrame;
     private final JPanel mainPanel;
-    private final JPanel pieceSelectionPanel;
 
     public Window(final String title, final Dimension size){
         this.windowFrame = new JFrame(title);
@@ -20,8 +19,6 @@ public class Window {
         this.mainPanel.setBorder(new EmptyBorder(5, 20, 20, 20));
         this.mainPanel.setLayout(new GridLayout(2,2));
 
-        this.pieceSelectionPanel = new JPanel();
-        this.pieceSelectionPanel.setLayout(new GridLayout(1, 3));
     }
 
     public final JFrame getWindowFrame(){
@@ -32,7 +29,4 @@ public class Window {
         return this.mainPanel;
     }
 
-    public final JPanel getPieceSelectionPanel(){
-        return this.pieceSelectionPanel;
-    }
 }
