@@ -66,6 +66,10 @@ public class Game {
         return instance;
     }
 
+    public void startNewGame(){
+        instance = new Game();
+    }
+
     public void addPoints(int increment){
         this.punteggio.points += increment;
     }
