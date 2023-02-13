@@ -9,15 +9,14 @@ public class Piece {
     private final ShapeType type;
     private final Color pieceColor;
     private final int size;
-
-    public boolean visible;
+    public boolean available;
 
     public Piece(PieceGeometry pieceGeometry, ShapeType type, Color pieceColor){
         this.pieceGeometry = pieceGeometry;
         this.type = type;
         this.pieceColor = pieceColor;
         this.size = pieceGeometry.getShape().getRowDimension();
-        this.visible = true;
+        this.available = true;
     }
 
     public Piece(Piece piece){
@@ -25,7 +24,7 @@ public class Piece {
         this.type = piece.type;
         this.pieceColor = piece.getPieceColor();
         this.size = piece.getPieceGeometry().getShape().getRowDimension();
-        this.visible = piece.visible;
+        this.available = piece.available;
     }
 
     public enum ShapeType{
@@ -57,7 +56,7 @@ public class Piece {
 
     public int getSize(){return this.size;}
 
-    public void setInvisible(){ this.visible = false;}
+    public void setUnavailable(){ this.available = false;}
 }
 
 
