@@ -25,6 +25,7 @@ public class StartMenu {
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
             Game game = new Game();
+            this.window.dispose();
         });
         startButton.setBackground(Color.GREEN);
         startButton.setOpaque(true);
