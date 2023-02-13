@@ -39,7 +39,7 @@ public class Game {
             {
                 this.availablePieces.rotateAll();
             }
-            this.availablePieces.pieceSelectionPanel.repaint();
+            this.availablePieces.draw();
         });
 
         JPanel upperPanel = new JPanel();

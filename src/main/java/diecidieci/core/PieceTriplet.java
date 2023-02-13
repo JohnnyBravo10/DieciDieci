@@ -9,12 +9,16 @@ public class PieceTriplet {
 
     public PieceTriplet(Piece[] pieces){
         this.pieces=pieces;
-        this.pieceSelectionPanel=new PieceTripletGraphics(this.pieces);
+        this.pieceSelectionPanel = new PieceTripletGraphics(this.pieces);
     }
 
     public void rotateAll(){
         for(Piece p : pieces){
             p.getPieceGeometry().rotate();
         }
+    }
+
+    public void draw(){
+        this.pieceSelectionPanel.repaint();
     }
 }
