@@ -31,6 +31,7 @@ public class EndGame {
         newGameButton.setOpaque(true);
         newGameButton.setBorderPainted(false);
         newGameButton.addActionListener(e -> {
+            Game.getInstance().startNewGame();
             this.window.dispose();
         });
         JButton homeButton = new JButton("Menù Start");
