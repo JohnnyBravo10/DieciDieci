@@ -38,7 +38,13 @@ public class TileGraphics extends JComponent {
 
                     Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
                     Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
-
+                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())){
+                        /*
+                        String message = "GAME OVER";
+                        JOptionPane.showMessageDialog(null,message,"End",JOptionPane.PLAIN_MESSAGE);
+                         */
+                        EndGame endgame = new EndGame();
+                    }
                 }
             }
 

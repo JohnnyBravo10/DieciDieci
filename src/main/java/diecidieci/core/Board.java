@@ -152,6 +152,25 @@ public class Board {
         return this.boardGraphics;
     }
 
+    public boolean shouldStop(PieceTriplet triplet) {
+        Piece firstPiece = new Piece(triplet.pieces[0]);
+        Piece secondPiece = new Piece(triplet.pieces[1]);
+        Piece thirdPiece = new Piece(triplet.pieces[2]);
+        for (int k = 0; k < 4; k++) {
+            for (int i=0; i<BOARD_DIM; i++){
+                for (int j=0; j<BOARD_DIM; j++){
+                    Double[] coord = {Double.valueOf(i),Double.valueOf(j)};
+                    if (canBePlaced(firstPiece,coord) || canBePlaced(secondPiece,coord) || canBePlaced(thirdPiece,coord)){
+                        return false;
+                    }
+                }
+            }
+            firstPiece.getPieceGeometry().rotate();
+            secondPiece.getPieceGeometry().rotate();
+            thirdPiece.getPieceGeometry().rotate();
+        }
+        return true;
+    }
 }
 
 

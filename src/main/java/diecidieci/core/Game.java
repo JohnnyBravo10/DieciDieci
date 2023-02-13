@@ -100,4 +100,6 @@ public class Game {
         return this.punteggio;
     }
 
+    public PieceTriplet getAvailablePieces(){ return this.availablePieces;}
+
     }
