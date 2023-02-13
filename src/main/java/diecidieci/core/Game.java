@@ -103,7 +103,7 @@ public class Game {
     public boolean checkAvailability() {
         for (Piece x : this.availablePieces.pieces
         ) {
-            if (x.available == true) {
+            if (x.available) {
                 return true;
             }
         }

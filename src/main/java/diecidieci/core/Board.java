@@ -128,7 +128,7 @@ public class Board {
 
     public boolean canBePlaced(Piece p, Double[] clickedPosition) throws ArrayIndexOutOfBoundsException {
         try {
-            for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++) {
+            for (int i = 0; i < p.getSize(); i++) {
                 if (!this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].isEmpty()) {
                     return false;
                 }
@@ -159,8 +159,8 @@ public class Board {
         for (int k = 0; k < 4; k++) {
             for (int i=0; i<BOARD_DIM; i++){
                 for (int j=0; j<BOARD_DIM; j++){
-                    Double[] coord = {Double.valueOf(i),Double.valueOf(j)};
-                    if (canBePlaced(firstPiece,coord) || canBePlaced(secondPiece,coord) || canBePlaced(thirdPiece,coord)){
+                    Double[] coord = {(double) i, (double) j};
+                    if ((canBePlaced(firstPiece,coord) && firstPiece.available) || (canBePlaced(secondPiece,coord) && secondPiece.available) || (canBePlaced(thirdPiece,coord) && thirdPiece.available)){
                         return false;
                     }
                 }
