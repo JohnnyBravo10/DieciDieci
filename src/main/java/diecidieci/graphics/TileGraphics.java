@@ -36,16 +36,17 @@ public class TileGraphics extends JComponent {
                     Game.getInstance().getBoard().checkBoard(); //libero colonne o righe piene (e incremento punteggi)
 
                     Game.getInstance().getSelectedPiece().setUnavailable();
-                    Game.getInstance().getAvailablePieces().pieceSelectionPanel.repaint();
+                    Game.getInstance().setSelectedPiece(null);
+                    Game.getInstance().getAvailablePieces().draw();
 
                     Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
                     Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
                     if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())){
-                        /*
-                        String message = "GAME OVER";
-                        JOptionPane.showMessageDialog(null,message,"End",JOptionPane.PLAIN_MESSAGE);
-                         */
                         EndGame endgame = new EndGame();
+                    }
+                    if ( !Game.getInstance().checkAvailability()){
+                        Game.getInstance().refreshPieces();
+                        Game.getInstance().getAvailablePieces().draw();
                     }
                 }
             }

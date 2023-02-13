@@ -1,5 +1,6 @@
 package diecidieci.core;
 
+import diecidieci.graphics.PieceTripletGraphics;
 import diecidieci.graphics.Window;
 import javax.swing.*;
 import java.awt.*;
@@ -97,4 +98,21 @@ public class Game {
 
     public PieceTriplet getAvailablePieces(){ return this.availablePieces;}
 
+
+    //ritorna true se ci sono ancora pezzi da inserire nella board
+    public boolean checkAvailability() {
+        for (Piece x : this.availablePieces.pieces
+        ) {
+            if (x.available == true) {
+                return true;
+            }
+        }
+        return false;
     }
+
+    // metodo da aggiustare
+    public void refreshPieces(){
+        this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
+        this.availablePieces.draw();
+    }
+}
