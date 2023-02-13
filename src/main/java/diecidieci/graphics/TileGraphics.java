@@ -16,9 +16,8 @@ public class TileGraphics extends JComponent {
 
     private Tile tile;
 
-    public TileGraphics(Tile tile1, Double[] coordinate){//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
-        this.tile = tile1;
-
+    public TileGraphics(Tile tile, Double[] coordinate){//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
+        this.tile = tile;
 
         this.setSize(new Dimension(32,32) );
 
@@ -30,34 +29,15 @@ public class TileGraphics extends JComponent {
 
             @Override
             public void mousePressed(MouseEvent e) {
+                if (Game.getInstance().getBoard().canBePlaced(Game.getInstance().getSelectedPiece(), coordinate)) {//se il pezzo ci sta
 
-                /*
-                if(getBorder()==null) {
-                    setBorder(BorderFactory.createLineBorder(Color.DARK_GRAY));
-                    Game.setSelectedTile(tile);
-                }
-                else {
-                    setBorder(null);
-                    Game.setSelectedTile(null);
-                }
-                for (int i=0; i< BOARD_DIM; i++){
-                    for (int j= 0; j<BOARD_DIM; j++){
-                        if (Game.getSelectedTile() != Game.board.getBoardGraphics().getGameBoard()[i][j].getTile()){
-                            Game.board.getBoardGraphics().getGameBoard()[i][j].setBorder(null);
-                        }
-                    }
-                }
-
-                 */
-                if (Game.board.canBePlaced(Game.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
-
-                    Game.board.place(Game.getSelectedPiece(), coordinate); //piazzo il pezzo
-                    Game.addPoints(Game.getSelectedPiece().getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
-                    Game.board.checkBoard();//libero colonne o righe piene (e incremento punteggi)
+                    Game.getInstance().getBoard().place(Game.getInstance().getSelectedPiece(), coordinate); //piazzo il pezzo
+                    Game.getInstance().addPoints(Game.getInstance().getSelectedPiece().getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
+                    Game.getInstance().getBoard().checkBoard(); //libero colonne o righe piene (e incremento punteggi)
 
 
-                    Game.board.boardGraphics.repaint(); //aggiorno la board
-                    Game.punteggio.pointsLabel.setText("Punteggio: " + Game.punteggio.points); //aggiorno il punteggio
+                    Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
+                    Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
 
                 }
             }
@@ -83,8 +63,6 @@ public class TileGraphics extends JComponent {
     @Override
     protected void paintComponent(Graphics g){
         g.setColor(this.tile.getColor());//seleziono il colore del tile
-        //g.fillRect((int)(this.getPreferredSize().width + (Tile.getSize()+1)*(0.05)/*ascissa del quadratino*/),
-                //(int)(this.getPreferredSize().height + (Tile.getSize()+1.5)*(-0.1)),Tile.getSize(), Tile.getSize());
         g.fillRect(0,0, Tile.getSize(), Tile.getSize());
     }
 

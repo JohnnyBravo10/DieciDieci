@@ -8,8 +8,6 @@ import java.awt.event.MouseListener;
 
 public class Board {
 
-    // TODO: May be it can be a singleton class since we need only one board but idk
-
     public static Tile[][] gameBoard;
     public final BoardGraphics boardGraphics;
     public static final int BOARD_DIM = 10;
@@ -25,6 +23,7 @@ public class Board {
         }
 
         this.boardGraphics = new BoardGraphics(this.gameBoard);
+
         this.boardGraphics.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -35,7 +34,7 @@ public class Board {
             public void mousePressed(MouseEvent e) {
                 //TODO: determinare su che casella ci si trova col mouse, verificare che il selectedPeace possa essere inserito in quel punto (metodo canBePlaced)
                 //eventualmente piazzarlo nella board (metodo place)
-                Game.board.boardGraphics.repaint();
+                Game.getInstance().getBoard().boardGraphics.repaint();
             }
 
             @Override
@@ -111,13 +110,13 @@ public class Board {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[i][j].makeAvailable();
                 }
-                Game.addPoints(10);
+                Game.getInstance().addPoints(10);
             }
             if (!tokeepColumns[i]) {
                 for (int j = 0; j < BOARD_DIM; j++) {
                     this.gameBoard[j][i].makeAvailable();
                 }
-                Game.addPoints(10);
+                Game.getInstance().addPoints(10);
             }
         }
     }

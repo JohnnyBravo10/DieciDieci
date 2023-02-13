@@ -8,25 +8,31 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 
+@SuppressWarnings("LanguageDetectionInspection")
 public class Game {
-    public static Board board; //board di gioco
-    public static Punteggio punteggio;
-    public JButton rotationButton; //bottone per ruotare i pezzi
-    public static PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
-    private static Piece selectedPiece;
+    private static final int WINDOW_SIZE = 780;
+    private static Game instance;
 
-    private static Tile selectedTile;
+    private Board board; //board di gioco
+    private Punteggio punteggio;
+    private JButton rotationButton; //bottone per ruotare i pezzi
+    private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
+    private Piece selectedPiece;
+
+    private Tile selectedTile;
     private final Window window;
 
-    public Game() {
+    private Game() {
 
-        this.window = new Window("1010", new Dimension(780, 780));
+        this.window = new Window("1010", new Dimension(WINDOW_SIZE, WINDOW_SIZE));
 
-        board = new Board();
+        this.board = new Board();
+
+        // TODO: Forse può essere una classe sigleton ?
 
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
 
-        this.punteggio= new Punteggio(0);
+        this.punteggio = new Punteggio(0);
 
         //creazione bottone rotazione, anche per questo si potrebbe forse creare una classe apposita che estenda JButton
         this.rotationButton = new JButton("Rotate");
@@ -58,22 +64,40 @@ public class Game {
         this.window.getWindowFrame().setVisible(true);
     }
 
-    public static void addPoints(int increment){
-        punteggio.points += increment;
+    public static Game getInstance(){
+        if (instance == null){
+            instance = new Game();
+        }
+        return instance;
     }
 
-    public static void setSelectedPiece (Piece p){
-        selectedPiece=p;
+    public void addPoints(int increment){
+        this.punteggio.points += increment;
     }
 
-    public static Piece getSelectedPiece(){
-        return selectedPiece;
+    public void setSelectedPiece (Piece piece){
+        this.selectedPiece = piece;
     }
 
-    public static void setSelectedTile(Tile t){
-        selectedTile = t;
+    public Piece getSelectedPiece(){
+        return this.selectedPiece;
     }
-    public static Tile getSelectedTile(){
-        return selectedTile;
+
+    // TODO: Probabilmente c'è un modo per farlo meglio Game non credo deve prendersi le responsabilità di qualcosa che deve fare la classe Piece
+
+    public void setSelectedTile(Tile tile){
+        this.selectedTile = tile;
     }
+    public Tile getSelectedTile(){
+        return this.selectedTile;
+    }
+
+    public Board getBoard(){
+        return this.board;
+    }
+
+    public Punteggio getPunteggio(){
+        return this.punteggio;
+    }
+
     }

@@ -24,7 +24,7 @@ public class StartMenu {
         label_titolo.setHorizontalAlignment(JLabel.CENTER);
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
-            Game game = new Game();
+            Game game = Game.getInstance();
             this.window.dispose();
         });
         startButton.setBackground(Color.GREEN);

@@ -1,5 +1,6 @@
 package diecidieci.graphics;
 
+import com.sun.jdi.IntegerType;
 import diecidieci.core.Game;
 import diecidieci.core.Piece;
 import diecidieci.core.Tile;
@@ -27,17 +28,18 @@ public class PieceGraphics extends JComponent {
 
             @Override
             public void mousePressed(MouseEvent e) {
+                Game instance = Game.getInstance();
                 if(getBorder()==null) {
                     setBorder(BorderFactory.createLineBorder(Color.RED));
-                    Game.setSelectedPiece(piece);
+                    instance.setSelectedPiece(piece);
                 }
                 else {
                     setBorder(null);
-                    Game.setSelectedPiece(null);
+                    instance.setSelectedPiece(null);
                 }
 
-                for (int a=0; a< array.length; a++){
-                    if (a!=index){
+                for (int a = 0; a < array.length; a++){
+                    if (a != index){
                         array[a].setBorder(null);
                     }
                 }

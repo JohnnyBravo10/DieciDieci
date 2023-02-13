@@ -11,20 +11,6 @@ public class BoardGraphics extends JPanel {
 
     private TileGraphics[][] tileGraphicsComponents;
 
-    /*public BoardGraphics(){
-
-        this.setPreferredSize(new Dimension(330,330));
-        this.setLayout(new GridLayout(BOARD_DIM, BOARD_DIM));
-        this.tileGraphicsComponents = new TileGraphics[BOARD_DIM][BOARD_DIM];
-        for (int i = 0; i < BOARD_DIM; i++) {
-            for (int j = 0; j < BOARD_DIM; j++) {
-                gameBoard[i][j] = new TileGraphics(new Tile());
-            }
-        }
-
-    }
-    */
-
 
     public BoardGraphics(Tile[][] gameBoard) {
         this.setPreferredSize(new Dimension(330, 330));
