@@ -64,6 +64,9 @@ public class PieceGraphics extends JComponent {
 
     @Override
     protected void paintComponent(Graphics g){
+        if (piece.visible == false){
+            this.setVisible(false);
+        }
         if (piece!=null) {
             setBackground(getBackground());
             g.setColor(piece.getPieceColor());//seleziono il colore del pezzo

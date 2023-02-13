@@ -35,6 +35,8 @@ public class TileGraphics extends JComponent {
                     Game.getInstance().addPoints(Game.getInstance().getSelectedPiece().getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
                     Game.getInstance().getBoard().checkBoard(); //libero colonne o righe piene (e incremento punteggi)
 
+                    Game.getInstance().getSelectedPiece().setInvisible();
+                    Game.getInstance().getAvailablePieces().pieceSelectionPanel.repaint();
 
                     Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
                     Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
