@@ -1,6 +1,5 @@
 package diecidieci.graphics;
 
-import com.sun.jdi.IntegerType;
 import diecidieci.core.Game;
 import diecidieci.core.Piece;
 import diecidieci.core.Tile;
