@@ -1,14 +1,10 @@
 package diecidieci.core;
 
-import diecidieci.graphics.PieceGraphics;
 import diecidieci.graphics.Window;
-
 import javax.swing.*;
-import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
 
-@SuppressWarnings("LanguageDetectionInspection")
 public class Game {
     private static final int WINDOW_SIZE = 780;
     private static Game instance;
@@ -41,9 +37,7 @@ public class Game {
         this.rotationButton.addActionListener(e -> {
             for(int i = 0; i < this.availablePieces.pieces.length; i++)
             {
-                this.availablePieces.pieces[i].getPieceGeometry().rotate();
-                //this.availablePieces.pieceSelectionPanel.pieceGraphicsComponents[i].repaint();
-                //faccio direttamente il repaint del pannello fuori dal for
+                this.availablePieces.rotateAll();
             }
             this.availablePieces.pieceSelectionPanel.repaint();
         });
@@ -88,6 +82,7 @@ public class Game {
     public void setSelectedTile(Tile tile){
         this.selectedTile = tile;
     }
+
     public Tile getSelectedTile(){
         return this.selectedTile;
     }
