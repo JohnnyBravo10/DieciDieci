@@ -18,7 +18,7 @@ public class BoardTests {
     {
         Board b = new Board();
 
-        Arrays.stream(b.gameBoard)
+        Arrays.stream(b.getGameBoard())
                 .forEach(x -> Arrays.stream(x).forEach(y -> assertTrue(y.isEmpty())));
     }
 
@@ -29,13 +29,13 @@ public class BoardTests {
         Board tabella1 = new Board();
         Board tabella2 = new Board();
         for (int i=0; i < BOARD_DIM;i++){
-            tabella1.gameBoard[0][i].setColor(Color.RED);
-            tabella1.gameBoard[5][i].setColor(Color.RED);
+            tabella1.getGameBoard()[0][i].setColor(Color.RED);
+            tabella1.getGameBoard()[5][i].setColor(Color.RED);
         }
         int points_count = tabella1.checkBoard();
         for (int i=0; i< BOARD_DIM;i++){
             for (int j=0; j< BOARD_DIM;j++){
-                assertEquals(tabella1.gameBoard[i][j].getColor(),tabella2.gameBoard[i][j].getColor());
+                assertEquals(tabella1.getGameBoard()[i][j].getColor(),tabella2.getGameBoard()[i][j].getColor());
             }
         }
         assertEquals(points_count, 2);
@@ -47,7 +47,7 @@ public class BoardTests {
         Piece p= PieceSet.getPossibleSet()[1];
         Board tabella= new Board();
         assertTrue(tabella.canBePlaced(p, new Double[]{2.0,2.0})); //can be placed case
-        tabella.gameBoard[2][3].setColor(Color.yellow);
+        tabella.getGameBoard()[2][3].setColor(Color.yellow);
         assertFalse(tabella.canBePlaced(p, new Double[]{2.0,2.0})); //occupied tile case
         assertFalse(tabella.canBePlaced(p, new Double[]{3.0,9.0})); //out of gameboard case
     }

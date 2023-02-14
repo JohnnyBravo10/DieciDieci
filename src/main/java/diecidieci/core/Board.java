@@ -153,6 +153,10 @@ public class Board {
         return this.boardGraphics;
     }
 
+    public Tile[][] getGameBoard() {
+        return gameBoard;
+    }
+
     public boolean shouldStop(PieceTriplet triplet) {
         Piece firstPiece = new Piece(triplet.pieces[0]);
         Piece secondPiece = new Piece(triplet.pieces[1]);
