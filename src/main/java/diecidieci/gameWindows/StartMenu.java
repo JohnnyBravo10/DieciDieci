@@ -31,12 +31,12 @@ public class StartMenu {
         startButton.setBorderPainted(false);
         JButton rulesButton = new JButton("Rules");
         rulesButton.addActionListener(e -> {
-            String message = """
-                    Every turn three pieces are offered to the player, who has to place them in the 10x10 tiles game board\s
-                     without putting them above a tile of a previously placed piece. The player earns 1 point for every tile\s
-                    composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a\s
-                    row or a column are occupied this line is fully emptied and the player earns 10 points. The game\s
-                    terminates when none of the proposed pieces can be placed on the board.""";
+            String message =
+                    "Every turn three pieces are offered to the player, who has to place them in the 10x10 tiles game board\s" +
+                   "without putting them above a tile of a previously placed piece. The player earns 1 point for every tile\s" +
+                   "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a\s" +
+                   "row or a column are occupied this line is fully emptied and the player earns 10 points. The game\s" +
+                   "terminates when none of the proposed pieces can be placed on the board.";
             JOptionPane.showMessageDialog(null,message,"Rules",JOptionPane.PLAIN_MESSAGE);
         });
         rulesButton.setBackground(Color.YELLOW);
