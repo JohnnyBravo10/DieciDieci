@@ -21,7 +21,7 @@ public class EndGame {
         JLabel labelGameover = new JLabel("GAME OVER");
         labelGameover.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getPunteggio());
+        JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getPunteggio().points);
         labelPoints.setHorizontalAlignment(JLabel.CENTER);
 
         JButton newGameButton = new JButton("New Game");
