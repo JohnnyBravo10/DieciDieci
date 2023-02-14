@@ -4,9 +4,6 @@ package diecidieci.core;
 import diecidieci.gameWindows.Game;
 import diecidieci.graphics.BoardGraphics;
 
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
-
 public class Board {
 
     private final Tile[][] gameBoard;
@@ -24,35 +21,6 @@ public class Board {
         }
 
         this.boardGraphics = new BoardGraphics(this.gameBoard);
-
-        this.boardGraphics.addMouseListener(new MouseListener() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mousePressed(MouseEvent e) {
-                //TODO: determinare su che casella ci si trova col mouse, verificare che il selectedPeace possa essere inserito in quel punto (metodo canBePlaced)
-                //eventualmente piazzarlo nella board (metodo place)
-                Game.getInstance().getBoard().boardGraphics.repaint();
-            }
-
-            @Override
-            public void mouseReleased(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-
-            }
-        });
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
