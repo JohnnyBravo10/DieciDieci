@@ -32,10 +32,10 @@ public class StartMenu {
         JButton rulesButton = new JButton("Rules");
         rulesButton.addActionListener(e -> {
             String message =
-                    "Every turn three pieces are offered to the player, who has to place them in the 10x10 tiles game board " +
-                   "without putting them above a tile of a previously placed piece. The player earns 1 point for every tile " +
-                   "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a " +
-                   "row or a column are occupied this line is fully emptied and the player earns 10 points. The game " +
+                    "Every turn three pieces are offered to the player, who has to place them in the 10x10 tiles game board\n" +
+                   "without putting them above a tile of a previously placed piece. The player earns 1 point for every tile\n" +
+                   "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a\n" +
+                   "row or a column are occupied this line is fully emptied and the player earns 10 points. The game\n" +
                    "terminates when none of the proposed pieces can be placed on the board.";
             JOptionPane.showMessageDialog(null,message,"Rules",JOptionPane.PLAIN_MESSAGE);
         });
