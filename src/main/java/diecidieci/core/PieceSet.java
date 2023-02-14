@@ -3,7 +3,7 @@ package diecidieci.core;
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 
 import java.awt.*;
-import java.util.Random;
+import java.security.SecureRandom;
 
 public class PieceSet {
 
@@ -63,7 +63,7 @@ public class PieceSet {
                     Piece.ShapeType.REVERSEDELLE3x,
                     Color.BLACK)
     };
-    private static final Random gen = new Random();
+    private static final SecureRandom gen = new SecureRandom();
 
 
     //anche questi due metodi li ho resi statici
