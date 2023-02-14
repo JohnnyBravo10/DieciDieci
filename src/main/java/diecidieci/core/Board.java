@@ -1,6 +1,7 @@
 package diecidieci.core;
 
 
+import diecidieci.gameWindows.Game;
 import diecidieci.graphics.BoardGraphics;
 
 import java.awt.event.MouseEvent;
@@ -8,7 +9,7 @@ import java.awt.event.MouseListener;
 
 public class Board {
 
-    public static Tile[][] gameBoard;
+    private final Tile[][] gameBoard;
     public final BoardGraphics boardGraphics;
     public static final int BOARD_DIM = 10;
 
@@ -18,7 +19,7 @@ public class Board {
 
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
-                gameBoard[i][j] = new Tile();
+                this.gameBoard[i][j] = new Tile();
             }
         }
 

@@ -1,6 +1,4 @@
-package diecidieci.graphics;
-
-import diecidieci.core.Game;
+package diecidieci.gameWindows;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

@@ -1,5 +1,5 @@
 package diecidieci.core;
-import diecidieci.graphics.StartMenu;
+import diecidieci.gameWindows.StartMenu;
 
 
 public class Main {

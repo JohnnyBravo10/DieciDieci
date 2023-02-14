@@ -1,6 +1,6 @@
 package diecidieci.graphics;
 
-import diecidieci.core.Game;
+import diecidieci.gameWindows.Game;
 import diecidieci.core.Piece;
 import diecidieci.core.Tile;
 import org.apache.commons.math3.linear.RealMatrix;
@@ -13,7 +13,7 @@ import java.awt.event.MouseListener;
 
 public class PieceGraphics extends JComponent {
 
-    private Piece piece;
+    private final Piece piece;
 
     public PieceGraphics(Piece piece, PieceGraphics[] array, int index){
         this.piece = piece;
@@ -64,22 +64,21 @@ public class PieceGraphics extends JComponent {
 
     @Override
     protected void paintComponent(Graphics g){
-        if (piece.available == false){
+        if (!piece.available){
             this.setVisible(false);
         }
-        if (piece != null) {
-            setBackground(getBackground());
-            g.setColor(piece.getPieceColor());//seleziono il colore del pezzo
-            for (int k = 0; k < piece.getSize(); k++) {//per ogni quadratino del pezzo
-                RealMatrix pg = piece.getPieceGeometry().getShape();
-                g.fillRect((int) (this.getPreferredSize().width / 2 + (Tile.getSize() + 1) * (pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),
-                        (int) (this.getPreferredSize().height / 2 - (Tile.getSize() + 1) * (pg.getRow(k)[1] + 0.5)), Tile.getSize(), Tile.getSize());
+
+        setBackground(getBackground());
+        g.setColor(piece.getPieceColor());//seleziono il colore del pezzo
+        for (int k = 0; k < piece.getSize(); k++) {//per ogni quadratino del pezzo
+            RealMatrix pg = piece.getPieceGeometry().getShape();
+            g.fillRect((int) (this.getPreferredSize().width / 2 + (Tile.getSize() + 1) * (pg.getRow(k)[0] - 0.5)/*ascissa del quadratino*/),
+                    (int) (this.getPreferredSize().height / 2 - (Tile.getSize() + 1) * (pg.getRow(k)[1] + 0.5)), Tile.getSize(), Tile.getSize());
             }
-        }
-        else{
-            setBackground(getBackground());
-        }
     }
 
+    public Piece getPiece(){
+        return this.piece;
+    }
 }
 

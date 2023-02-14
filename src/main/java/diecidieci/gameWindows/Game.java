@@ -1,7 +1,7 @@
-package diecidieci.core;
+package diecidieci.gameWindows;
 
-import diecidieci.graphics.PieceTripletGraphics;
-import diecidieci.graphics.Window;
+import diecidieci.core.*;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -10,13 +10,12 @@ public class Game {
     private static final int WINDOW_SIZE = 780;
     private static Game instance;
 
-    private Board board; //board di gioco
-    private Punteggio punteggio;
-    private JButton rotationButton; //bottone per ruotare i pezzi
+    private final Board board; //board di gioco
+    private final Punteggio punteggio;
+    private final JButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private Piece selectedPiece;
 
-    private Tile selectedTile;
     private final Window window;
 
     private Game() {
@@ -24,8 +23,6 @@ public class Game {
         this.window = new Window("1010", new Dimension(WINDOW_SIZE, WINDOW_SIZE));
 
         this.board = new Board();
-
-        // TODO: Forse può essere una classe sigleton ?
 
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
 
@@ -66,7 +63,7 @@ public class Game {
         return instance;
     }
 
-    public void startNewGame(){
+    protected void startNewGame(){
         instance = new Game();
     }
 
@@ -83,14 +80,6 @@ public class Game {
     }
 
     // TODO: Probabilmente c'è un modo per farlo meglio Game non credo deve prendersi le responsabilità di qualcosa che deve fare la classe Piece
-
-    public void setSelectedTile(Tile tile){
-        this.selectedTile = tile;
-    }
-
-    public Tile getSelectedTile(){
-        return this.selectedTile;
-    }
 
     public Board getBoard(){
         return this.board;

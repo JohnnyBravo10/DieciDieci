@@ -1,25 +1,22 @@
 package diecidieci.graphics;
 
-import diecidieci.core.Game;
-import diecidieci.core.Piece;
-import diecidieci.core.PieceSet;
+import diecidieci.gameWindows.EndGame;
+import diecidieci.gameWindows.Game;
 import diecidieci.core.Tile;
-import org.apache.commons.math3.linear.RealMatrix;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.event.WindowEvent;
-import static diecidieci.core.Board.BOARD_DIM;
 
 public class TileGraphics extends JComponent {
 
-    private Tile tile;
+    private final Tile tile;
 
-    public TileGraphics(Tile tile, Double[] coordinate){//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
+    public TileGraphics(Tile tile, Double[] coordinate) {//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
         this.tile = tile;
 
-        this.setSize(new Dimension(32,32) );
+        this.setSize(new Dimension(32, 32));
 
         this.addMouseListener(new MouseListener() {
             @Override
@@ -42,11 +39,11 @@ public class TileGraphics extends JComponent {
                     Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
                     Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
 
-                    if ( !Game.getInstance().checkAvailability()) {//se non ci sono più pezzi
-                        Game.getInstance().refreshPieces();
-                        Game.getInstance().getAvailablePieces().draw();
+                    if (!Game.getInstance().checkAvailability()) {//se non ci sono più pezzi
+                        Game.getInstance().refreshPieces();//funziona
+                        Game.getInstance().getAvailablePieces().draw();//aggiorno pezzi
                     }
-                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())){//se non si riesce più
+                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più
                         EndGame endgame = new EndGame();
                     }
                 }
@@ -71,10 +68,8 @@ public class TileGraphics extends JComponent {
     }
 
     @Override
-    protected void paintComponent(Graphics g){
+    protected void paintComponent(Graphics g) {
         g.setColor(this.tile.getColor());//seleziono il colore del tile
-        g.fillRect(0,0, Tile.getSize(), Tile.getSize());
+        g.fillRect(0, 0, Tile.getSize(), Tile.getSize());
     }
-
-    public Tile getTile(){return this.tile;}
 }
