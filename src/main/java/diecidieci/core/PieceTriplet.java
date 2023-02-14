@@ -1,6 +1,5 @@
 package diecidieci.core;
 
-import diecidieci.graphics.PieceGraphics;
 import diecidieci.graphics.PieceTripletGraphics;
 
 public class PieceTriplet {

@@ -56,11 +56,11 @@ public class PieceSet {
             //REVERSED ELLES
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
                     {-0.5, -0.5}, {0.5, 0.5}, {0.5, -0.5}})),
-                    Piece.ShapeType.REVERSEDELLE2X,
+                    Piece.ShapeType.REVERSEDELLE2x,
                     Color.LIGHT_GRAY),
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{
                     {0, 0}, {-1, 0}, {-2, 0}, {0, 1}, {0, 2}})),
-                    Piece.ShapeType.REVERSEDELLE3X,
+                    Piece.ShapeType.REVERSEDELLE3x,
                     Color.BLACK)
     };
     private static final Random gen = new Random();

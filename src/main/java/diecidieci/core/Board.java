@@ -104,7 +104,7 @@ public class Board {
             }
             return true;
         } catch (
-                ArrayIndexOutOfBoundsException IndexOutOfBoundsException) { //in this case the piece can't be placed beacause it's totally or partially out of the board
+                ArrayIndexOutOfBoundsException indexOutOfBoundsException) { //in this case the piece can't be placed beacause it's totally or partially out of the board
             return false;
         }
     }

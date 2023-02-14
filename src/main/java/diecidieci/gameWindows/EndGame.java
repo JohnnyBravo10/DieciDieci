@@ -18,11 +18,11 @@ public class EndGame {
         mainPanel.setLayout(new GridLayout(4, 1));
         mainPanel.setBorder(new EmptyBorder(10, 50, 10, 50));
 
-        JLabel label_gameover = new JLabel("GAME OVER");
-        label_gameover.setHorizontalAlignment(JLabel.CENTER);
+        JLabel labelGameover = new JLabel("GAME OVER");
+        labelGameover.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel label_points = new JLabel("You scored: "+ Game.getInstance().getPunteggio());
-        label_points.setHorizontalAlignment(JLabel.CENTER);
+        JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getPunteggio());
+        labelPoints.setHorizontalAlignment(JLabel.CENTER);
 
         JButton newGameButton = new JButton("New Game");
         newGameButton.setBackground(Color.GREEN);
@@ -41,8 +41,8 @@ public class EndGame {
             this.window.dispose();
         });
 
-        mainPanel.add(label_gameover);
-        mainPanel.add(label_points);
+        mainPanel.add(labelGameover);
+        mainPanel.add(labelPoints);
         mainPanel.add(newGameButton);
         mainPanel.add(homeButton);
         this.window.add(mainPanel);

@@ -38,10 +38,9 @@ public class PieceGeometry {
 
     // Useare questo .collect(Collectors.toList()) al posto di .toList() perché a circleci non piace
     public double[] calculateLeftCorner() {
-        OptionalDouble max_y = Arrays.stream(this.shape.getColumn(1)).max();
+        OptionalDouble maxY = Arrays.stream(this.shape.getColumn(1)).max();
 
-        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], max_y.getAsDouble()) == 0)
-                .collect(Collectors.toList());
+        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], maxY.getAsDouble()) == 0).toList();
 
         Optional<double[]> min = leftCandidates.stream().min(Comparator.comparingDouble(h -> h[0]));
 

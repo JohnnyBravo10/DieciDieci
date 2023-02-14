@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static diecidieci.core.Board.BOARD_DIM;
 
 
-public class BoardTests {
+class BoardTests {
 
     // Check if at the beginning all the board pieces are blank
     @Test
@@ -38,7 +38,7 @@ public class BoardTests {
                 assertEquals(tabella1.getGameBoard()[i][j].getColor(),tabella2.getGameBoard()[i][j].getColor());
             }
         }
-        assertEquals(points_count, 2);
+        assertEquals(2, points_count);
     }
 
     //Test per verificare il metodo can be placed

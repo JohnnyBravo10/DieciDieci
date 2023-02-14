@@ -26,7 +26,6 @@ public class Piece {
         this.size = piece.getPieceGeometry().getShape().getRowDimension();
         this.available = piece.available;
     }
-
     public enum ShapeType{
         SQUARE2x,
         SQUARE3x,
@@ -37,15 +36,12 @@ public class Piece {
         STRAIGHT5x,
         ELLE2x,
         ELLE3x,
-        REVERSEDELLE2X,
-        REVERSEDELLE3X
+        REVERSEDELLE2x,
+        REVERSEDELLE3x
 
     }
 
     // GETTERS
-    public ShapeType getType() {
-        return this.type;
-    }
     public PieceGeometry getPieceGeometry(){
         return this.pieceGeometry;
     }

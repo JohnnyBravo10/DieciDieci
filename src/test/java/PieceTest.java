@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
-public class PieceTest {
+class PieceTest {
 
     //final PieceSet allSets = PieceSet.getInstance();
 
@@ -47,9 +47,9 @@ public class PieceTest {
     // Test how to get an entry and if it's working
     @Test
     void testWorkingGetEntry(){
-        assertEquals(PieceSet.getPossibleSet()[0]
+        assertEquals(0, PieceSet.getPossibleSet()[0]
                 .getPieceGeometry()
-                .getShape().getEntry(0, 0) ,0);
+                .getShape().getEntry(0, 0));
     }
 
     // This test checks if a rotation of 360 is correct
