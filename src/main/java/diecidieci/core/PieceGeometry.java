@@ -40,7 +40,8 @@ public class PieceGeometry {
     public double[] calculateLeftCorner() {
         OptionalDouble maxY = Arrays.stream(this.shape.getColumn(1)).max();
 
-        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], maxY.getAsDouble()) == 0).toList();
+        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], maxY.getAsDouble()) == 0)
+                .collect(Collectors.toList());
 
         Optional<double[]> min = leftCandidates.stream().min(Comparator.comparingDouble(h -> h[0]));
 
