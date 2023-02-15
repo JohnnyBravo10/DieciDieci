@@ -6,12 +6,13 @@ import java.awt.*;
 
 public class Window {
 
+    private static final int WINDOW_SIZE = 780;
     private final JFrame windowFrame;
     private final JPanel mainPanel;
 
-    public Window(final String title, final Dimension size){
+    public Window(final String title){
         this.windowFrame = new JFrame(title);
-        this.windowFrame.setPreferredSize(size);
+        this.windowFrame.setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
         this.windowFrame.setResizable(false);
         this.windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 

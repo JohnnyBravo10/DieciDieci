@@ -121,10 +121,6 @@ public class Board {
         }
     }
 
-    public BoardGraphics getBoardGraphics(){
-        return this.boardGraphics;
-    }
-
     public Tile[][] getGameBoard() {
         return gameBoard;
     }

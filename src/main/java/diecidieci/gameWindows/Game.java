@@ -3,16 +3,14 @@ package diecidieci.gameWindows;
 import diecidieci.core.*;
 
 import javax.swing.*;
-import java.awt.*;
 
 
 public class Game {
-    private static final int WINDOW_SIZE = 780;
     private static Game instance;
 
     private final Board board; //board di gioco
     private final Punteggio punteggio;
-    private final JButton rotationButton; //bottone per ruotare i pezzi
+    private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private Piece selectedPiece;
 
@@ -20,29 +18,16 @@ public class Game {
 
     private Game() {
 
-        this.window = new Window("1010", new Dimension(WINDOW_SIZE, WINDOW_SIZE));
+        this.window = new Window("1010");
 
         this.board = new Board();
-
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
-
         this.punteggio = new Punteggio(0);
-
-        //creazione bottone rotazione, anche per questo si potrebbe forse creare una classe apposita che estenda JButton
-        this.rotationButton = new JButton("Rotate");
-        this.rotationButton.setSize(new Dimension(100, 50));
-
-        this.rotationButton.addActionListener(e -> {
-            for(int i = 0; i < this.availablePieces.pieces.length; i++)
-            {
-                this.availablePieces.rotateAll();
-            }
-            this.availablePieces.draw();
-        });
+        this.rotationButton = new RotationButton();
 
         JPanel upperPanel = new JPanel();
         upperPanel.add(this.punteggio.pointsLabel);
-        upperPanel.add(board.getBoardGraphics());
+        upperPanel.add(this.board.boardGraphics);
 
         JPanel lowerPanel = new JPanel();
         lowerPanel.add(this.availablePieces.pieceSelectionPanel);
