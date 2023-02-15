@@ -15,7 +15,7 @@ public class PieceGeometry {
         this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
     }
 
-    public PieceGeometry(PieceGeometry pieceGeometry){
+    public PieceGeometry(PieceGeometry pieceGeometry) {
         this.shape = pieceGeometry.getShape().copy();
         this.leftSquareCorner = pieceGeometry.getLeftSquareCorner().copy();
     }
@@ -33,18 +33,19 @@ public class PieceGeometry {
         this.leftSquareCorner = new ArrayRealVector(this.calculateLeftCorner());
     }
 
-    // TODO: GET RID OF THE WARNING BECAUSE I HAVE TO CHECK IF THE OPTINAL VALUES ARE PRESENT USING isPresent() METHOD
-
-
-    // Useare questo .collect(Collectors.toList()) al posto di .toList() perché a circleci non piace
     public double[] calculateLeftCorner() {
         OptionalDouble maxY = Arrays.stream(this.shape.getColumn(1)).max();
 
-        List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], maxY.getAsDouble()) == 0)
-                .collect(Collectors.toList());
+        if (maxY.isPresent()) {
+            List<double[]> leftCandidates = Arrays.stream(this.shape.getData()).filter(c -> Double.compare(c[1], maxY.getAsDouble()) == 0)
+                    .collect(Collectors.toList());
 
-        Optional<double[]> min = leftCandidates.stream().min(Comparator.comparingDouble(h -> h[0]));
+            Optional<double[]> min = leftCandidates.stream().min(Comparator.comparingDouble(h -> h[0]));
+            if (min.isPresent()) {
 
-        return min.get();
+                return min.get();
+            }
+        }
+        throw new RuntimeException("Errore nel calcolo dell'angolo");
     }
 }

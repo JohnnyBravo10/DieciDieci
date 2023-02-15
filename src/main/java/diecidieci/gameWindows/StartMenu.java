@@ -18,9 +18,9 @@ public class StartMenu {
         mainPanel.setLayout(new GridLayout(4, 1));
         mainPanel.setBorder(new EmptyBorder(100, 200, 100, 200));
 
-        JLabel label_titolo = new JLabel("1010!");
-        label_titolo.setPreferredSize(new Dimension(400, 400));
-        label_titolo.setHorizontalAlignment(JLabel.CENTER);
+        JLabel labelTitolo = new JLabel("1010!");
+        labelTitolo.setPreferredSize(new Dimension(400, 400));
+        labelTitolo.setHorizontalAlignment(JLabel.CENTER);
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
             Game game = Game.getInstance();
@@ -51,7 +51,7 @@ public class StartMenu {
         exitButton.setOpaque(true);
         exitButton.setBorderPainted(false);
 
-        mainPanel.add(label_titolo);
+        mainPanel.add(labelTitolo);
         mainPanel.add(startButton);
         mainPanel.add(rulesButton);
         mainPanel.add(exitButton);
