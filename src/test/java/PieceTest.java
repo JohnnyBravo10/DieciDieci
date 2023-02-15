@@ -6,7 +6,6 @@ import org.apache.commons.math3.linear.RealVector;
 import diecidieci.core.Piece;
 import diecidieci.core.PieceGeometry;
 import diecidieci.core.PieceSet;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -55,7 +54,7 @@ class PieceTest {
     // This test checks if a rotation of 360 is correct
 
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testPieceRotation(int index){
 
         RealMatrix m = PieceSet.getPossibleSet()[index]
@@ -81,9 +80,6 @@ class PieceTest {
                     new ArrayRealVector(new double[]{-1, 1}),
 
                     new ArrayRealVector(new double[]{-0.5, 0.5}),
-                    new ArrayRealVector(new double[]{0, 2}),
-
-                    new ArrayRealVector(new double[]{0.5, 0.5}),
                     new ArrayRealVector(new double[]{0, 2})
                     )
     );
@@ -91,7 +87,7 @@ class PieceTest {
     //test per calculate left square corner
 
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testLeftCornerCalculation(int index){
         assertEquals(new ArrayRealVector(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
@@ -102,7 +98,7 @@ class PieceTest {
     //test per getLeftSquareCorner
 
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCorner(int index){
         assertEquals(PieceSet.getPossibleSet()[index]
                 .getPieceGeometry()
@@ -114,26 +110,23 @@ class PieceTest {
     final List<RealMatrix> LeftCornerPositions = new ArrayList<>(
             Arrays.asList(
                     new Array2DRowRealMatrix(new double[][]{{0, 0}, {0, 0}, {0, 0}, {0, 0}}),
-                    new Array2DRowRealMatrix(new double[][]{{0, 0}, {0, 0}, {-1, 0}, {0, 1}}),
-                    new Array2DRowRealMatrix(new double[][]{{0, 0}, {0, 0}, {-2, 0}, {0, 2}}),
-                    new Array2DRowRealMatrix(new double[][]{{0, 0}, {0, 0}, {-3, 0}, {0, 3}}),
-                    new Array2DRowRealMatrix(new double[][]{{0, 0}, {0, 0}, {-4, 0}, {0, 4}}),
+                    new Array2DRowRealMatrix(new double[][]{{-0.5, 0}, {0, 0.5}, {-0.5, 0}, {0, 0.5}}),
+                    new Array2DRowRealMatrix(new double[][]{{-1, 0}, {0, 1}, {-1, 0}, {0, 1}}),
+                    new Array2DRowRealMatrix(new double[][]{{-1.5, 0}, {0, 1.5}, {-1.5, 0}, {0, 1.5}}),
+                    new Array2DRowRealMatrix(new double[][]{{-2, 0}, {0, 2}, {-2, 0}, {0, 2}}),
 
-                    new Array2DRowRealMatrix(new double[][]{{0, 1}, {0, 0}, {-1, 0}, {-1, 1}}),
+                    new Array2DRowRealMatrix(new double[][]{{-0.5, 0.5}, {-0.5, 0.5}, {-0.5, 0.5}, {-0.5, 0.5}}),
                     new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {-1, 1}}),
 
-                    new Array2DRowRealMatrix(new double[][]{{0, 1}, {0, 0}, {-1, 0}, {0, 1}}),
-                    new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {1, 1}}),
-
-                    new Array2DRowRealMatrix(new double[][]{{0, 1}, {0, 0}, {-1, 0}, {0, 1}}),
-                    new Array2DRowRealMatrix(new double[][]{{-1, 1}, {-1, 1}, {-1, 1}, {1, 1}})
+                    new Array2DRowRealMatrix(new double[][]{{-0.5, 0.5}, {-0.5, 0.5}, {-0.5, 0.5}, {0.5, 0.5}}),
+                    new Array2DRowRealMatrix(new double[][]{{0, 2}, {0, 0}, {-2, 0}, {0, 2}})
             )
     );
 
     //test per i Left corner ad ogni rotazione
-    @Disabled
+
     @ParameterizedTest
-    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10})
+    @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCornerWithRotations(int index) {
         PieceGeometry p= PieceSet.getPossibleSet()[index].getPieceGeometry();
 
