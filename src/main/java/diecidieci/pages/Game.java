@@ -1,4 +1,4 @@
-package diecidieci.Pages;
+package diecidieci.pages;
 
 import diecidieci.core.*;
 

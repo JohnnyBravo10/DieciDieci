@@ -1,6 +1,6 @@
 package diecidieci.core;
 
-import diecidieci.Pages.Game;
+import diecidieci.pages.Game;
 
 import javax.swing.*;
 import java.awt.*;

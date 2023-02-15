@@ -1,5 +1,5 @@
 package diecidieci.core;
-import diecidieci.Pages.StartMenu;
+import diecidieci.pages.StartMenu;
 
 
 public class Main {

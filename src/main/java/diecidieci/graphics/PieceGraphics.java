@@ -1,6 +1,6 @@
 package diecidieci.graphics;
 
-import diecidieci.Pages.Game;
+import diecidieci.pages.Game;
 import diecidieci.core.Piece;
 import diecidieci.core.Tile;
 import org.apache.commons.math3.linear.RealMatrix;
