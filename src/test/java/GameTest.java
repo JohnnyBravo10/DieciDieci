@@ -15,7 +15,7 @@ public class GameTest {
     {
         Game game = new Game();
         game.addPoints(10);
-        assertEquals(10, game.getPunteggio().points);
+        assertEquals(10, game.getScore().points);
     }
 
 
@@ -26,7 +26,7 @@ public class GameTest {
         Game game= new Game();
         Piece p = PieceSet.getPossibleSet()[2];
         game.addPoints(p.getSize());
-        assertEquals(3, game.getPunteggio().points);
+        assertEquals(3, game.getScore().points);
     }
 
 */

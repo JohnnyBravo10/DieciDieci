@@ -8,7 +8,7 @@ import javax.swing.*;
 public class Game {
     private static Game instance;
     private final Board board; //board di gioco
-    private final Punteggio punteggio;
+    private final Score score;
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private Piece selectedPiece;
@@ -20,11 +20,11 @@ public class Game {
 
         this.board = new Board();
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
-        this.punteggio = new Punteggio(0);
+        this.score = new Score(0);
         this.rotationButton = new RotationButton();
 
         JPanel upperPanel = new JPanel();
-        upperPanel.add(this.punteggio.pointsLabel);
+        upperPanel.add(this.score.pointsLabel);
         upperPanel.add(this.board.boardGraphics);
 
         JPanel lowerPanel = new JPanel();
@@ -51,7 +51,7 @@ public class Game {
     }
 
     public void addPoints(int increment){
-        this.punteggio.points += increment;
+        this.score.points += increment;
     }
 
     public void setSelectedPiece (Piece piece){
@@ -68,8 +68,8 @@ public class Game {
         return this.board;
     }
 
-    public Punteggio getPunteggio(){
-        return this.punteggio;
+    public Score getPunteggio(){
+        return this.score;
     }
 
     public PieceTriplet getAvailablePieces(){ return this.availablePieces;}
