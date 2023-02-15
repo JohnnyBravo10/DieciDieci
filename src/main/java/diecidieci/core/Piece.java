@@ -5,25 +5,26 @@ import java.awt.*;
 
 public class Piece {
 
-    private final PieceGeometry pieceGeometry;
+    private final PieceGeometry geometry;
     private final ShapeType type;
-    private final Color pieceColor;
+    private final Color color;
     private final int size;
+
     public boolean available;
 
     public Piece(PieceGeometry pieceGeometry, ShapeType type, Color pieceColor){
-        this.pieceGeometry = pieceGeometry;
+        this.geometry = pieceGeometry;
         this.type = type;
-        this.pieceColor = pieceColor;
+        this.color = pieceColor;
         this.size = pieceGeometry.getShape().getRowDimension();
         this.available = true;
     }
 
     public Piece(Piece piece){
-        this.pieceGeometry = new PieceGeometry(piece.getPieceGeometry());
+        this.geometry = new PieceGeometry(piece.getGeometry());
         this.type = piece.type;
-        this.pieceColor = piece.getPieceColor();
-        this.size = piece.getPieceGeometry().getShape().getRowDimension();
+        this.color = piece.getColor();
+        this.size = piece.getGeometry().getShape().getRowDimension();
         this.available = piece.available;
     }
     public enum ShapeType{
@@ -39,12 +40,12 @@ public class Piece {
     }
 
     // GETTERS
-    public PieceGeometry getPieceGeometry(){
-        return this.pieceGeometry;
+    public PieceGeometry getGeometry(){
+        return this.geometry;
     }
 
-    public Color getPieceColor() {
-        return this.pieceColor;
+    public Color getColor() {
+        return this.color;
     }
 
     public int getSize(){return this.size;}

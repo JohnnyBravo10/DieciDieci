@@ -7,14 +7,15 @@ import java.awt.*;
 public class Window {
 
     private static final int WINDOW_SIZE = 780;
-    private final JFrame windowFrame;
+
+    private final JFrame frame;
     private final JPanel mainPanel;
 
     public Window(final String title){
-        this.windowFrame = new JFrame(title);
-        this.windowFrame.setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
-        this.windowFrame.setResizable(false);
-        this.windowFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.frame = new JFrame(title);
+        this.frame.setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
+        this.frame.setResizable(false);
+        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         this.mainPanel = new JPanel();
         this.mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
@@ -22,8 +23,8 @@ public class Window {
 
     }
 
-    public final JFrame getWindowFrame(){
-        return this.windowFrame;
+    public final JFrame getFrame(){
+        return this.frame;
     }
 
     public final JPanel getMainPanel(){

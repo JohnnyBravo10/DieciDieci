@@ -7,16 +7,16 @@ import java.awt.*;
 
 public class PieceTripletGraphics extends JPanel {
 
-    public PieceGraphics[] pieceGraphicsComponents;
+    public PieceGraphics[] components;
     public PieceTripletGraphics(Piece[] pieces){
         this.setLayout(new GridLayout(1, 3));
 
-        this.pieceGraphicsComponents = new PieceGraphics[3];
+        this.components = new PieceGraphics[3];
 
-        for(int i = 0; i < pieceGraphicsComponents.length; i++)
+        for(int i = 0; i < components.length; i++)
         {
-            pieceGraphicsComponents[i] = new PieceGraphics(pieces[i], this.pieceGraphicsComponents, i);
-            this.add(this.pieceGraphicsComponents[i]);
+            components[i] = new PieceGraphics(pieces[i], this.components, i);
+            this.add(this.components[i]);
         }
     }
 }

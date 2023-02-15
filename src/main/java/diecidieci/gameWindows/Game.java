@@ -7,14 +7,11 @@ import javax.swing.*;
 
 public class Game {
     private static Game instance;
-
     private final Board board; //board di gioco
     private final Punteggio punteggio;
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
-
     private Piece selectedPiece;
-
     private final Window window;
 
     private Game() {
@@ -37,9 +34,9 @@ public class Game {
         this.window.getMainPanel().add(upperPanel);
         this.window.getMainPanel().add(lowerPanel);
 
-        this.window.getWindowFrame().add(this.window.getMainPanel());
-        this.window.getWindowFrame().pack();
-        this.window.getWindowFrame().setVisible(true);
+        this.window.getFrame().add(this.window.getMainPanel());
+        this.window.getFrame().pack();
+        this.window.getFrame().setVisible(true);
     }
 
     public static Game getInstance(){

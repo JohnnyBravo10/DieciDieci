@@ -39,7 +39,7 @@ class PieceTest {
     @Test
     void testFirstShapeMatrixInitialization(){
         assertEquals(PieceSet.getPossibleSet()[0]
-                .getPieceGeometry()
+                .getGeometry()
                 .getShape(), new Array2DRowRealMatrix(new double[][]{{0, 0}}));
     }
 
@@ -47,7 +47,7 @@ class PieceTest {
     @Test
     void testWorkingGetEntry(){
         assertEquals(0, PieceSet.getPossibleSet()[0]
-                .getPieceGeometry()
+                .getGeometry()
                 .getShape().getEntry(0, 0));
     }
 
@@ -58,14 +58,14 @@ class PieceTest {
     void testPieceRotation(int index){
 
         RealMatrix m = PieceSet.getPossibleSet()[index]
-                .getPieceGeometry().getShape();
+                .getGeometry().getShape();
 
         for(int i = 0; i < 360; i+= 90)
         {
-            PieceSet.getPossibleSet()[index].getPieceGeometry().rotate();
+            PieceSet.getPossibleSet()[index].getGeometry().rotate();
         }
 
-        assertEquals(PieceSet.getPossibleSet()[index].getPieceGeometry().getShape(), m);
+        assertEquals(PieceSet.getPossibleSet()[index].getGeometry().getShape(), m);
     }
 
     final List<RealVector> startingLeftCornerPositions = new ArrayList<>(
@@ -90,7 +90,7 @@ class PieceTest {
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testLeftCornerCalculation(int index){
         assertEquals(new ArrayRealVector(PieceSet.getPossibleSet()[index]
-                .getPieceGeometry()
+                .getGeometry()
                 .calculateLeftCorner()), startingLeftCornerPositions.get(index));
     }
 
@@ -101,7 +101,7 @@ class PieceTest {
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCorner(int index){
         assertEquals(PieceSet.getPossibleSet()[index]
-                .getPieceGeometry()
+                .getGeometry()
                 .getLeftSquareCorner(), startingLeftCornerPositions.get(index));
     }
 
@@ -128,7 +128,7 @@ class PieceTest {
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCornerWithRotations(int index) {
-        PieceGeometry p= PieceSet.getPossibleSet()[index].getPieceGeometry();
+        PieceGeometry p= PieceSet.getPossibleSet()[index].getGeometry();
 
         for (int i = 0; i < 360; i += 90) {
             assertEquals(p.getLeftSquareCorner(), LeftCornerPositions.get(index).getRowVector(i/90));

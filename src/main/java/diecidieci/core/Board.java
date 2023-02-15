@@ -102,7 +102,7 @@ public class Board {
 
         try {
             for (int i = 0; i < p.getSize(); i++) {
-                if (!this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].isEmpty()) {
+                if (!this.gameBoard[(int) (clickedPosition[0] + p.getGeometry().getLeftSquareCorner().getEntry(1) - p.getGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getGeometry().calculateLeftCorner()[0] + p.getGeometry().getShape().getRow(i)[0])].isEmpty()) {
                     return false;
                 }
             }
@@ -116,8 +116,8 @@ public class Board {
 
     //metodo da invocare per piazzare il pezzo (dopo aver verificato che c'è spazio con canBePlaced)
     public void place (Piece p, Double[] clickedPosition){
-        for (int i = 0; i < p.getPieceGeometry().getShape().getRowDimension(); i++){
-            this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].setColor(p.getPieceColor());
+        for (int i = 0; i < p.getGeometry().getShape().getRowDimension(); i++){
+            this.gameBoard[(int) (clickedPosition[0] + p.getGeometry().getLeftSquareCorner().getEntry(1) - p.getGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getGeometry().calculateLeftCorner()[0] + p.getGeometry().getShape().getRow(i)[0])].setColor(p.getColor());
         }
     }
 
@@ -138,9 +138,9 @@ public class Board {
                     }
                 }
             }
-            firstPiece.getPieceGeometry().rotate();
-            secondPiece.getPieceGeometry().rotate();
-            thirdPiece.getPieceGeometry().rotate();
+            firstPiece.getGeometry().rotate();
+            secondPiece.getGeometry().rotate();
+            thirdPiece.getGeometry().rotate();
         }
         return true;
     }

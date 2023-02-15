@@ -13,7 +13,7 @@ public class PieceTriplet {
 
     public void rotateAll(){
         for(Piece p : pieces){
-            p.getPieceGeometry().rotate();
+            p.getGeometry().rotate();
         }
     }
 
