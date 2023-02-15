@@ -136,4 +136,11 @@ class PieceTest {
         }
     }
 
+    @Test
+    void SetUnavailableTest(){
+        Piece p = new Piece(PieceSet.getRandomPiece());
+        p.setUnavailable();
+        assertEquals(false,p.available);
+    }
+
 }

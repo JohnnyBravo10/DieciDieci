@@ -25,7 +25,7 @@ class BoardTests {
     // test per verificare l'efficienza del metodo checkBoard
     @Disabled //non funziona ora che ho aggiunto l'incremento del punteggio al metodo cleanBoard perché il punteggio non è inizializzato
     @Test
-    void Test_checkBoard(){
+    void checkBoardTest(){
         Board tabella1 = new Board();
         Board tabella2 = new Board();
         for (int i=0; i < BOARD_DIM;i++){
