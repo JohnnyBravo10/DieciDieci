@@ -1,4 +1,4 @@
-package diecidieci.gameWindows;
+package diecidieci.Pages;
 
 import diecidieci.core.*;
 
@@ -12,11 +12,11 @@ public class Game {
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
     private Piece selectedPiece;
-    private final Window window;
+    private final GameWindow window;
 
     private Game() {
 
-        this.window = new Window("1010");
+        this.window = new GameWindow("1010");
 
         this.board = new Board();
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
@@ -92,7 +92,7 @@ public class Game {
         //this.availablePieces.draw();
     }
 
-    public Window getWindow() {
+    public GameWindow getWindow() {
         return window;
     }
 }

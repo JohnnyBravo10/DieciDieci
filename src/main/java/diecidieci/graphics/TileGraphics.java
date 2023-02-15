@@ -1,7 +1,7 @@
 package diecidieci.graphics;
 
-import diecidieci.gameWindows.EndGame;
-import diecidieci.gameWindows.Game;
+import diecidieci.Pages.EndGame;
+import diecidieci.Pages.Game;
 import diecidieci.core.Tile;
 
 import javax.swing.*;

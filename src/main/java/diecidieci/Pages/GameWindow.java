@@ -1,17 +1,17 @@
-package diecidieci.gameWindows;
+package diecidieci.Pages;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-public class Window {
+public class GameWindow {
 
     private static final int WINDOW_SIZE = 780;
 
     private final JFrame frame;
     private final JPanel mainPanel;
 
-    public Window(final String title){
+    public GameWindow(final String title){
         this.frame = new JFrame(title);
         this.frame.setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
         this.frame.setResizable(false);

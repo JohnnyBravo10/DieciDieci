@@ -1,7 +1,7 @@
 package diecidieci.core;
 
 
-import diecidieci.gameWindows.Game;
+import diecidieci.Pages.Game;
 import diecidieci.graphics.BoardGraphics;
 
 public class Board {

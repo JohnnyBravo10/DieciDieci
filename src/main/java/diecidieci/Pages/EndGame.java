@@ -1,4 +1,4 @@
-package diecidieci.gameWindows;
+package diecidieci.Pages;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

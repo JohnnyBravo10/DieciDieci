@@ -1,11 +1,3 @@
-
-import diecidieci.core.Piece;
-import diecidieci.core.PieceSet;
-import diecidieci.gameWindows.Game;
-import org.junit.jupiter.api.Disabled;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-
 public class GameTest {
 
 /*
