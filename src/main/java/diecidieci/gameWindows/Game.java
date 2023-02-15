@@ -106,6 +106,10 @@ public class Game {
     // metodo da aggiustare
     public void refreshPieces(){
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
-        this.availablePieces.draw();
+        //this.availablePieces.draw();
+    }
+
+    public Window getWindow() {
+        return window;
     }
 }

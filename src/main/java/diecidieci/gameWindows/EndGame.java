@@ -32,7 +32,7 @@ public class EndGame {
             Game.getInstance().startNewGame();
             this.window.dispose();
         });
-        JButton homeButton = new JButton("Menù Start");
+        JButton homeButton = new JButton("Start Menu");
         homeButton.setBackground(Color.YELLOW);
         homeButton.setOpaque(true);
         homeButton.setBorderPainted(false);

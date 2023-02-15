@@ -96,6 +96,10 @@ public class Board {
 
 
     public boolean canBePlaced(Piece p, Double[] clickedPosition) throws ArrayIndexOutOfBoundsException {
+        if (p==null){
+            return false;
+        }
+
         try {
             for (int i = 0; i < p.getSize(); i++) {
                 if (!this.gameBoard[(int) (clickedPosition[0] + p.getPieceGeometry().getLeftSquareCorner().getEntry(1) - p.getPieceGeometry().getShape().getRow(i)[1])][(int) (clickedPosition[1] - p.getPieceGeometry().calculateLeftCorner()[0] + p.getPieceGeometry().getShape().getRow(i)[0])].isEmpty()) {
