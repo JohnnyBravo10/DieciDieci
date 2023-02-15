@@ -12,6 +12,7 @@ public class Game {
     private final Punteggio punteggio;
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
+
     private Piece selectedPiece;
 
     private final Window window;
