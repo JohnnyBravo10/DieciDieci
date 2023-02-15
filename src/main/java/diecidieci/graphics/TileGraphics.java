@@ -45,6 +45,7 @@ public class TileGraphics extends JComponent {
                     }
                     Game.getInstance().getAvailablePieces().draw();
                     if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più
+                        Game.getInstance().getWindow().getWindowFrame().dispose();
                         EndGame endgame = new EndGame();
                     }
                 }
