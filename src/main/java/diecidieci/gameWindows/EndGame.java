@@ -3,6 +3,7 @@ package diecidieci.gameWindows;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 
 public class EndGame {
 
@@ -32,13 +33,13 @@ public class EndGame {
             Game.getInstance().startNewGame();
             this.window.dispose();
         });
-        JButton homeButton = new JButton("Start Menu");
-        homeButton.setBackground(Color.YELLOW);
+        JButton homeButton = new JButton("Quit");
+        homeButton.setBackground(Color.RED);
         homeButton.setOpaque(true);
         homeButton.setBorderPainted(false);
         homeButton.addActionListener(e -> {
-            StartMenu startMenu = new StartMenu();
-            this.window.dispose();
+            WindowEvent close = new WindowEvent(this.window, WindowEvent.WINDOW_CLOSING);
+            this.window.dispatchEvent(close);
         });
 
         mainPanel.add(labelGameover);
