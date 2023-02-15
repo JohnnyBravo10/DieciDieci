@@ -2,15 +2,9 @@
 import diecidieci.core.Piece;
 import diecidieci.core.PieceSet;
 import diecidieci.gameWindows.Game;
-import org.apache.commons.math3.linear.Array2DRowRealMatrix;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-
-import java.awt.*;
-import java.util.Arrays;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class GameTest {
 
