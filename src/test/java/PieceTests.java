@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
-class PieceTest {
+class PieceTests {
 
     //final PieceSet allSets = PieceSet.getInstance();
 
@@ -140,7 +140,7 @@ class PieceTest {
     void SetUnavailableTest(){
         Piece p = new Piece(PieceSet.getRandomPiece());
         p.setUnavailable();
-        assertEquals(false,p.available);
+        assertFalse(p.available);
     }
 
 }

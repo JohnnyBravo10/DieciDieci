@@ -1,4 +1,4 @@
-public class GameTest {
+public class GameTests {
 
 /*
     @Disabled //necessario rendere public il costruttore Game()
