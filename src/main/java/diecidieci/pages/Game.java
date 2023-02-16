@@ -69,7 +69,7 @@ public class Game {
         return this.selectedPiece;
     }
 
-    public Score getPunteggio(){
+    public Score getScore(){
         return this.score;
     }
 

@@ -1,27 +1,29 @@
+import diecidieci.core.Piece;
+import diecidieci.core.PieceSet;
+import diecidieci.pages.Game;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class GameTests {
 
-/*
-    @Disabled //necessario rendere public il costruttore Game()
     @Test
-    void addPointsTest()
+    void testAddingPoint()
     {
-        Game game = new Game();
+        Game game = Game.getInstance();
         game.addPoints(10);
         assertEquals(10, game.getScore().points);
     }
 
 
-    @Disabled //necessario rendere public il costruttore Game()
     @Test
-    void addPointsTest2()
+    void testPointsAddedByPiece()
     {
-        Game game= new Game();
+        Game game = Game.getInstance();
         Piece p = PieceSet.getPossibleSet()[2];
         game.addPoints(p.getSize());
-        assertEquals(3, game.getScore().points);
+        assertEquals(13, game.getScore().points); // Punti primo test + punti secondo
     }
-
-*/
 }
 
 

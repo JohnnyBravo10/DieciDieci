@@ -22,7 +22,7 @@ public class EndMenu {
         JLabel labelGameover = new JLabel("GAME OVER");
         labelGameover.setHorizontalAlignment(JLabel.CENTER);
 
-        JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getPunteggio().points);
+        JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getScore().points);
         labelPoints.setHorizontalAlignment(JLabel.CENTER);
 
         JButton newGameButton = new JButton("New Game");
