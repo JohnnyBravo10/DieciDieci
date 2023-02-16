@@ -12,8 +12,6 @@ public class RotationButton extends JButton {
         super("Rotate");
         this.setSize(new Dimension(100, 50));
 
-        this.addActionListener(e -> {
-            Game.getInstance().rotatePieces();
-        });
+        this.addActionListener(e -> Game.getInstance().rotateAndDrawAllPieces());
     }
 }
