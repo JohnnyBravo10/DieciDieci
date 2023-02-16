@@ -1,7 +1,6 @@
 package diecidieci.graphics;
 
 import diecidieci.core.Piece;
-
 import javax.swing.*;
 import java.awt.*;
 

@@ -1,7 +1,6 @@
 package diecidieci.core;
 
 import org.apache.commons.math3.linear.*;
-
 import java.util.*;
 import java.util.stream.Collectors;
 

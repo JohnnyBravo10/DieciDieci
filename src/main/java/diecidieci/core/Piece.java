@@ -2,7 +2,6 @@ package diecidieci.core;
 
 import java.awt.*;
 
-
 public class Piece {
 
     private final PieceGeometry geometry;
@@ -11,7 +10,7 @@ public class Piece {
     private final int size;
     private boolean available;
 
-    //costruttore di piece (per creare il possible set di pieces)
+    //costruttore di piece (per creare il possibleSet in pieceSet)
     public Piece(PieceGeometry pieceGeometry, ShapeType type, Color pieceColor){
         this.geometry = pieceGeometry;
         this.type = type;
@@ -20,7 +19,7 @@ public class Piece {
         this.available = true;
     }
 
-    //costruttore di piece (per copiarne uno del possible set)
+    //costruttore di piece (per copiarne uno dal possibleSet)
     public Piece(Piece piece){
         this.geometry = new PieceGeometry(piece.geometry);
         this.type = piece.type;

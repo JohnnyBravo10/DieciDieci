@@ -3,17 +3,18 @@ package diecidieci.pages;
 import diecidieci.core.*;
 import diecidieci.graphics.PieceTripletGraphics;
 import diecidieci.graphics.RotationButton;
-
 import javax.swing.*;
 import java.awt.*;
 
 
 public class Game {
     private static Game instance;
+
     private final Board board; //board di gioco
-    private final Score score;
+    private final Score score; //punteggio
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
     private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare
+
     private Piece selectedPiece;
     private final GameWindow window;
 
@@ -122,6 +123,7 @@ public class Game {
         this.window.getFrame().dispose();
     }
 
+    //azioni dopo click su board
     public void update(Double[] coordinate){
         if (this.board.canBePlaced(this.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
             this.updateOnPiecePlaced(coordinate);
@@ -136,6 +138,7 @@ public class Game {
         }
     }
 
+    //piazzare un pezzo e aggiornare board e punteggio
     private void updateOnPiecePlaced(Double[] coordinate){
         this.board.place(this.selectedPiece, coordinate); //piazzo il pezzo
         this.addPoints(this.selectedPiece.getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
@@ -147,6 +150,8 @@ public class Game {
         this.drawBoard(); //aggiorno la board
         this.updateScore();
     }
+
+    //rotazione e aggiornamento pezzi
     public void rotateAndDrawAllPieces(){
         this.availablePieces.rotateAll();
         this.availablePieces.draw();

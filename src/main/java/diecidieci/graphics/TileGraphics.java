@@ -2,7 +2,6 @@ package diecidieci.graphics;
 
 import diecidieci.pages.Game;
 import diecidieci.core.Tile;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;

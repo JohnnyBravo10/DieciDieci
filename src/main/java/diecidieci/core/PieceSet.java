@@ -1,16 +1,13 @@
 package diecidieci.core;
 
 import org.apache.commons.math3.linear.Array2DRowRealMatrix;
-
 import java.awt.*;
 import java.security.SecureRandom;
 
 public class PieceSet {
 
+    //costruttore privato per nascondere quello pubblico di default
     private PieceSet(){}
-
-    //(poi volendo tutt questo campo final si potrebbe addiritture mettere nella classe piece e cancellare la class pieceset
-    // in alternativa si potrebbe anche pensare di rendere pieceset una classe record :o
 
     //set dei possibili pezzi
     private static final Piece[] possibleSet = new Piece[]{
@@ -54,7 +51,6 @@ public class PieceSet {
                     Color.YELLOW)
     };
     private static final SecureRandom gen = new SecureRandom();
-
 
     //possible set getter
     public static Piece[] getPossibleSet() {

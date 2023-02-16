@@ -1,6 +1,5 @@
 package diecidieci.core;
 
-
 import diecidieci.pages.Game;
 import diecidieci.graphics.BoardGraphics;
 
@@ -93,8 +92,6 @@ public class Board {
 
     //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner sul tile della gameboard cliccato
     //forse gli indici della casella della board cliccata potrebbero essere anche descritti da un array di int
-
-
     public boolean canBePlaced(Piece p, Double[] clickedPosition) throws ArrayIndexOutOfBoundsException {
         if (p==null){
             return false;

@@ -4,10 +4,8 @@ import diecidieci.pages.Game;
 import diecidieci.core.Piece;
 import diecidieci.core.Tile;
 import org.apache.commons.math3.linear.RealMatrix;
-
 import javax.swing.*;
 import java.awt.*;
-
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 

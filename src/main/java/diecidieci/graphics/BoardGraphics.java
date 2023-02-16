@@ -1,10 +1,8 @@
 package diecidieci.graphics;
 
 import diecidieci.core.Tile;
-
 import javax.swing.*;
 import java.awt.*;
-
 import static diecidieci.core.Board.BOARD_DIM;
 
 public class BoardGraphics extends JPanel {

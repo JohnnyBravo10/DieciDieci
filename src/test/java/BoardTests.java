@@ -23,7 +23,7 @@ class BoardTests {
     }
 
     // test per verificare l'efficienza del metodo checkBoard
-    @Disabled //non funziona ora che ho aggiunto l'incremento del punteggio al metodo cleanBoard perché il punteggio non è inizializzato
+    @Disabled //non funziona ora che l'incremento del punteggio è stato incluso nel metodo cleanBoard perché il punteggio non è inizializzato
     @Test
     void checkBoardTest(){
         Board tabella1 = new Board();

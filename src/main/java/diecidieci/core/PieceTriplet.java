@@ -19,6 +19,7 @@ public class PieceTriplet {
         }
     }
 
+    //metodo per fare repaint del selectionPanel
     public void draw(){
         this.selectionPanel.repaint();
     }
