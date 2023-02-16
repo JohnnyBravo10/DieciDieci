@@ -20,7 +20,9 @@ public class TileGraphics extends JComponent {
 
         this.addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {}
+            public void mouseClicked(MouseEvent e) {
+                // Do nothing because we use mousePressed
+            }
 
             @Override
             public void mousePressed(MouseEvent e) {
@@ -28,11 +30,17 @@ public class TileGraphics extends JComponent {
             }
 
             @Override
-            public void mouseReleased(MouseEvent e) {}
+            public void mouseReleased(MouseEvent e) {
+                // Do nothing because we use mousePressed
+            }
             @Override
-            public void mouseEntered(MouseEvent e) {}
+            public void mouseEntered(MouseEvent e) {
+                // Do nothing because we use mousePressed
+            }
             @Override
-            public void mouseExited(MouseEvent e) {}
+            public void mouseExited(MouseEvent e) {
+                // Do nothing because we use mousePressed
+            }
 
         });
     }
