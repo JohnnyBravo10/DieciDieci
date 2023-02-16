@@ -7,6 +7,8 @@ import java.security.SecureRandom;
 
 public class PieceSet {
 
+    private PieceSet(){}
+
     //(poi volendo tutt questo campo final si potrebbe addiritture mettere nella classe piece e cancellare la class pieceset
     // in alternativa si potrebbe anche pensare di rendere pieceset una classe record :o
 
