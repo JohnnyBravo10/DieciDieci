@@ -77,8 +77,6 @@ public class Game {
         return this.score;
     }
 
-    public PieceTriplet getAvailablePieces(){ return this.availablePieces;}
-
 
     //verifica della disponibilità o meno di pezzi
     public boolean checkPieceAvailability() {
@@ -150,7 +148,7 @@ public class Game {
         this.updateScore();
     }
     public void rotateAndDrawAllPieces(){
-        this.getAvailablePieces().rotateAll();
-        this.getAvailablePieces().draw();
+        this.availablePieces.rotateAll();
+        this.availablePieces.draw();
     }
 }
