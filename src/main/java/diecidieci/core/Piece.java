@@ -53,7 +53,7 @@ public class Piece {
 
     public void setUnavailable(){ this.available = false;}
 
-    public Boolean isAvailable(){ return this.available;}
+    public boolean isAvailable(){ return this.available;}
 }
 
 
