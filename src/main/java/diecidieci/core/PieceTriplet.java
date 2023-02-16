@@ -8,7 +8,7 @@ public class PieceTriplet {
 
     //generatore di una tripletta dati i tre pezzi
     public PieceTriplet(Piece[] pieces){
-        this.pieces=pieces;
+        this.pieces = pieces;
         this.pieceSelectionPanel = new PieceTripletGraphics(this.pieces);
     }
 

@@ -83,7 +83,7 @@ public class Game {
 
 
     //verifica della disponibilità o meno di pezzi
-    public boolean checkAvailability() {
+    public boolean checkPieceAvailability() {
         for (Piece x : this.availablePieces.pieces
         ) {
             if (x.available) {
@@ -94,8 +94,8 @@ public class Game {
     }
 
     //generazione di 3 nuovi pezzi da piazzare
-    public void refreshPieces(){
-        this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
+    private PieceTriplet refreshPieces(){
+        return new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
     }
 
     //window getter
@@ -104,29 +104,56 @@ public class Game {
     }
 
     //aggiorno board
-    public void updateBoard(){
-        this.getBoard().boardGraphics.repaint();
+    private void drawBoard(){
+        this.board.boardGraphics.repaint();
     }
 
     //aggiorno il punteggio
-    public void updateScore(){
-        this.getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points);
+    private void updateScore(){
+        this.score.pointsLabel.setText("Punteggio: " + this.score.points);
     }
 
     //aggiorno availablePieces (necessario quando genero nuovi pezzi, quando ruoto quelli esistenti basta draw)
     public void updateAvailablePieces(){
-        this.getAvailablePieces().pieceSelectionPanel = new PieceTripletGraphics(this.getAvailablePieces().pieces);
+        this.availablePieces = this.refreshPieces();
+        this.availablePieces.pieceSelectionPanel = new PieceTripletGraphics(this.availablePieces.pieces);
         this.getLowerPanel().remove(0);
-        this.getLowerPanel().add(this.getAvailablePieces().pieceSelectionPanel, 0);
+        this.getLowerPanel().add(this.availablePieces.pieceSelectionPanel, 0);
     }
 
     //accesso al lowerPanel
-    public JPanel getLowerPanel(){
-        return (JPanel)this.getWindow().getMainPanel().getComponent(1);
+    private JPanel getLowerPanel(){
+        return (JPanel)this.window.getMainPanel().getComponent(1);
     }
 
     //chiusura frame
-    public void disposeWindow(){
-        this.getWindow().getFrame().dispose();
+    private void disposeWindow(){
+        this.window.getFrame().dispose();
+    }
+
+    public void update(Double[] coordinate){
+        if (this.board.canBePlaced(this.getSelectedPiece(), coordinate)) {//se il pezzo ci sta
+            this.updateOnPiecePlaced(coordinate);
+            if (!this.checkPieceAvailability()) {//se non ci sono più pezzi
+                this.updateAvailablePieces();
+            }
+            this.availablePieces.draw();//aggiorno pezzi
+            if (this.board.shouldStop(this.availablePieces)) {//se non si riesce più a giocare
+                this.disposeWindow();
+                EndGame endgame = new EndGame();
+            }
+        }
+    }
+
+    private void updateOnPiecePlaced(Double[] coordinate){
+        this.board.place(this.selectedPiece, coordinate); //piazzo il pezzo
+        this.addPoints(this.selectedPiece.getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
+        this.board.checkBoard(); //libero colonne o righe piene (e incremento punteggi)
+
+        this.selectedPiece.setUnavailable(); //cancello pezzo dal panello in basso
+        this.setSelectedPiece(null);//deseleziono
+
+        this.drawBoard(); //aggiorno la board
+        this.updateScore();
     }
 }

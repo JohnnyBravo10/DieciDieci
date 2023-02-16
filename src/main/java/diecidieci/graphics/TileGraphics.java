@@ -25,28 +25,7 @@ public class TileGraphics extends JComponent {
 
             @Override
             public void mousePressed(MouseEvent e) {
-                if (Game.getInstance().getBoard().canBePlaced(Game.getInstance().getSelectedPiece(), coordinate)) {//se il pezzo ci sta
-
-                    Game.getInstance().getBoard().place(Game.getInstance().getSelectedPiece(), coordinate); //piazzo il pezzo
-                    Game.getInstance().addPoints(Game.getInstance().getSelectedPiece().getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
-                    Game.getInstance().getBoard().checkBoard(); //libero colonne o righe piene (e incremento punteggi)
-
-                    Game.getInstance().getSelectedPiece().setUnavailable(); //cancello pezzo dal panello in basso
-                    Game.getInstance().setSelectedPiece(null);//deseleziono
-
-                    Game.getInstance().updateBoard(); //aggiorno la board
-                    Game.getInstance().updateScore(); //aggiorno il punteggio
-
-                    if (!Game.getInstance().checkAvailability()) {//se non ci sono più pezzi
-                        Game.getInstance().refreshPieces();
-                        Game.getInstance().updateAvailablePieces();
-                    }
-                    Game.getInstance().getAvailablePieces().draw();//aggiorno pezzi
-                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più a giocare
-                        Game.getInstance().disposeWindow();
-                        EndGame endgame = new EndGame();
-                    }
-                }
+                Game.getInstance().update(coordinate);
             }
 
             @Override
