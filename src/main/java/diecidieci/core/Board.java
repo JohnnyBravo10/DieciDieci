@@ -140,9 +140,7 @@ public class Board {
                     }
                 }
             }
-            firstPiece.getGeometry().rotate();
-            secondPiece.getGeometry().rotate();
-            thirdPiece.getGeometry().rotate();
+            triplet.rotateAll();
         }
         return true;
     }
