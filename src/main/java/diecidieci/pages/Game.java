@@ -140,7 +140,7 @@ public class Game {
             this.availablePieces.draw();//aggiorno pezzi
             if (this.board.shouldStop(this.availablePieces)) {//se non si riesce più a giocare
                 this.disposeWindow();
-                EndGame endgame = new EndGame();
+                new EndGame();
             }
         }
     }
