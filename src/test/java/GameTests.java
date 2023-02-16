@@ -16,8 +16,9 @@ class GameTests {
     {
         if (!GraphicsEnvironment.isHeadless()){
             Game game = Game.getInstance();
+            int initialScore = game.getScore().points;
             game.addPoints(10);
-            assertEquals(10, game.getScore().points);
+            assertEquals(10, game.getScore().points - initialScore);
         }
 
         assertTrue(true);
@@ -30,9 +31,10 @@ class GameTests {
     {
         if (!GraphicsEnvironment.isHeadless()) {
             Game game = Game.getInstance();
+            int initialScore = game.getScore().points;
             Piece p = PieceSet.getPossibleSet()[2];
             game.addPoints(p.getSize());
-            assertEquals(13, game.getScore().points); // Punti primo test + punti secondo
+            assertEquals(3, game.getScore().points - initialScore); // Punti primo test + punti secondo
         }
 
         assertTrue(true);
