@@ -39,6 +39,10 @@ public class Piece {
         ELLE3X
     }
 
+    public void setUnavailable(){ this.available = false;}
+
+    public boolean isAvailable(){ return this.available;}
+
     // GETTERS
     public PieceGeometry getGeometry(){
         return this.geometry;
@@ -50,9 +54,6 @@ public class Piece {
 
     public int getSize(){return this.size;}
 
-    public void setUnavailable(){ this.available = false;}
-
-    public boolean isAvailable(){ return this.available;}
 }
 
 

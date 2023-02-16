@@ -23,14 +23,13 @@ public class Board {
     }
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
-    // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti
     public void checkBoard() {
         Boolean[] tokeepColumns = checkColumns();
         Boolean[] tokeepRows = checkRows();
         cleanBoard(tokeepRows, tokeepColumns);
     }
 
-    // metodo per controllare le colonne
+    // metodo per controllare le colonne da tenere
     public Boolean[] checkColumns() {
         Boolean[] tokeepColumns = new Boolean[BOARD_DIM];
 
@@ -48,7 +47,7 @@ public class Board {
         return tokeepColumns;
     }
 
-    // metodo per controllare le righe
+    // metodo per controllare le righe da tenere
     public Boolean[] checkRows() {
         Boolean[] tokeepRows = new Boolean[BOARD_DIM];
 
@@ -66,7 +65,7 @@ public class Board {
         return tokeepRows;
     }
 
-    // metodo che rende bianche righe e colonne completate
+    // metodo che rende bianche righe e colonne completate e aggiunge i punti
     public void cleanBoard(Boolean[] tokeepRows, Boolean[] tokeepColumns) {
 
         for (int i = 0; i < BOARD_DIM; i++) {
