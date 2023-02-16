@@ -10,7 +10,7 @@ public class GameTests {
 
     @Before
     public void setUpHeadlessMode() {
-        System.setProperty("java.awt.headless", "true");
+        System.setProperty("java.awt.headless", "false");
     }
 
 
