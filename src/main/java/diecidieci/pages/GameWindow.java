@@ -15,7 +15,7 @@ public class GameWindow {
         this.frame = new JFrame(title);
         this.frame.setPreferredSize(new Dimension(WINDOW_SIZE, WINDOW_SIZE));
         this.frame.setResizable(false);
-        this.frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         this.mainPanel = new JPanel();
         this.mainPanel.setBorder(new EmptyBorder(20, 20, 20, 20));

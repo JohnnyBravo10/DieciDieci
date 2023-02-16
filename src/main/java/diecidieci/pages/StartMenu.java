@@ -12,7 +12,7 @@ public class StartMenu {
         this.window = new JFrame("1010");
         this.window.setPreferredSize(new Dimension(780, 780));
         this.window.setResizable(false);
-        this.window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(4, 1));
@@ -20,7 +20,7 @@ public class StartMenu {
 
         JLabel labelTitolo = new JLabel("1010!");
         labelTitolo.setPreferredSize(new Dimension(400, 400));
-        labelTitolo.setHorizontalAlignment(JLabel.CENTER);
+        labelTitolo.setHorizontalAlignment(SwingConstants.CENTER);
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
             Game.getInstance();
