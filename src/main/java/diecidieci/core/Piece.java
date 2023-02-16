@@ -30,15 +30,15 @@ public class Piece {
         this.available = piece.available;
     }
     public enum ShapeType{
-        SQUARE2x,
-        SQUARE3x,
-        STRAIGHT1x,
-        STRAIGHT2x,
-        STRAIGHT3x,
-        STRAIGHT4x,
-        STRAIGHT5x,
-        ELLE2x,
-        ELLE3x
+        SQUARE2X,
+        SQUARE3X,
+        STRAIGHT1X,
+        STRAIGHT2X,
+        STRAIGHT3X,
+        STRAIGHT4X,
+        STRAIGHT5X,
+        ELLE2X,
+        ELLE3X
     }
 
     // GETTERS
