@@ -69,10 +69,6 @@ public class Game {
         return this.selectedPiece;
     }
 
-    public Board getBoard(){
-        return this.board;
-    }
-
     public Score getPunteggio(){
         return this.score;
     }
@@ -94,11 +90,6 @@ public class Game {
     //generazione di 3 nuovi pezzi da piazzare
     private PieceTriplet refreshPieces(){
         return new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
-    }
-
-    //window getter
-    public GameWindow getWindow() {
-        return window;
     }
 
     //aggiorno board
@@ -138,7 +129,7 @@ public class Game {
             this.availablePieces.draw();//aggiorno pezzi
             if (this.board.shouldStop(this.availablePieces)) {//se non si riesce più a giocare
                 this.disposeWindow();
-                new EndGame();
+                new EndMenu();
             }
         }
     }

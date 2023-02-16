@@ -1,6 +1,5 @@
 package diecidieci.graphics;
 
-import diecidieci.pages.EndGame;
 import diecidieci.pages.Game;
 import diecidieci.core.Tile;
 

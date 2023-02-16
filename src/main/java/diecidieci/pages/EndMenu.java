@@ -5,11 +5,11 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.WindowEvent;
 
-public class EndGame {
+public class EndMenu {
 
     private final JFrame window;
 
-    public EndGame(){
+    public EndMenu(){
         this.window = new JFrame("1010");
         this.window.setPreferredSize(new Dimension(300, 300));
         this.window.setResizable(false);
