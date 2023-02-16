@@ -36,7 +36,9 @@ public class StartMenu {
                    "without putting them above a tile of a previously placed piece. The player earns 1 point for every tile\n" +
                    "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a\n" +
                    "row or a column are occupied this line is fully emptied and the player earns 10 points. The game\n" +
-                   "terminates when none of the proposed pieces can be placed on the board.";
+                   "terminates when none of the proposed pieces can be placed on the board.\n"+
+                    "(Please note: when you click on a tile of the board that will be the one where the top left tile of\n"+
+                    "the selected piece will be placed)\n";
             JOptionPane.showMessageDialog(null,message,"Rules",JOptionPane.PLAIN_MESSAGE);
         });
         rulesButton.setBackground(Color.YELLOW);
