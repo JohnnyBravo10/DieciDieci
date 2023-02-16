@@ -148,4 +148,8 @@ public class Game {
         this.drawBoard(); //aggiorno la board
         this.updateScore();
     }
+    public void rotatePieces(){
+        this.getAvailablePieces().rotateAll();
+        this.getAvailablePieces().draw();
+    }
 }
