@@ -13,17 +13,17 @@ public class EndMenu {
         this.window = new JFrame("1010");
         this.window.setPreferredSize(new Dimension(300, 300));
         this.window.setResizable(false);
-        this.window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.window.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
         JPanel mainPanel = new JPanel();
         mainPanel.setLayout(new GridLayout(4, 1));
         mainPanel.setBorder(new EmptyBorder(10, 50, 10, 50));
 
         JLabel labelGameover = new JLabel("GAME OVER");
-        labelGameover.setHorizontalAlignment(JLabel.CENTER);
+        labelGameover.setHorizontalAlignment(SwingConstants.CENTER);
 
         JLabel labelPoints = new JLabel("You scored: "+ Game.getInstance().getScore().points);
-        labelPoints.setHorizontalAlignment(JLabel.CENTER);
+        labelPoints.setHorizontalAlignment(SwingConstants.CENTER);
 
         JButton newGameButton = new JButton("New Game");
         newGameButton.setBackground(Color.GREEN);
