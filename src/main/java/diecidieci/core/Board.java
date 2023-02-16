@@ -26,22 +26,10 @@ public class Board {
 
     // metodo che controlla righe, colonne e rende bianche quelle completate
     // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti
-    public int checkBoard() {
+    public void checkBoard() {
         Boolean[] tokeepColumns = checkColumns();
         Boolean[] tokeepRows = checkRows();
-        /*
-        int count = 0;
-        for (int i = 0; i < BOARD_DIM; i++){
-            if (!tokeepColumns[i]){
-                count += 1;
-            }
-            if (!tokeepRows[i]){
-                count += 1;
-            }
-        }
-        */
         cleanBoard(tokeepRows, tokeepColumns);
-        return (int)(Arrays.stream(tokeepRows).filter(x -> !x).count()+ Arrays.stream(tokeepColumns).filter(x -> !x).count());
     }
 
     // metodo per controllare le colonne

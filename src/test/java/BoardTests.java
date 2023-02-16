@@ -23,7 +23,6 @@ class BoardTests {
     }
 
     // test per verificare l'efficienza del metodo checkBoard
-    @Disabled //non funziona ora che l'incremento del punteggio è stato incluso nel metodo cleanBoard perché il punteggio non è inizializzato
     @Test
     void checkBoardTest(){
         Board tabella1 = new Board();
@@ -32,13 +31,12 @@ class BoardTests {
             tabella1.getGameBoard()[0][i].setColor(Color.RED);
             tabella1.getGameBoard()[5][i].setColor(Color.RED);
         }
-        int points_count = tabella1.checkBoard();
+        tabella1.checkBoard();
         for (int i=0; i< BOARD_DIM;i++){
             for (int j=0; j< BOARD_DIM;j++){
                 assertEquals(tabella1.getGameBoard()[i][j].getColor(),tabella2.getGameBoard()[i][j].getColor());
             }
         }
-        assertEquals(2, points_count);
     }
 
     //Test per verificare il metodo can be placed
