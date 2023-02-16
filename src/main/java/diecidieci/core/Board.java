@@ -3,8 +3,6 @@ package diecidieci.core;
 import diecidieci.pages.Game;
 import diecidieci.graphics.BoardGraphics;
 
-import java.util.Arrays;
-
 public class Board {
 
     private final Tile[][] gameBoard;

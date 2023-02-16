@@ -10,19 +10,15 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-
 import java.util.*;
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 
 class PieceTests {
 
-    //final PieceSet allSets = PieceSet.getInstance();
-
-    // Test if all the pieces have been initialized
+    //Test metodo getPossibleSet
     @Test
     void testPieceInitialization(){
         int cont = 0;
@@ -35,7 +31,7 @@ class PieceTests {
         assertEquals(PieceSet.getPossibleSet().length, cont);
     }
 
-    // Test if a shape it's initialized by comparing it to the real matrix
+    //Test metodo getPossibleSet
     @Test
     void testFirstShapeMatrixInitialization(){
         assertEquals(PieceSet.getPossibleSet()[0]
@@ -43,7 +39,7 @@ class PieceTests {
                 .getShape(), new Array2DRowRealMatrix(new double[][]{{0, 0}}));
     }
 
-    // Test how to get an entry and if it's working
+    //Test metodo getPossibleSet
     @Test
     void testWorkingGetEntry(){
         assertEquals(0, PieceSet.getPossibleSet()[0]
@@ -51,8 +47,7 @@ class PieceTests {
                 .getShape().getEntry(0, 0));
     }
 
-    // This test checks if a rotation of 360 is correct
-
+    //Test metodo rotate
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testPieceRotation(int index){
@@ -84,8 +79,7 @@ class PieceTests {
                     )
     );
 
-    //test per calculate left square corner
-
+    //Test per metodo calculateLeftCorner
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testLeftCornerCalculation(int index){
@@ -95,8 +89,7 @@ class PieceTests {
     }
 
 
-    //test per getLeftSquareCorner
-
+    //test per metodo getLeftSquareCorner
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCorner(int index){
@@ -123,8 +116,7 @@ class PieceTests {
             )
     );
 
-    //test per i Left corner ad ogni rotazione
-
+    //test per metodi getLeftSquareCorner e rotate
     @ParameterizedTest
     @ValueSource(ints={0, 1, 2, 3, 4, 5, 6, 7, 8})
     void testGetLeftCornerWithRotations(int index) {

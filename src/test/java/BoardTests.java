@@ -1,8 +1,8 @@
+
 import diecidieci.core.Board;
 import diecidieci.core.Piece;
 import diecidieci.core.PieceSet;
 import org.junit.jupiter.api.Test;
-
 import java.awt.*;
 import java.util.Arrays;
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,7 +11,7 @@ import static diecidieci.core.Board.BOARD_DIM;
 
 class BoardTests {
 
-    // Check if at the beginning all the board pieces are blank
+    //Test costruttore board
     @Test
     void correctBoardInitialization()
     {
@@ -21,7 +21,7 @@ class BoardTests {
                 .forEach(x -> Arrays.stream(x).forEach(y -> assertTrue(y.isEmpty())));
     }
 
-    // test per verificare l'efficienza del metodo checkBoard
+    //Test metodo checkBoard
     @Test
     void checkBoardTest(){
         if (!GraphicsEnvironment.isHeadless()) {
@@ -41,7 +41,7 @@ class BoardTests {
         assertTrue(true);
     }
 
-    //Test per verificare il metodo can be placed
+    //Test metodo canBePlaced
     @Test
     void canBePlacedTest(){
         Piece p= PieceSet.getPossibleSet()[1];
@@ -52,6 +52,7 @@ class BoardTests {
         assertFalse(tabella.canBePlaced(p, new Double[]{3.0,9.0})); //out of gameboard case
     }
 
+    //Test metodi place e canBePlaced
     @Test
     void placeTest(){
         Piece p=PieceSet.getPossibleSet()[1];

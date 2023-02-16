@@ -1,13 +1,13 @@
+
 import diecidieci.core.Tile;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
-
 import java.awt.*;
 import java.util.stream.Stream;
-
 import static org.junit.jupiter.api.Assertions.*;
+
 class TileTests {
     private static Stream<Arguments> provideTilesOccupiedToTest() {
         return Stream.of(
@@ -16,10 +16,9 @@ class TileTests {
         );
     }
 
-    // Check if a tile is occupied or not all in one test
+    //Test metodo isEmpty
     @ParameterizedTest
     @MethodSource("provideTilesOccupiedToTest")
-
     void testTiles(boolean expected, boolean result){
         assertEquals(expected, result);
     }
@@ -31,19 +30,22 @@ class TileTests {
         );
     }
 
+    //Test metodo getColor
     @ParameterizedTest
     @MethodSource("provideTilesColorToTest")
-
     void testTiles(String expected, String result){
         assertEquals(expected, result);
     }
 
+    //Test metodo makeAvailable
     @Test
     void MakeAvailableTest() {
         Tile redTile = new Tile(Color.red);
         redTile.makeAvailable();
         assertEquals(Color.white, redTile.getColor());
     }
+
+    //Test metodo setColor
     @Test
     void SetColorTest() {
         Tile redTile = new Tile();
