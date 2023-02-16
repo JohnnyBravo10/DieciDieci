@@ -135,7 +135,7 @@ public class Board {
             for (int i=0; i<BOARD_DIM; i++){
                 for (int j=0; j<BOARD_DIM; j++){
                     Double[] coord = {(double) i, (double) j};
-                    if ((canBePlaced(firstPiece,coord) && firstPiece.available) || (canBePlaced(secondPiece,coord) && secondPiece.available) || (canBePlaced(thirdPiece,coord) && thirdPiece.available)){
+                    if ((canBePlaced(firstPiece,coord) && firstPiece.isAvailable()) || (canBePlaced(secondPiece,coord) && secondPiece.isAvailable()) || (canBePlaced(thirdPiece,coord) && thirdPiece.isAvailable())){
                         return false;
                     }
                 }

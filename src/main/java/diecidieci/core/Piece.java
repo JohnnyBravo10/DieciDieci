@@ -9,8 +9,7 @@ public class Piece {
     private final ShapeType type;
     private final Color color;
     private final int size;
-
-    public boolean available;
+    private boolean available;
 
     //costruttore di piece (per creare il possible set di pieces)
     public Piece(PieceGeometry pieceGeometry, ShapeType type, Color pieceColor){
@@ -23,10 +22,10 @@ public class Piece {
 
     //costruttore di piece (per copiarne uno del possible set)
     public Piece(Piece piece){
-        this.geometry = new PieceGeometry(piece.getGeometry());
+        this.geometry = new PieceGeometry(piece.geometry);
         this.type = piece.type;
-        this.color = piece.getColor();
-        this.size = piece.getGeometry().getShape().getRowDimension();
+        this.color = piece.color;
+        this.size = piece.geometry.getShape().getRowDimension();
         this.available = piece.available;
     }
     public enum ShapeType{
@@ -53,6 +52,8 @@ public class Piece {
     public int getSize(){return this.size;}
 
     public void setUnavailable(){ this.available = false;}
+
+    public Boolean isAvailable(){ return this.available;}
 }
 
 

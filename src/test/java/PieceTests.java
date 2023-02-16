@@ -140,7 +140,7 @@ class PieceTests {
     void SetUnavailableTest(){
         Piece p = new Piece(PieceSet.getRandomPiece());
         p.setUnavailable();
-        assertFalse(p.available);
+        assertFalse(p.isAvailable());
     }
 
 }

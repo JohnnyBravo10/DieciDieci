@@ -60,7 +60,7 @@ public class PieceGraphics extends JComponent {
     //rappresentazione PieceGraphics
     @Override
     protected void paintComponent(Graphics g){
-        if (!piece.available){
+        if (!piece.isAvailable()){
             this.setVisible(false);
         }
 
