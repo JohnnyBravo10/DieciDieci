@@ -141,7 +141,7 @@ public class Game {
     //piazzare un pezzo e aggiornare board e punteggio
     private void updateOnPiecePlaced(Double[] coordinate){
         this.board.place(this.selectedPiece, coordinate); //piazzo il pezzo
-        this.addPoints(this.selectedPiece.getSize()); //incremento il punteggio (si potrebbe includere nel metodo place)
+        this.addPoints(this.selectedPiece.getSize()); //incremento il punteggio
         this.board.checkBoard(); //libero colonne o righe piene (e incremento punteggi)
 
         this.selectedPiece.setUnavailable(); //cancello pezzo dal panello in basso
