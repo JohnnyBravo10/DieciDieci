@@ -15,6 +15,7 @@ public class PieceGraphics extends JComponent {
 
     private final Piece piece;
 
+    //costruttore PieceGraphics con MouseListener
     public PieceGraphics(Piece piece, PieceGraphics[] array, int index){
         this.piece = piece;
         this.setPreferredSize(new Dimension(200, 200));
@@ -52,14 +53,15 @@ public class PieceGraphics extends JComponent {
 
     }
 
+    //rappresentazione PieceGraphics
     @Override
     protected void paintComponent(Graphics g){
         if (!piece.available){
             this.setVisible(false);
         }
 
-        else {////////
-            this.setVisible(true);///////////
+        else {
+            this.setVisible(true);
             setBackground(getBackground());
             g.setColor(piece.getColor());//seleziono il colore del pezzo
             for (int k = 0; k < piece.getSize(); k++) {//per ogni quadratino del pezzo
@@ -70,6 +72,7 @@ public class PieceGraphics extends JComponent {
         }
     }
 
+    //piece getter
     public Piece getPiece(){
         return this.piece;
     }

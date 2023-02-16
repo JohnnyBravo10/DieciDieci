@@ -9,9 +9,10 @@ import static diecidieci.core.Board.BOARD_DIM;
 
 public class BoardGraphics extends JPanel {
 
-    private TileGraphics[][] tiles;
+    private final TileGraphics[][] tiles;
 
 
+    //costruttore BoardGraphics con matrice di TileGraphics
     public BoardGraphics(Tile[][] gameBoard) {
         this.setPreferredSize(new Dimension(330, 330));
         this.setLayout(new GridLayout(BOARD_DIM, BOARD_DIM));
@@ -25,10 +26,4 @@ public class BoardGraphics extends JPanel {
             }
         }
     }
-
-    public TileGraphics[][] getGameBoard(){
-        return this.tiles;
-    }
-
-
 }

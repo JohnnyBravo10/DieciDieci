@@ -4,43 +4,39 @@ import java.awt.*;
 
 public class Tile {
     private Color color;
-    private static final int SIZE = 32; // Adding tile size
+    private static final int SIZE = 32;
 
-    //initialization empty tile
+    //costruttore Tile vuoto
     public Tile(){
         this.color = Color.white;
     }
 
-    //initialization empty/occupied tile
+    //costruttore Tile vuoto/occupato
     public Tile (Color color){
         this.color = color;
     }
 
-    // Adding is Empty check
+    //verifica accessibilità Tile
     public boolean isEmpty(){
         return this.color.equals(Color.white);
     }
 
-    //Get tile's color
+    //Tile's color getter
     public Color getColor(){
         return this.color;
     }
 
-    // Make tiles white again
+    //liberare Tile
     public void makeAvailable(){
         this.color = Color.white;
     }
 
-    // set the color
+    //occupare il Tile
     public void setColor(Color color){
         this.color = color;
     }
 
-    // check if two tiles are equals (have the same color)
-    public boolean equals (Tile tile){
-        return this.getColor() == tile.getColor();
-    }
-
+    //SIZE getter
     public static int getSize() {
         return SIZE;
     }

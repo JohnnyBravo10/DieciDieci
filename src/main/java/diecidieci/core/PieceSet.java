@@ -7,12 +7,10 @@ import java.security.SecureRandom;
 
 public class PieceSet {
 
-    // ho reso possibleSet un campo static final perché alla fine è una costante. Tenendo così
-    // non dobbiamo più usare un costruttore che costruisce il possibleSet (i prof fanno così nelle cell dell'esempio della banca)
-    // ho modificato anche i test. ora non c'è neanche bisogno di istanziare la classe pieceset, secondo me così è meglio in caso ditemi
-    // se non vi convince. (poi volendo tutt questo campo final si potrebbe addiritture mettere nella classe piece e cancellare la class pieceset
+    //(poi volendo tutt questo campo final si potrebbe addiritture mettere nella classe piece e cancellare la class pieceset
     // in alternativa si potrebbe anche pensare di rendere pieceset una classe record :o
 
+    //set dei possibili pezzi
     private static final Piece[] possibleSet = new Piece[]{
             // STRAIGTH
             new Piece(new PieceGeometry(new Array2DRowRealMatrix(new double[][]{{0, 0}})),
@@ -56,11 +54,12 @@ public class PieceSet {
     private static final SecureRandom gen = new SecureRandom();
 
 
-    //anche questi due metodi li ho resi statici
+    //possible set getter
     public static Piece[] getPossibleSet() {
         return possibleSet;
     }
 
+    //generatore pezzo casuale
     public static Piece getRandomPiece(){
         return new Piece(possibleSet[gen.nextInt(possibleSet.length)]);
     }

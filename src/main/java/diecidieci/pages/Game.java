@@ -10,10 +10,11 @@ public class Game {
     private final Board board; //board di gioco
     private final Score score;
     private final RotationButton rotationButton; //bottone per ruotare i pezzi
-    private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare, anche questo campo probabilmente dovrà essere reso statico
+    private PieceTriplet availablePieces; //tre pezzi disponibili da piazzare
     private Piece selectedPiece;
     private final GameWindow window;
 
+    //costruttore Game con window riempita da 4 entità (punteggio, plancia, pezzi, tasto rotazione)
     private Game() {
 
         this.window = new GameWindow("1010");
@@ -39,6 +40,7 @@ public class Game {
         this.window.getFrame().setVisible(true);
     }
 
+    //instance getter
     public static Game getInstance(){
         if (instance == null){
             instance = new Game();
@@ -46,18 +48,22 @@ public class Game {
         return instance;
     }
 
+    //inizio nuova partita
     protected void startNewGame(){
         instance = new Game();
     }
 
+    //incremento punteggio
     public void addPoints(int increment){
         this.score.points += increment;
     }
 
+    //set SelectedPiece
     public void setSelectedPiece (Piece piece){
         this.selectedPiece = piece;
     }
 
+    //getters
     public Piece getSelectedPiece(){
         return this.selectedPiece;
     }
@@ -75,7 +81,7 @@ public class Game {
     public PieceTriplet getAvailablePieces(){ return this.availablePieces;}
 
 
-    //ritorna true se ci sono ancora pezzi da inserire nella board
+    //verifica della disponibilità o meno di pezzi
     public boolean checkAvailability() {
         for (Piece x : this.availablePieces.pieces
         ) {
@@ -86,12 +92,12 @@ public class Game {
         return false;
     }
 
-    // metodo da aggiustare
+    //generazione di 3 nuovi pezzi da piazzare
     public void refreshPieces(){
         this.availablePieces = new PieceTriplet(new Piece[]{PieceSet.getRandomPiece(),PieceSet.getRandomPiece(),PieceSet.getRandomPiece()});
-        //this.availablePieces.draw();
     }
 
+    //window getter
     public GameWindow getWindow() {
         return window;
     }

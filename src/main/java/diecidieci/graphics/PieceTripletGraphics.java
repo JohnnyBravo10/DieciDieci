@@ -8,6 +8,8 @@ import java.awt.*;
 public class PieceTripletGraphics extends JPanel {
 
     public PieceGraphics[] components;
+
+    //costruttore PieceTripletGraphics con array di PieceGraphics
     public PieceTripletGraphics(Piece[] pieces){
         this.setLayout(new GridLayout(1, 3));
 

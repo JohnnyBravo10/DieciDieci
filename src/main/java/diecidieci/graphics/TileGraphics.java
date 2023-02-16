@@ -13,6 +13,7 @@ public class TileGraphics extends JComponent {
 
     private final Tile tile;
 
+    //costruttore TileGraphics con MouseListener
     public TileGraphics(Tile tile, Double[] coordinate) {//le coordinate servono per dire dove si trova il tile nella board per piazzare il pezzo quando si clicca
         this.tile = tile;
 
@@ -32,19 +33,18 @@ public class TileGraphics extends JComponent {
 
                     Game.getInstance().getSelectedPiece().setUnavailable(); //cancello pezzo dal panello in basso
                     Game.getInstance().setSelectedPiece(null);//deseleziono
-                    //Game.getInstance().getAvailablePieces().draw();//aggiorno pezzi
 
                     Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
                     Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
 
                     if (!Game.getInstance().checkAvailability()) {//se non ci sono più pezzi
-                        Game.getInstance().refreshPieces();//funziona
+                        Game.getInstance().refreshPieces();
                         Game.getInstance().getAvailablePieces().pieceSelectionPanel = new PieceTripletGraphics(Game.getInstance().getAvailablePieces().pieces);
                         ((JPanel)Game.getInstance().getWindow().getMainPanel().getComponent(1)).remove(0);
                         ((JPanel)Game.getInstance().getWindow().getMainPanel().getComponent(1)).add(Game.getInstance().getAvailablePieces().pieceSelectionPanel, 0);
                     }
-                    Game.getInstance().getAvailablePieces().draw();
-                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più
+                    Game.getInstance().getAvailablePieces().draw();//aggiorno pezzi
+                    if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più a giocare
                         Game.getInstance().getWindow().getFrame().dispose();
                         EndGame endgame = new EndGame();
                     }
@@ -61,6 +61,7 @@ public class TileGraphics extends JComponent {
         });
     }
 
+    //rappresentazione TileGraphics
     @Override
     protected void paintComponent(Graphics g) {
         g.setColor(this.tile.getColor());//seleziono il colore del tile

@@ -8,7 +8,7 @@ import java.awt.*;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
-class SimpleTests {
+class TileTests {
     private static Stream<Arguments> provideTilesOccupiedToTest() {
         return Stream.of(
                 Arguments.of(new Tile(Color.white).isEmpty(), true),
@@ -50,12 +50,4 @@ class SimpleTests {
         redTile.setColor(Color.RED);
         assertEquals(Color.RED, redTile.getColor());
     }
-
-    @Test
-    void EqualsTilesTest(){
-        Tile tile1 = new Tile(Color.BLUE);
-        Tile tile2 = new Tile(Color.BLUE);
-        assertTrue(tile1.equals(tile2));
-    }
-
 }

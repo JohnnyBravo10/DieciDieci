@@ -91,7 +91,7 @@ public class Board {
     }
 
 
-    //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner posizionato sul tile della gameboard cliccato (accetta indici del tile sulla matrice gameboard)
+    //metodo per determinare se un dato pezzo può essere posizionato con il leftcorner sul tile della gameboard cliccato
     //forse gli indici della casella della board cliccata potrebbero essere anche descritti da un array di int
 
 
@@ -121,10 +121,12 @@ public class Board {
         }
     }
 
+    //board getter
     public Tile[][] getGameBoard() {
         return gameBoard;
     }
 
+    //metodo per verificare che ci sia ancora la possibilità di piazzare pezzi
     public boolean shouldStop(PieceTriplet triplet) {
         Piece firstPiece = new Piece(triplet.pieces[0]);
         Piece secondPiece = new Piece(triplet.pieces[1]);

@@ -12,6 +12,7 @@ public class Piece {
 
     public boolean available;
 
+    //costruttore di piece (per creare il possible set di pieces)
     public Piece(PieceGeometry pieceGeometry, ShapeType type, Color pieceColor){
         this.geometry = pieceGeometry;
         this.type = type;
@@ -20,6 +21,7 @@ public class Piece {
         this.available = true;
     }
 
+    //costruttore di piece (per copiarne uno del possible set)
     public Piece(Piece piece){
         this.geometry = new PieceGeometry(piece.getGeometry());
         this.type = piece.type;
