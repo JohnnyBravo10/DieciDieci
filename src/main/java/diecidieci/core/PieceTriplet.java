@@ -3,7 +3,7 @@ package diecidieci.core;
 import diecidieci.graphics.PieceTripletGraphics;
 
 public class PieceTriplet {
-    public Piece[] pieces;
+    public final Piece[] pieces;
     public PieceTripletGraphics pieceSelectionPanel;
 
     //generatore di una tripletta dati i tre pezzi

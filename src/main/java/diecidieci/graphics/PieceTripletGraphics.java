@@ -7,7 +7,7 @@ import java.awt.*;
 
 public class PieceTripletGraphics extends JPanel {
 
-    public PieceGraphics[] components;
+    public final PieceGraphics[] components;
 
     //costruttore PieceTripletGraphics con array di PieceGraphics
     public PieceTripletGraphics(Piece[] pieces){

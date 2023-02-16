@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Score extends JPanel{
     public int points;
-    public JLabel pointsLabel;
+    public final JLabel pointsLabel;
 
     //costruttore di Score
     public Score (int points){
