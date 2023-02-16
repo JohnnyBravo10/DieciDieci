@@ -22,8 +22,7 @@ public class PieceGraphics extends JComponent {
 
         this.addMouseListener(new MouseListener() {
             @Override
-            public void mouseClicked(MouseEvent e) {
-                // Do nothing because we use mousePressed
+            public void mouseClicked(MouseEvent e) {// non fa nulla perché usiamo mousePressed
             }
 
             @Override
@@ -46,17 +45,14 @@ public class PieceGraphics extends JComponent {
             }
 
             @Override
-            public void mouseReleased(MouseEvent e) {
-                // Do nothing because we use mousePressed
+            public void mouseReleased(MouseEvent e) {// non fa nulla perché usiamo mousePressed
             }
             @Override
-            public void mouseEntered(MouseEvent e) {
-                // Do nothing because we use mousePressed
+            public void mouseEntered(MouseEvent e) {// non fa nulla perché usiamo mousePressed
             }
             @Override
-            public void mouseExited(MouseEvent e) {
-                // Do nothing because we use mousePressed
-            }
+            public void mouseExited(MouseEvent e) {// non fa nulla perché usiamo mousePressed
+                 }
         });
 
     }
