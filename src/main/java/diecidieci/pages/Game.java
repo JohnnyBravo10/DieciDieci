@@ -31,7 +31,7 @@ public class Game {
         upperPanel.add(this.board.boardGraphics);
 
         JPanel lowerPanel = new JPanel();
-        lowerPanel.add(this.availablePieces.pieceSelectionPanel);
+        lowerPanel.add(this.availablePieces.selectionPanel);
         lowerPanel.add(this.rotationButton);
 
         this.window.getMainPanel().add(upperPanel);
@@ -108,9 +108,9 @@ public class Game {
     //aggiorno availablePieces (necessario quando genero nuovi pezzi, quando ruoto quelli esistenti basta draw)
     public void updateAvailablePieces(){
         this.availablePieces = this.refreshPieces();
-        this.availablePieces.pieceSelectionPanel = new PieceTripletGraphics(this.availablePieces.pieces);
+        this.availablePieces.selectionPanel = new PieceTripletGraphics(this.availablePieces.pieces);
         this.getLowerPanel().remove(0);
-        this.getLowerPanel().add(this.availablePieces.pieceSelectionPanel, 0);
+        this.getLowerPanel().add(this.availablePieces.selectionPanel, 0);
     }
 
     //accesso al lowerPanel
