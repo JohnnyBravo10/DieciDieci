@@ -34,18 +34,16 @@ public class TileGraphics extends JComponent {
                     Game.getInstance().getSelectedPiece().setUnavailable(); //cancello pezzo dal panello in basso
                     Game.getInstance().setSelectedPiece(null);//deseleziono
 
-                    Game.getInstance().getBoard().boardGraphics.repaint(); //aggiorno la board
-                    Game.getInstance().getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points); //aggiorno il punteggio
+                    Game.getInstance().updateBoard(); //aggiorno la board
+                    Game.getInstance().updateScore(); //aggiorno il punteggio
 
                     if (!Game.getInstance().checkAvailability()) {//se non ci sono più pezzi
                         Game.getInstance().refreshPieces();
-                        Game.getInstance().getAvailablePieces().pieceSelectionPanel = new PieceTripletGraphics(Game.getInstance().getAvailablePieces().pieces);
-                        ((JPanel)Game.getInstance().getWindow().getMainPanel().getComponent(1)).remove(0);
-                        ((JPanel)Game.getInstance().getWindow().getMainPanel().getComponent(1)).add(Game.getInstance().getAvailablePieces().pieceSelectionPanel, 0);
+                        Game.getInstance().updateAvailablePieces();
                     }
                     Game.getInstance().getAvailablePieces().draw();//aggiorno pezzi
                     if (Game.getInstance().getBoard().shouldStop(Game.getInstance().getAvailablePieces())) {//se non si riesce più a giocare
-                        Game.getInstance().getWindow().getFrame().dispose();
+                        Game.getInstance().disposeWindow();
                         EndGame endgame = new EndGame();
                     }
                 }

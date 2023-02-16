@@ -1,6 +1,7 @@
 package diecidieci.pages;
 
 import diecidieci.core.*;
+import diecidieci.graphics.PieceTripletGraphics;
 
 import javax.swing.*;
 
@@ -100,5 +101,32 @@ public class Game {
     //window getter
     public GameWindow getWindow() {
         return window;
+    }
+
+    //aggiorno board
+    public void updateBoard(){
+        this.getBoard().boardGraphics.repaint();
+    }
+
+    //aggiorno il punteggio
+    public void updateScore(){
+        this.getPunteggio().pointsLabel.setText("Punteggio: " + Game.getInstance().getPunteggio().points);
+    }
+
+    //aggiorno availablePieces (necessario quando genero nuovi pezzi, quando ruoto quelli esistenti basta draw)
+    public void updateAvailablePieces(){
+        this.getAvailablePieces().pieceSelectionPanel = new PieceTripletGraphics(this.getAvailablePieces().pieces);
+        this.getLowerPanel().remove(0);
+        this.getLowerPanel().add(this.getAvailablePieces().pieceSelectionPanel, 0);
+    }
+
+    //accesso al lowerPanel
+    public JPanel getLowerPanel(){
+        return (JPanel)this.getWindow().getMainPanel().getComponent(1);
+    }
+
+    //chiusura frame
+    public void disposeWindow(){
+        this.getWindow().getFrame().dispose();
     }
 }
