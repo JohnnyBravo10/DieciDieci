@@ -53,7 +53,7 @@ public class Game {
     }
 
     //inizio nuova partita
-    protected void startNewGame(){
+    protected static void startNewGame(){
         instance = new Game();
     }
 

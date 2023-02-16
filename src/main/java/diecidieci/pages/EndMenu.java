@@ -30,7 +30,7 @@ public class EndMenu {
         newGameButton.setOpaque(true);
         newGameButton.setBorderPainted(false);
         newGameButton.addActionListener(e -> {
-            Game.getInstance().startNewGame();
+            Game.startNewGame();
             this.window.dispose();
         });
         JButton homeButton = new JButton("Quit");
