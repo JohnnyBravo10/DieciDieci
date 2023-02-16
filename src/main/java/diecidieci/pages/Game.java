@@ -4,6 +4,7 @@ import diecidieci.core.*;
 import diecidieci.graphics.PieceTripletGraphics;
 
 import javax.swing.*;
+import java.awt.*;
 
 
 public class Game {
@@ -38,7 +39,9 @@ public class Game {
 
         this.window.getFrame().add(this.window.getMainPanel());
         this.window.getFrame().pack();
-        this.window.getFrame().setVisible(true);
+        if (!GraphicsEnvironment.isHeadless()) {
+            this.window.getFrame().setVisible(true);
+        }
     }
 
     //instance getter
