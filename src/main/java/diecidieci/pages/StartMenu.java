@@ -23,7 +23,7 @@ public class StartMenu {
         labelTitolo.setHorizontalAlignment(JLabel.CENTER);
         JButton startButton = new JButton("Start");
         startButton.addActionListener(e -> {
-            Game game = Game.getInstance();
+            Game.getInstance();
             this.window.dispose();
         });
         startButton.setBackground(Color.GREEN);
@@ -31,7 +31,7 @@ public class StartMenu {
         startButton.setBorderPainted(false);
         JButton rulesButton = new JButton("Rules");
         rulesButton.addActionListener(e -> {
-            String message =
+            final String message =
                     "Every turn three pieces are offered to the player, who has to place them in the 10x10 tiles game board\n" +
                    "without putting them above a tile of a previously placed piece. The player earns 1 point for every tile\n" +
                    "composing the pieces he posits on the board. If after a piece is placed on the board all the tiles of a\n" +

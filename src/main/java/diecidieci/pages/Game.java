@@ -69,8 +69,6 @@ public class Game {
         return this.selectedPiece;
     }
 
-    // TODO: Probabilmente c'è un modo per farlo meglio Game non credo deve prendersi le responsabilità di qualcosa che deve fare la classe Piece
-
     public Board getBoard(){
         return this.board;
     }
