@@ -2,6 +2,7 @@ package diecidieci.pages;
 
 import diecidieci.core.*;
 import diecidieci.graphics.PieceTripletGraphics;
+import diecidieci.graphics.RotationButton;
 
 import javax.swing.*;
 import java.awt.*;

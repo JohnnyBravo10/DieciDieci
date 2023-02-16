@@ -1,4 +1,4 @@
-package diecidieci.core;
+package diecidieci.graphics;
 
 import diecidieci.pages.Game;
 
