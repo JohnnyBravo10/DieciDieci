@@ -1,11 +1,18 @@
 import diecidieci.core.Piece;
 import diecidieci.core.PieceSet;
 import diecidieci.pages.Game;
+import org.junit.Before;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GameTests {
+
+    @Before
+    public void setUpHeadlessMode() {
+        System.setProperty("java.awt.headless", "true");
+    }
+
 
     @Test
     void testAddingPoint()
