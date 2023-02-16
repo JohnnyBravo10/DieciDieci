@@ -3,6 +3,8 @@ package diecidieci.core;
 import diecidieci.pages.Game;
 import diecidieci.graphics.BoardGraphics;
 
+import java.util.Arrays;
+
 public class Board {
 
     private final Tile[][] gameBoard;
@@ -25,8 +27,9 @@ public class Board {
     // metodo che controlla righe, colonne e rende bianche quelle completate
     // ritorna il numero di righe e colonne cancellate che verrà poi moltiplicato per 10 per assegnare i punti
     public int checkBoard() {
-        boolean[] tokeepColumns = checkColumns();
-        boolean[] tokeepRows = checkRows();
+        Boolean[] tokeepColumns = checkColumns();
+        Boolean[] tokeepRows = checkRows();
+        /*
         int count = 0;
         for (int i = 0; i < BOARD_DIM; i++){
             if (!tokeepColumns[i]){
@@ -36,13 +39,14 @@ public class Board {
                 count += 1;
             }
         }
+        */
         cleanBoard(tokeepRows, tokeepColumns);
-        return count;
+        return (int)(Arrays.stream(tokeepRows).filter(x -> !x).count()+ Arrays.stream(tokeepColumns).filter(x -> !x).count());
     }
 
     // metodo per controllare le colonne
-    public boolean[] checkColumns() {
-        boolean[] tokeepColumns = new boolean[BOARD_DIM];
+    public Boolean[] checkColumns() {
+        Boolean[] tokeepColumns = new Boolean[BOARD_DIM];
 
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
@@ -51,13 +55,16 @@ public class Board {
                     break;
                 }
             }
+            if (tokeepColumns[i] == null){
+                tokeepColumns[i] = false;
+            }
         }
         return tokeepColumns;
     }
 
     // metodo per controllare le righe
-    public boolean[] checkRows() {
-        boolean[] tokeepRows = new boolean[BOARD_DIM];
+    public Boolean[] checkRows() {
+        Boolean[] tokeepRows = new Boolean[BOARD_DIM];
 
         for (int i = 0; i < BOARD_DIM; i++) {
             for (int j = 0; j < BOARD_DIM; j++) {
@@ -66,12 +73,15 @@ public class Board {
                     break;
                 }
             }
+            if (tokeepRows[i] == null){
+                tokeepRows[i] = false;
+            }
         }
         return tokeepRows;
     }
 
     // metodo che rende bianche righe e colonne completate
-    public void cleanBoard(boolean[] tokeepRows, boolean[] tokeepColumns) {
+    public void cleanBoard(Boolean[] tokeepRows, Boolean[] tokeepColumns) {
 
         for (int i = 0; i < BOARD_DIM; i++) {
             if (!tokeepRows[i]) {
@@ -142,5 +152,3 @@ public class Board {
         return true;
     }
 }
-
-
