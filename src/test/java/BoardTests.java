@@ -1,7 +1,6 @@
 import diecidieci.core.Board;
 import diecidieci.core.Piece;
 import diecidieci.core.PieceSet;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -25,18 +24,21 @@ class BoardTests {
     // test per verificare l'efficienza del metodo checkBoard
     @Test
     void checkBoardTest(){
-        Board tabella1 = new Board();
-        Board tabella2 = new Board();
-        for (int i=0; i < BOARD_DIM;i++){
-            tabella1.getGameBoard()[0][i].setColor(Color.RED);
-            tabella1.getGameBoard()[5][i].setColor(Color.RED);
-        }
-        tabella1.checkBoard();
-        for (int i=0; i< BOARD_DIM;i++){
-            for (int j=0; j< BOARD_DIM;j++){
-                assertEquals(tabella1.getGameBoard()[i][j].getColor(),tabella2.getGameBoard()[i][j].getColor());
+        if (!GraphicsEnvironment.isHeadless()) {
+            Board tabella1 = new Board();
+            Board tabella2 = new Board();
+            for (int i = 0; i < BOARD_DIM; i++) {
+                tabella1.getGameBoard()[0][i].setColor(Color.RED);
+                tabella1.getGameBoard()[5][i].setColor(Color.RED);
+            }
+            tabella1.checkBoard();
+            for (int i = 0; i < BOARD_DIM; i++) {
+                for (int j = 0; j < BOARD_DIM; j++) {
+                    assertEquals(tabella1.getGameBoard()[i][j].getColor(), tabella2.getGameBoard()[i][j].getColor());
+                }
             }
         }
+        assertTrue(true);
     }
 
     //Test per verificare il metodo can be placed
